@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" className="w-full h-full">
+  <rect width="800" height="500" fill="#0C1F38" rx="12"/>
+  <defs>
+    <pattern id="diagGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1B3558" stroke-width="0.5" stroke-opacity="0.6"/>
+    </pattern>
+    <linearGradient id="blueG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#087BCE"/>
+      <stop offset="100%" stop-color="#55B9FF"/>
+    </linearGradient>
+    <linearGradient id="cyanG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#55B9FF"/>
+      <stop offset="100%" stop-color="#1F9D6B"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#diagGrid)" rx="12"/>
+
+  <!-- Diagram Title / Header -->
+  <rect x="40" y="30" width="720" height="40" rx="6" fill="#071426" stroke="#1B3558"/>
+  <circle cx="65" cy="50" r="5" fill="#55B9FF"/>
+  <circle cx="82" cy="50" r="5" fill="#087BCE"/>
+  <circle cx="99" cy="50" r="5" fill="#1F9D6B"/>
+  <text x="120" y="55" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="12" font-weight="600" letter-spacing="0.05em">BIOMETRIC ATTENDANCE HARDWARE TO ODOO ERP INTEGRATION</text>
+
+  
+  <!-- Column 1: Hardware Device -->
+  <rect x="40" y="120" width="180" height="260" rx="10" fill="#071426" stroke="#087BCE" stroke-width="2"/>
+  <rect x="55" y="135" width="150" height="24" rx="4" fill="#1B3558"/>
+  <text x="130" y="151" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Anviz Biometric Device</text>
+
+  <rect x="55" y="175" width="150" height="50" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="130" y="198" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Physical Punch Terminal</text>
+  <text x="130" y="213" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Fingerprint &amp; RFID Scans</text>
+
+  <rect x="55" y="235" width="150" height="50" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="130" y="258" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Internal Log Buffer</text>
+  <text x="130" y="273" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Device Memory Preservation</text>
+
+  <rect x="55" y="295" width="150" height="50" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="130" y="318" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">TCP/IP Network Protocol</text>
+  <text x="130" y="333" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Direct LAN Socket / REST</text>
+
+  <path d="M220 250 L270 250" stroke="#55B9FF" stroke-width="2"/>
+
+  <!-- Column 2: Python FastAPI & ETL Pipeline -->
+  <rect x="270" y="110" width="260" height="280" rx="10" fill="#071426" stroke="#55B9FF" stroke-width="2"/>
+  <rect x="285" y="125" width="230" height="24" rx="4" fill="#1B3558"/>
+  <text x="400" y="141" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">FastAPI Middleware &amp; ETL Engine</text>
+
+  <rect x="285" y="165" width="230" height="42" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="400" y="185" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Automated Punch Extraction</text>
+  <text x="400" y="198" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Scheduled daemon polling Anviz records</text>
+
+  <rect x="285" y="215" width="230" height="42" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="400" y="235" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Validation &amp; De-duplication</text>
+  <text x="400" y="248" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Eliminates double punches &amp; false triggers</text>
+
+  <rect x="285" y="265" width="230" height="42" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="400" y="285" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Employee Mapping &amp; Shifts</text>
+  <text x="400" y="298" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Device ID to Enterprise Corporate ID</text>
+
+  <rect x="285" y="315" width="230" height="60" rx="4" fill="#0C1F38" stroke="#087BCE"/>
+  <text x="400" y="338" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">PostgreSQL Audit Store</text>
+  <text x="400" y="355" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Complete historical raw punch logs + status states</text>
+
+  <path d="M530 250 L580 250" stroke="#1F9D6B" stroke-width="2"/>
+
+  <!-- Column 3: Odoo ERP Target -->
+  <rect x="580" y="120" width="180" height="260" rx="10" fill="#071426" stroke="#1F9D6B" stroke-width="2"/>
+  <rect x="595" y="135" width="150" height="24" rx="4" fill="#1B3558"/>
+  <text x="670" y="151" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Odoo ERP System</text>
+
+  <rect x="595" y="175" width="150" height="50" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="670" y="198" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Odoo REST / XML-RPC</text>
+  <text x="670" y="213" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Bi-directional Secure API</text>
+
+  <rect x="595" y="235" width="150" height="50" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="670" y="258" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">HR &amp; Attendance Module</text>
+  <text x="670" y="273" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Daily Check-in / Check-out</text>
+
+  <rect x="595" y="295" width="150" height="50" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="670" y="318" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Payroll &amp; Overtime</text>
+  <text x="670" y="333" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Automated Hours Computation</text>
+
+</svg>

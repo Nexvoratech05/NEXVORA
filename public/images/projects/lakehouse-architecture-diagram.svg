@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" className="w-full h-full">
+  <rect width="800" height="500" fill="#0C1F38" rx="12"/>
+  <defs>
+    <pattern id="diagGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1B3558" stroke-width="0.5" stroke-opacity="0.6"/>
+    </pattern>
+    <linearGradient id="blueG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#087BCE"/>
+      <stop offset="100%" stop-color="#55B9FF"/>
+    </linearGradient>
+    <linearGradient id="cyanG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#55B9FF"/>
+      <stop offset="100%" stop-color="#1F9D6B"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#diagGrid)" rx="12"/>
+
+  <!-- Diagram Title / Header -->
+  <rect x="40" y="30" width="720" height="40" rx="6" fill="#071426" stroke="#1B3558"/>
+  <circle cx="65" cy="50" r="5" fill="#55B9FF"/>
+  <circle cx="82" cy="50" r="5" fill="#087BCE"/>
+  <circle cx="99" cy="50" r="5" fill="#1F9D6B"/>
+  <text x="120" y="55" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="12" font-weight="600" letter-spacing="0.05em">ENTERPRISE MEDALLION LAKEHOUSE &amp; AI PIPELINE — DATABRICKS</text>
+
+  
+  <!-- Sources -->
+  <rect x="40" y="110" width="110" height="290" rx="8" fill="#071426" stroke="#1B3558"/>
+  <text x="95" y="140" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">DATA SOURCES</text>
+
+  <rect x="50" y="160" width="90" height="42" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="95" y="180" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">APIs &amp; Webhooks</text>
+  <text x="95" y="193" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">JSON Telemetry</text>
+
+  <rect x="50" y="215" width="90" height="42" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="95" y="235" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">RDBMS / JDBC</text>
+  <text x="95" y="248" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Postgres / MySQL</text>
+
+  <rect x="50" y="270" width="90" height="42" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="95" y="290" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Storage / S3</text>
+  <text x="95" y="303" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Parquet / CSV</text>
+
+  <rect x="50" y="325" width="90" height="42" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="95" y="345" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Auto Loader</text>
+  <text x="95" y="358" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Schema Discovery</text>
+
+  <path d="M150 255 L180 255" stroke="#087BCE" stroke-width="2"/>
+
+  <!-- Ingestion -->
+  <rect x="180" y="110" width="100" height="290" rx="8" fill="#071426" stroke="#087BCE" stroke-width="1.5"/>
+  <text x="230" y="140" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">INGESTION</text>
+  <text x="230" y="165" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">PySpark Engine</text>
+  <text x="230" y="195" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Streaming Read</text>
+  <text x="230" y="220" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Batch Ingestion</text>
+  <text x="230" y="245" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Metadata Injection</text>
+  <text x="230" y="270" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Checkpointing</text>
+  <text x="230" y="300" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Schema Evolution</text>
+  <text x="230" y="330" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Fault Tolerant</text>
+
+  <path d="M280 255 L310 255" stroke="#CD7F32" stroke-width="2"/>
+
+  <!-- Bronze Layer -->
+  <rect x="310" y="110" width="125" height="290" rx="8" fill="#071426" stroke="#CD7F32" stroke-width="2"/>
+  <rect x="320" y="125" width="105" height="22" rx="4" fill="#2E1C0C"/>
+  <text x="372" y="140" fill="#E6A15C" font-family="'Inter', sans-serif" font-size="10" font-weight="700" text-anchor="middle">BRONZE LAYER</text>
+  <text x="372" y="170" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Raw Ingestion</text>
+  <text x="372" y="195" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Delta Lake Tables</text>
+  <text x="372" y="220" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Full History Archive</text>
+  <text x="372" y="245" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Append-Only Logs</text>
+  <text x="372" y="270" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Source Metadata</text>
+  <text x="372" y="300" fill="#E6A15C" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">ACID Transactions</text>
+
+  <path d="M435 255 L465 255" stroke="#C0C0C0" stroke-width="2"/>
+
+  <!-- Silver Layer -->
+  <rect x="465" y="110" width="125" height="290" rx="8" fill="#071426" stroke="#C0C0C0" stroke-width="2"/>
+  <rect x="475" y="125" width="105" height="22" rx="4" fill="#2A303C"/>
+  <text x="527" y="140" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="10" font-weight="700" text-anchor="middle">SILVER LAYER</text>
+  <text x="527" y="170" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Cleansed &amp; Validated</text>
+  <text x="527" y="195" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">De-duplication</text>
+  <text x="527" y="220" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Null &amp; Type Casting</text>
+  <text x="527" y="245" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Data Quality Rules</text>
+  <text x="527" y="270" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Conformed Schemas</text>
+  <text x="527" y="300" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Upserts &amp; Merges</text>
+
+  <path d="M590 255 L620 255" stroke="#FFD700" stroke-width="2"/>
+
+  <!-- Gold Layer & BI -->
+  <rect x="620" y="110" width="140" height="290" rx="8" fill="#071426" stroke="#FFD700" stroke-width="2"/>
+  <rect x="630" y="125" width="120" height="22" rx="4" fill="#3D3200"/>
+  <text x="690" y="140" fill="#FFE55C" font-family="'Inter', sans-serif" font-size="10" font-weight="700" text-anchor="middle">GOLD &amp; ANALYTICS</text>
+  <text x="690" y="170" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Business Aggregates</text>
+  <text x="690" y="195" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Dimensional Models</text>
+  <text x="690" y="220" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Star Schema Tables</text>
+  <text x="690" y="250" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Databricks SQL</text>
+  <text x="690" y="270" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Power BI / AI-BI</text>
+  <text x="690" y="300" fill="#FFE55C" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Sub-second Queries</text>
+
+  <!-- Unity Catalog Banner across Bottom -->
+  <rect x="40" y="420" width="720" height="50" rx="8" fill="#071426" stroke="#087BCE"/>
+  <text x="400" y="445" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="10" font-weight="700" text-anchor="middle">DATABRICKS UNITY CATALOG GOVERNANCE</text>
+  <text x="400" y="460" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Unified Governance · Data Lineage · Row/Column-Level Access Controls · Automated Auditing</text>
+
+</svg>

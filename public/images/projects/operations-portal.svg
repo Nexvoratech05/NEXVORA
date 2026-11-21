@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" className="w-full h-full">
+  <rect width="800" height="500" fill="#0C1F38" rx="12"/>
+  <defs>
+    <pattern id="portalGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1B3558" stroke-width="0.5" stroke-opacity="0.6"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="500" fill="url(#portalGrid)" rx="12"/>
+
+  <!-- Diagram Title / Header -->
+  <rect x="40" y="30" width="720" height="40" rx="6" fill="#071426" stroke="#1B3558"/>
+  <circle cx="65" cy="50" r="5" fill="#55B9FF"/>
+  <circle cx="82" cy="50" r="5" fill="#087BCE"/>
+  <circle cx="99" cy="50" r="5" fill="#1F9D6B"/>
+  <text x="120" y="55" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="12" font-weight="600" letter-spacing="0.05em">FULL-STACK ENTERPRISE OPERATIONS PORTAL ARCHITECTURE</text>
+
+  <!-- Left Sidebar (Navigation & RBAC) -->
+  <rect x="50" y="100" width="160" height="360" rx="8" fill="#071426" stroke="#1B3558"/>
+  <rect x="65" y="115" width="130" height="24" rx="4" fill="#1B3558"/>
+  <text x="130" y="131" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Role-Based Security</text>
+
+  <rect x="65" y="160" width="130" height="40" rx="4" fill="#0C1F38" stroke="#087BCE"/>
+  <text x="130" y="185" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Admin Dashboard</text>
+
+  <rect x="65" y="215" width="130" height="40" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="130" y="240" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="10" text-anchor="middle">Operations Manager</text>
+
+  <rect x="65" y="270" width="130" height="40" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="130" y="295" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="10" text-anchor="middle">Field Technician</text>
+
+  <rect x="65" y="325" width="130" height="40" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="130" y="350" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="10" text-anchor="middle">Audit &amp; Compliance</text>
+
+  <!-- Center Top: Next.js App Router RSC -->
+  <rect x="235" y="100" width="515" height="150" rx="8" fill="#071426" stroke="#087BCE" stroke-width="1.5"/>
+  <text x="255" y="130" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="12" font-weight="600">Next.js 14 App Router &amp; Server Components</text>
+  <text x="255" y="150" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="10">Streaming SSR · Instant Layout Resiliency · Zero Client-Side Data Leaks</text>
+
+  <!-- Metrics Cards Inside Dashboard -->
+  <rect x="255" y="170" width="145" height="65" rx="6" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="270" y="195" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="9">System Status</text>
+  <text x="270" y="222" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="16" font-weight="700">Operational</text>
+
+  <rect x="420" y="170" width="145" height="65" rx="6" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="435" y="195" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="9">Accessibility</text>
+  <text x="435" y="222" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="16" font-weight="700">WCAG 2.2 AA</text>
+
+  <rect x="585" y="170" width="145" height="65" rx="6" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="600" y="195" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="9">Data Pipeline</text>
+  <text x="600" y="222" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="16" font-weight="700">Synchronized</text>
+
+  <!-- Bottom Data Grid & Storage -->
+  <rect x="235" y="275" width="515" height="185" rx="8" fill="#071426" stroke="#1B3558"/>
+  <rect x="250" y="290" width="160" height="24" rx="4" fill="#1B3558"/>
+  <text x="330" y="306" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Data Grid &amp; State Sync</text>
+
+  <!-- Grid Rows -->
+  <rect x="250" y="325" width="485" height="32" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="270" y="345" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10">TRX-94812 — Database Schema Replication Sync</text>
+  <text x="670" y="345" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="9" text-anchor="end">Synchronized</text>
+
+  <rect x="250" y="365" width="485" height="32" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="270" y="385" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10">TRX-94813 — Multi-Region Automated Snapshot</text>
+  <text x="670" y="385" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="9" text-anchor="end">Verified</text>
+
+  <rect x="250" y="405" width="485" height="32" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="270" y="425" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10">TRX-94814 — Real-Time WebSocket Session Active</text>
+  <text x="670" y="425" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="9" text-anchor="end">Connected</text>
+</svg>
+

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" className="w-full h-full">
+  <rect width="800" height="500" fill="#0C1F38" rx="12"/>
+  <defs>
+    <pattern id="crmGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1B3558" stroke-width="0.5" stroke-opacity="0.6"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="500" fill="url(#crmGrid)" rx="12"/>
+
+  <!-- Diagram Title / Header -->
+  <rect x="40" y="30" width="720" height="40" rx="6" fill="#071426" stroke="#1B3558"/>
+  <circle cx="65" cy="50" r="5" fill="#55B9FF"/>
+  <circle cx="82" cy="50" r="5" fill="#087BCE"/>
+  <circle cx="99" cy="50" r="5" fill="#1F9D6B"/>
+  <text x="120" y="55" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="12" font-weight="600" letter-spacing="0.05em">HIGH-THROUGHPUT CRM DATA PIPELINE &amp; DEDUPLICATION ARCHITECTURE</text>
+
+  <!-- Input Sources -->
+  <rect x="40" y="110" width="160" height="70" rx="8" fill="#071426" stroke="#1B3558"/>
+  <text x="120" y="140" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="600" text-anchor="middle">Inbound Web Forms</text>
+  <text x="120" y="160" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Webhooks / REST API</text>
+
+  <rect x="40" y="210" width="160" height="70" rx="8" fill="#071426" stroke="#1B3558"/>
+  <text x="120" y="240" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="600" text-anchor="middle">WhatsApp Leads</text>
+  <text x="120" y="260" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Instant Chat Ingestion</text>
+
+  <rect x="40" y="310" width="160" height="70" rx="8" fill="#071426" stroke="#1B3558"/>
+  <text x="120" y="340" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="600" text-anchor="middle">Legacy ERP &amp; Billing</text>
+  <text x="120" y="360" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Batch CSV / SQL Sync</text>
+
+  <!-- Flow Arrows to Ingestion Stream -->
+  <path d="M200 145 L250 220" stroke="#087BCE" stroke-width="1.5"/>
+  <path d="M200 245 L250 245" stroke="#087BCE" stroke-width="1.5"/>
+  <path d="M200 345 L250 270" stroke="#087BCE" stroke-width="1.5"/>
+
+  <!-- Ingestion & Validation Buffer -->
+  <rect x="250" y="170" width="130" height="150" rx="8" fill="#071426" stroke="#087BCE" stroke-width="1.5"/>
+  <text x="315" y="215" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="600" text-anchor="middle">FastAPI Ingestion</text>
+  <text x="315" y="240" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Zod / Pydantic Schema</text>
+  <text x="315" y="265" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Phone / Email Format</text>
+  <text x="315" y="290" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Audit Logs (Postgres)</text>
+
+  <!-- Arrow to Deduplication Engine -->
+  <path d="M380 245 L430 245" stroke="#55B9FF" stroke-width="2"/>
+
+  <!-- Deduplication & Reconciliation Core -->
+  <rect x="430" y="140" width="160" height="210" rx="10" fill="#071426" stroke="#55B9FF" stroke-width="2"/>
+  <rect x="445" y="155" width="130" height="24" rx="4" fill="#1B3558"/>
+  <text x="510" y="171" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Deduplication Engine</text>
+
+  <rect x="445" y="195" width="130" height="38" rx="4" fill="#0C1F38" stroke="#087BCE"/>
+  <text x="510" y="212" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Exact Email Match</text>
+  <text x="510" y="225" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">100% Deterministic</text>
+
+  <rect x="445" y="245" width="130" height="38" rx="4" fill="#0C1F38" stroke="#087BCE"/>
+  <text x="510" y="262" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Fuzzy Phone / Name</text>
+  <text x="510" y="275" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Levenshtein Similarity</text>
+
+  <rect x="445" y="295" width="130" height="38" rx="4" fill="#0C1F38" stroke="#087BCE"/>
+  <text x="510" y="312" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Merge History Rules</text>
+  <text x="510" y="325" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Zero Data Loss</text>
+
+  <!-- Arrow to CRM & Reporting -->
+  <path d="M590 245 L640 245" stroke="#55B9FF" stroke-width="2"/>
+
+  <!-- Target CRM & BI -->
+  <rect x="640" y="160" width="130" height="170" rx="8" fill="#071426" stroke="#1F9D6B" stroke-width="1.5"/>
+  <text x="705" y="200" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="600" text-anchor="middle">Unified CRM Hub</text>
+  <text x="705" y="225" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">HubSpot / Custom CRM</text>
+  <text x="705" y="250" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Single Source of Truth</text>
+  <text x="705" y="280" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Live BI Dashboards</text>
+  <text x="705" y="300" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Accurate Forecasts</text>
+</svg>
+

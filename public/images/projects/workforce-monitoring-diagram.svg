@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" className="w-full h-full">
+  <rect width="800" height="500" fill="#0C1F38" rx="12"/>
+  <defs>
+    <pattern id="diagGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1B3558" stroke-width="0.5" stroke-opacity="0.6"/>
+    </pattern>
+    <linearGradient id="blueG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#087BCE"/>
+      <stop offset="100%" stop-color="#55B9FF"/>
+    </linearGradient>
+    <linearGradient id="cyanG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#55B9FF"/>
+      <stop offset="100%" stop-color="#1F9D6B"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#diagGrid)" rx="12"/>
+
+  <!-- Diagram Title / Header -->
+  <rect x="40" y="30" width="720" height="40" rx="6" fill="#071426" stroke="#1B3558"/>
+  <circle cx="65" cy="50" r="5" fill="#55B9FF"/>
+  <circle cx="82" cy="50" r="5" fill="#087BCE"/>
+  <circle cx="99" cy="50" r="5" fill="#1F9D6B"/>
+  <text x="120" y="55" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="12" font-weight="600" letter-spacing="0.05em">ENTERPRISE WORKFORCE MONITORING &amp; IDLE ALERT ENGINE</text>
+
+  
+  <!-- Desktop Client -->
+  <rect x="40" y="120" width="180" height="260" rx="10" fill="#071426" stroke="#087BCE" stroke-width="2"/>
+  <rect x="55" y="135" width="150" height="24" rx="4" fill="#1B3558"/>
+  <text x="130" y="151" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Windows Workstation Agent</text>
+
+  <rect x="55" y="175" width="150" height="42" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="130" y="195" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Python Desktop Service</text>
+  <text x="130" y="208" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Silent background process</text>
+
+  <rect x="55" y="225" width="150" height="42" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="130" y="245" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Periodic Screen Capture</text>
+  <text x="130" y="258" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Encrypted automated snapshots</text>
+
+  <rect x="55" y="275" width="150" height="42" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="130" y="295" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Check-In / Break Tray</text>
+  <text x="130" y="308" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Accurate productive time</text>
+
+  <rect x="55" y="325" width="150" height="42" rx="4" fill="#0C1F38" stroke="#087BCE"/>
+  <text x="130" y="345" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Input Hook Telemetry</text>
+  <text x="130" y="358" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Mouse / Keyboard idle timers</text>
+
+  <path d="M220 250 L270 250" stroke="#55B9FF" stroke-width="2"/>
+
+  <!-- Middle Detection Core -->
+  <rect x="270" y="110" width="260" height="280" rx="10" fill="#071426" stroke="#55B9FF" stroke-width="2"/>
+  <rect x="285" y="125" width="230" height="24" rx="4" fill="#1B3558"/>
+  <text x="400" y="141" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Idle Logic &amp; Central REST Backend</text>
+
+  <rect x="285" y="165" width="230" height="48" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="400" y="185" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">2-Minute Inactivity Trigger</text>
+  <text x="400" y="202" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Detects PC on with zero physical user input</text>
+
+  <rect x="285" y="223" width="230" height="48" rx="4" fill="#0C1F38" stroke="#087BCE"/>
+  <text x="400" y="243" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Real-Time Alert Dispatch</text>
+  <text x="400" y="260" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Instant WebSocket &amp; email alert to Super Admin</text>
+
+  <rect x="285" y="281" width="230" height="48" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="400" y="301" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Worked-Hours Calculation</text>
+  <text x="400" y="318" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Deducts verified breaks and idle blocks automatically</text>
+
+  <rect x="285" y="339" width="230" height="40" rx="4" fill="#1B3558"/>
+  <text x="400" y="363" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Encrypted Storage &amp; Image Hash Verification</text>
+
+  <path d="M530 250 L580 250" stroke="#1F9D6B" stroke-width="2"/>
+
+  <!-- Admin Dashboard -->
+  <rect x="580" y="120" width="180" height="260" rx="10" fill="#071426" stroke="#1F9D6B" stroke-width="2"/>
+  <rect x="595" y="135" width="150" height="24" rx="4" fill="#1B3558"/>
+  <text x="670" y="151" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Super Admin Dashboard</text>
+
+  <rect x="595" y="175" width="150" height="50" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="670" y="198" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Live Status Grid</text>
+  <text x="670" y="213" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Active · Idle · On Break · Offline</text>
+
+  <rect x="595" y="235" width="150" height="50" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="670" y="258" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Screen Reviewer</text>
+  <text x="670" y="273" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Timeline scrubber with timestamps</text>
+
+  <rect x="595" y="295" width="150" height="50" rx="4" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="670" y="318" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Payroll Reports</text>
+  <text x="670" y="333" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Exportable verified working hours</text>
+
+</svg>
