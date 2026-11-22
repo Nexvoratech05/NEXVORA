@@ -3,6 +3,7 @@ import * as z from "zod";
 import { checkRateLimit, getClientIp } from "@/lib/server/rate-limit";
 import { verifyTurnstile } from "@/lib/server/turnstile";
 import { sendEmail } from "@/lib/server/email";
+import { saveLead } from "@/lib/server/leads";
 import { siteConfig } from "@/content/site";
 
 const quoteSchema = z.object({
@@ -116,7 +117,29 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 6. Notify Founders
+    // 6. Persist Quote Request to Storage
+    await saveLead({
+      type: "quote_request",
+      fullName: safeName,
+      email: safeEmail,
+      phone: safePhone !== "Not provided" ? safePhone : undefined,
+      ip,
+      details: {
+        company: safeCompany,
+        country: safeCountry,
+        contactMethod: data.contactMethod,
+        services: data.services,
+        projectName: safeProjectName,
+        projectDescription: safeDescription,
+        mainGoal: safeGoal,
+        timeline: safeTimeline,
+        budgetRange: safeBudget,
+        existingUrl: safeExistingUrl,
+        recipient: recipientEmail,
+      },
+    });
+
+    // 7. Notify Founders
     const quoteNotification = await sendEmail({
       to: recipientEmail || "founders@nexvora.com",
       subject: `[NEXVORA Quote Request] ${safeProjectName} from ${safeName} (${safeCompany})`,
@@ -156,10 +179,11 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // 7. Send Confirmation to Prospect
+    // 8. Send Confirmation to Prospect
     await sendEmail({
       to: safeEmail,
       subject: `Project Scope Confirmation — NEXVORA Technologies`,
+      isConfirmationReceipt: true,
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; color: #071426;">
           <h2 style="color: #087BCE;">We have received your project details, ${safeName}</h2>
