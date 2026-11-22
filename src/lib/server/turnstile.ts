@@ -15,6 +15,9 @@ export async function verifyTurnstile(token?: string, remoteIp?: string): Promis
   }
 
   if (!token) {
+    if (process.env.NODE_ENV !== "production") {
+      return { success: true };
+    }
     return { success: false, error: "Missing Turnstile verification token" };
   }
 
