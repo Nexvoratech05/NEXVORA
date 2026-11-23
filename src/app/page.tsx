@@ -260,6 +260,34 @@ export default function HomePage() {
             </Link>
           </div>
 
+          {/* 3D Unified Engineering Ecosystem Showcase */}
+          <div className="mb-14 rounded-2xl overflow-hidden border border-navy-800/80 bg-navy-950 shadow-2xl relative group">
+            <div className="relative aspect-[16/9] w-full max-h-[500px]">
+              <Image
+                src="/images/divisions-ecosystem-3d.jpg"
+                alt="NEXVORA Unified Engineering Ecosystem — 3D Architecture Visualization"
+                fill
+                priority
+                className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.01]"
+                sizes="(max-width: 1280px) 100vw, 1280px"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pointer-events-none">
+                <div className="space-y-0.5">
+                  <span className="text-[11px] font-mono uppercase tracking-widest text-cyan-400 font-semibold block">
+                    Unified Engineering Architecture
+                  </span>
+                  <p className="text-xs sm:text-sm text-gray-200 font-medium">
+                    Integrated data lakehouses, AI/ML models, cloud infrastructure, and intelligent automation.
+                  </p>
+                </div>
+                <span className="text-[11px] font-mono text-gray-400 bg-navy-900/80 border border-navy-700/60 px-2.5 py-1 rounded-full backdrop-blur-md">
+                  3D Interactive Infrastructure Overview
+                </span>
+              </div>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((svc) => (
               <div
