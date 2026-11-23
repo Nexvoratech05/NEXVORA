@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" class="w-full h-full">
+  <rect width="800" height="500" fill="#0C1F38" rx="12"/>
+  <defs>
+    <pattern id="techGrid5" width="25" height="25" patternUnits="userSpaceOnUse">
+      <path d="M 25 0 L 0 0 0 25" fill="none" stroke="#162D4D" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="500" fill="url(#techGrid5)" rx="12"/>
+
+  <!-- Top Window Title -->
+  <rect x="30" y="24" width="740" height="38" rx="7" fill="#071426" stroke="#1B3558"/>
+  <circle cx="54" cy="43" r="5" fill="#EF4444"/>
+  <circle cx="70" cy="43" r="5" fill="#F59E0B"/>
+  <circle cx="86" cy="43" r="5" fill="#10B981"/>
+  <text x="400" y="47" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="12" font-weight="700" letter-spacing="0.04em" text-anchor="middle">Full-Stack Web &amp; Scalable API Architecture</text>
+
+  <!-- 4 Connected Component Boxes with Dotted Lines -->
+
+  <!-- Box 1: Next.js App Router -->
+  <g transform="translate(45, 110)">
+    <rect width="140" height="180" rx="10" fill="#071426" stroke="#00D2FF" stroke-width="1.5"/>
+    <rect x="25" y="20" width="90" height="75" rx="8" fill="#0C1F38" stroke="#162D4D"/>
+    <!-- Next.js Browser UI Icon -->
+    <g transform="translate(56, 38)">
+      <rect width="32" height="24" rx="3" fill="#162D4D" stroke="#FFFFFF" stroke-width="1.2"/>
+      <circle cx="7" cy="6" r="1.5" fill="#EF4444"/>
+      <circle cx="12" cy="6" r="1.5" fill="#F59E0B"/>
+      <circle cx="17" cy="6" r="1.5" fill="#10B981"/>
+      <text x="16" y="19" fill="#00D2FF" font-family="monospace" font-size="8" font-weight="800" text-anchor="middle">&lt;RSC/&gt;</text>
+    </g>
+    <text x="70" y="122" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="13" font-weight="700" text-anchor="middle">Next.js App</text>
+    <text x="70" y="142" fill="#00D2FF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">App Router SSR</text>
+    <text x="70" y="162" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">React Server Comps</text>
+  </g>
+
+  <!-- Dotted Line 1 -> 2 -->
+  <line x1="185" y1="200" x2="235" y2="200" stroke="#00D2FF" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <circle cx="210" cy="200" r="4" fill="#00D2FF"/>
+
+  <!-- Box 2: TypeScript Strict -->
+  <g transform="translate(235, 110)">
+    <rect width="140" height="180" rx="10" fill="#071426" stroke="#00D2FF" stroke-width="1.5"/>
+    <rect x="25" y="20" width="90" height="75" rx="8" fill="#0C1F38" stroke="#162D4D"/>
+    <!-- TypeScript Badge Icon -->
+    <g transform="translate(56, 38)">
+      <rect width="28" height="28" rx="4" fill="#3178C6"/>
+      <text x="14" y="20" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="14" font-weight="800" text-anchor="middle">TS</text>
+    </g>
+    <text x="70" y="122" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="13" font-weight="700" text-anchor="middle">TypeScript</text>
+    <text x="70" y="142" fill="#3178C6" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Strict Type Safety</text>
+    <text x="70" y="162" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">End-to-End Typed</text>
+  </g>
+
+  <!-- Dotted Line 2 -> 3 -->
+  <line x1="375" y1="200" x2="425" y2="200" stroke="#00D2FF" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <circle cx="400" cy="200" r="4" fill="#00D2FF"/>
+
+  <!-- Box 3: FastAPI Async Microservices -->
+  <g transform="translate(425, 110)">
+    <rect width="140" height="180" rx="10" fill="#071426" stroke="#00D2FF" stroke-width="1.5"/>
+    <rect x="25" y="20" width="90" height="75" rx="8" fill="#0C1F38" stroke="#162D4D"/>
+    <!-- FastAPI Lightning Bolt Icon -->
+    <g transform="translate(56, 38)">
+      <circle cx="14" cy="14" r="14" fill="#009688"/>
+      <path d="M15 6 L9 15 H14 L13 22 L19 13 H14 Z" fill="#FFFFFF"/>
+    </g>
+    <text x="70" y="122" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="13" font-weight="700" text-anchor="middle">Python FastAPI</text>
+    <text x="70" y="142" fill="#009688" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Async Microservices</text>
+    <text x="70" y="162" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">OpenAPI 3.1 Specs</text>
+  </g>
+
+  <!-- Dotted Line 3 -> 4 -->
+  <line x1="565" y1="200" x2="615" y2="200" stroke="#00D2FF" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <circle cx="590" cy="200" r="4" fill="#00D2FF"/>
+
+  <!-- Box 4: PostgreSQL Persistence -->
+  <g transform="translate(615, 110)">
+    <rect width="140" height="180" rx="10" fill="#071426" stroke="#00D2FF" stroke-width="1.5"/>
+    <rect x="25" y="20" width="90" height="75" rx="8" fill="#0C1F38" stroke="#162D4D"/>
+    <!-- PostgreSQL Cylinder Icon -->
+    <g transform="translate(55, 38)">
+      <ellipse cx="15" cy="8" rx="13" ry="5" fill="#162D4D" stroke="#00D2FF" stroke-width="1.2"/>
+      <path d="M2 8 v14 c0 3 6 5 13 5 s13 -2 13 -5 v-14" fill="#071426" stroke="#00D2FF" stroke-width="1.2"/>
+      <path d="M2 15 c0 3 6 5 13 5 s13 -2 13 -5" fill="none" stroke="#00D2FF" stroke-width="1"/>
+    </g>
+    <text x="70" y="122" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="13" font-weight="700" text-anchor="middle">PostgreSQL</text>
+    <text x="70" y="142" fill="#10B981" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Row-Level Security</text>
+    <text x="70" y="162" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">ACID Multi-Tenant</text>
+  </g>
+
+  <!-- Bottom Supported Stages Container -->
+  <rect x="120" y="330" width="560" height="85" rx="9" fill="#071426" stroke="#1B3558"/>
+  <text x="400" y="358" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10" font-weight="700" letter-spacing="0.08em" text-anchor="middle">SUPPORTED FULL-STACK &amp; API STAGES</text>
+  
+  <g transform="translate(145, 372)">
+    <rect x="0" y="0" width="115" height="26" rx="4" fill="#0C1F38" stroke="#00D2FF" stroke-width="0.8"/>
+    <text x="57" y="17" fill="#00D2FF" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Tailwind CSS System</text>
+
+    <rect x="130" y="0" width="115" height="26" rx="4" fill="#0C1F38" stroke="#DC382D" stroke-width="0.8"/>
+    <text x="187" y="17" fill="#EF4444" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Redis Caching Tier</text>
+
+    <rect x="260" y="0" width="115" height="26" rx="4" fill="#0C1F38" stroke="#10B981" stroke-width="0.8"/>
+    <text x="317" y="17" fill="#10B981" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Pydantic Schemas</text>
+
+    <rect x="390" y="0" width="115" height="26" rx="4" fill="#0C1F38" stroke="#00D2FF" stroke-width="0.8"/>
+    <text x="447" y="17" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">PgBouncer Pooling</text>
+  </g>
+
+  <!-- Bottom Tagline -->
+  <text x="400" y="455" fill="#64748B" font-family="'Inter', sans-serif" font-size="9" font-weight="500" text-anchor="middle">Next.js App Router • Strict TypeScript • Python FastAPI • Tailwind CSS • Redis • PostgreSQL RLS</text>
+</svg>

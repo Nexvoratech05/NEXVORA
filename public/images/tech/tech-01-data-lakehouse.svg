@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" class="w-full h-full">
+  <rect width="800" height="500" fill="#0C1F38" rx="12"/>
+  <defs>
+    <pattern id="techGrid1" width="25" height="25" patternUnits="userSpaceOnUse">
+      <path d="M 25 0 L 0 0 0 25" fill="none" stroke="#162D4D" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="500" fill="url(#techGrid1)" rx="12"/>
+
+  <!-- Top Window Title (matching user uploaded image) -->
+  <rect x="30" y="24" width="740" height="38" rx="7" fill="#071426" stroke="#1B3558"/>
+  <circle cx="54" cy="43" r="5" fill="#EF4444"/>
+  <circle cx="70" cy="43" r="5" fill="#F59E0B"/>
+  <circle cx="86" cy="43" r="5" fill="#10B981"/>
+  <text x="400" y="47" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="12" font-weight="700" letter-spacing="0.04em" text-anchor="middle">Data Lakehouse &amp; Analytical Pipeline Stack</text>
+
+  <!-- Horizontal Flow System (4 Connected Boxes with Dotted Lines, exactly like user's image) -->
+  
+  <!-- Box 1: Apache Spark -->
+  <g transform="translate(45, 110)">
+    <rect width="140" height="180" rx="10" fill="#071426" stroke="#00D2FF" stroke-width="1.5"/>
+    <!-- Icon Container -->
+    <rect x="25" y="20" width="90" height="75" rx="8" fill="#0C1F38" stroke="#162D4D"/>
+    <!-- Spark Flame Icon -->
+    <circle cx="70" cy="57" r="18" fill="#E25A1C" fill-opacity="0.2"/>
+    <path d="M70 42 L73 52 L83 52 L75 58 L78 68 L70 62 L62 68 L65 58 L57 52 L67 52 Z" fill="#F59E0B"/>
+    <circle cx="70" cy="57" r="5" fill="#FFFFFF"/>
+    
+    <text x="70" y="122" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="13" font-weight="700" text-anchor="middle">Apache Spark</text>
+    <text x="70" y="142" fill="#00D2FF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">PySpark Engine</text>
+    <text x="70" y="162" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Distributed Compute</text>
+  </g>
+
+  <!-- Dotted Connector Line 1 -> 2 -->
+  <line x1="185" y1="200" x2="235" y2="200" stroke="#00D2FF" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <circle cx="210" cy="200" r="4" fill="#00D2FF"/>
+
+  <!-- Box 2: Delta Lake -->
+  <g transform="translate(235, 110)">
+    <rect width="140" height="180" rx="10" fill="#071426" stroke="#00D2FF" stroke-width="1.5"/>
+    <!-- Icon Container -->
+    <rect x="25" y="20" width="90" height="75" rx="8" fill="#0C1F38" stroke="#162D4D"/>
+    <!-- Delta Lake Triangle Icon -->
+    <polygon points="70,42 90,70 50,70" fill="none" stroke="#00D2FF" stroke-width="3"/>
+    <polygon points="70,50 82,67 58,67" fill="#00D2FF"/>
+    
+    <text x="70" y="122" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="13" font-weight="700" text-anchor="middle">Delta Lake</text>
+    <text x="70" y="142" fill="#00D2FF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">ACID Parquet</text>
+    <text x="70" y="162" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Medallion Tables</text>
+  </g>
+
+  <!-- Dotted Connector Line 2 -> 3 -->
+  <line x1="375" y1="200" x2="425" y2="200" stroke="#00D2FF" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <circle cx="400" cy="200" r="4" fill="#00D2FF"/>
+
+  <!-- Box 3: Databricks -->
+  <g transform="translate(425, 110)">
+    <rect width="140" height="180" rx="10" fill="#071426" stroke="#00D2FF" stroke-width="1.5"/>
+    <!-- Icon Container -->
+    <rect x="25" y="20" width="90" height="75" rx="8" fill="#0C1F38" stroke="#162D4D"/>
+    <!-- Databricks Layered Diamond Icon -->
+    <g transform="translate(56, 45)">
+      <path d="M14 2 L26 9 L26 14 L14 7 Z M14 10 L26 17 L26 22 L14 15 Z M2 9 L14 2 L14 7 L2 14 Z M2 17 L14 10 L14 15 L2 22 Z" fill="#FF3621"/>
+    </g>
+    
+    <text x="70" y="122" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="13" font-weight="700" text-anchor="middle">Databricks</text>
+    <text x="70" y="142" fill="#FF3621" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Unity Catalog</text>
+    <text x="70" y="162" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Managed Clusters</text>
+  </g>
+
+  <!-- Dotted Connector Line 3 -> 4 -->
+  <line x1="565" y1="200" x2="615" y2="200" stroke="#00D2FF" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <circle cx="590" cy="200" r="4" fill="#00D2FF"/>
+
+  <!-- Box 4: Power BI -->
+  <g transform="translate(615, 110)">
+    <rect width="140" height="180" rx="10" fill="#071426" stroke="#00D2FF" stroke-width="1.5"/>
+    <!-- Icon Container -->
+    <rect x="25" y="20" width="90" height="75" rx="8" fill="#0C1F38" stroke="#162D4D"/>
+    <!-- Power BI Bar Chart Icon -->
+    <g transform="translate(50, 44)">
+      <rect x="5" y="16" width="6" height="16" fill="#F59E0B" rx="1.5"/>
+      <rect x="15" y="9" width="6" height="23" fill="#FCD34D" rx="1.5"/>
+      <rect x="25" y="2" width="6" height="30" fill="#F59E0B" rx="1.5"/>
+    </g>
+    
+    <text x="70" y="122" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="13" font-weight="700" text-anchor="middle">Power BI</text>
+    <text x="70" y="142" fill="#F59E0B" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Executive KPIs</text>
+    <text x="70" y="162" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Semantic Models</text>
+  </g>
+
+  <!-- Bottom Supported Stages Container (matching user uploaded image) -->
+  <rect x="120" y="330" width="560" height="85" rx="9" fill="#071426" stroke="#1B3558"/>
+  <text x="400" y="358" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10" font-weight="700" letter-spacing="0.08em" text-anchor="middle">SUPPORTED LAKEHOUSE PIPELINE CAPABILITIES</text>
+  
+  <g transform="translate(145, 372)">
+    <rect x="0" y="0" width="115" height="26" rx="4" fill="#0C1F38" stroke="#00D2FF" stroke-width="0.8"/>
+    <text x="57" y="17" fill="#00D2FF" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Medallion Bronze/Gold</text>
+
+    <rect x="130" y="0" width="115" height="26" rx="4" fill="#0C1F38" stroke="#10B981" stroke-width="0.8"/>
+    <text x="187" y="17" fill="#10B981" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Auto Loader Cloud S3</text>
+
+    <rect x="260" y="0" width="115" height="26" rx="4" fill="#0C1F38" stroke="#F59E0B" stroke-width="0.8"/>
+    <text x="317" y="17" fill="#FCD34D" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">PostgreSQL / SQL CDC</text>
+
+    <rect x="390" y="0" width="115" height="26" rx="4" fill="#0C1F38" stroke="#00D2FF" stroke-width="0.8"/>
+    <text x="447" y="17" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Unity Data Lineage</text>
+  </g>
+
+  <!-- Bottom Tagline -->
+  <text x="400" y="455" fill="#64748B" font-family="'Inter', sans-serif" font-size="9" font-weight="500" text-anchor="middle">Distributed PySpark • Databricks Workspaces • Delta ACID Transactions • Sub-Second Query Execution</text>
+</svg>

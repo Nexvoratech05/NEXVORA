@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" class="w-full h-full">
+  <rect width="800" height="500" fill="#0C1F38" rx="12"/>
+  <defs>
+    <pattern id="techGrid6" width="25" height="25" patternUnits="userSpaceOnUse">
+      <path d="M 25 0 L 0 0 0 25" fill="none" stroke="#162D4D" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="500" fill="url(#techGrid6)" rx="12"/>
+
+  <!-- Top Window Title (Exact match with user's Card 2: QA CRM & Quality Management) -->
+  <rect x="30" y="24" width="740" height="38" rx="7" fill="#071426" stroke="#1B3558"/>
+  <circle cx="54" cy="43" r="5" fill="#EF4444"/>
+  <circle cx="70" cy="43" r="5" fill="#F59E0B"/>
+  <circle cx="86" cy="43" r="5" fill="#10B981"/>
+  <text x="400" y="47" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="12" font-weight="700" letter-spacing="0.04em" text-anchor="middle">QA CRM &amp; Quality Management Integration</text>
+
+  <!-- 3 Connected Component Boxes with Dotted Lines (Exact match with user's Card 2!) -->
+
+  <!-- Box 1: VICIdial (Completed call data) -->
+  <g transform="translate(60, 105)">
+    <rect width="180" height="185" rx="10" fill="#071426" stroke="#00D2FF" stroke-width="1.5"/>
+    <rect x="35" y="20" width="110" height="75" rx="8" fill="#0C1F38" stroke="#162D4D"/>
+    <!-- Phone Handset / Telephony PBX Icon -->
+    <g transform="translate(75, 42)">
+      <circle cx="15" cy="15" r="14" fill="#162D4D" stroke="#00D2FF" stroke-width="1.5"/>
+      <path d="M10 11 C10 16, 14 20, 19 20 L21 18 C21.5 17.5, 21 16, 20 15.5 L18 15 C17.5 15, 17 15.2, 16.5 15.5 C15.5 15, 14 13.5, 13.5 12.5 C14 12, 14.2 11.5, 14 11 L13.5 9 C13 8, 11.5 7.5, 11 8 L9.5 9.5 Z" fill="#00D2FF"/>
+    </g>
+    <text x="90" y="125" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="14" font-weight="700" text-anchor="middle">VICIdial</text>
+    <text x="90" y="148" fill="#00D2FF" font-family="'Inter', sans-serif" font-size="11" font-weight="600" text-anchor="middle">Completed Call Data</text>
+    <text x="90" y="168" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Audio &amp; Agent Dispositions</text>
+  </g>
+
+  <!-- Dotted Connector Line 1 -> 2 (matching user's Card 2) -->
+  <line x1="240" y1="197" x2="310" y2="197" stroke="#00D2FF" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <circle cx="275" cy="197" r="4" fill="#00D2FF"/>
+
+  <!-- Box 2: FastAPI (REST Workflows) -->
+  <g transform="translate(310, 105)">
+    <rect width="180" height="185" rx="10" fill="#071426" stroke="#00D2FF" stroke-width="1.5"/>
+    <rect x="35" y="20" width="110" height="75" rx="8" fill="#0C1F38" stroke="#162D4D"/>
+    <!-- FastAPI Integration Icon -->
+    <g transform="translate(75, 42)">
+      <circle cx="15" cy="15" r="14" fill="#009688"/>
+      <path d="M16 7 L10 16 H15 L14 23 L20 14 H15 Z" fill="#FFFFFF"/>
+    </g>
+    <text x="90" y="125" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="14" font-weight="700" text-anchor="middle">FastAPI</text>
+    <text x="90" y="148" fill="#00D2FF" font-family="'Inter', sans-serif" font-size="11" font-weight="600" text-anchor="middle">REST Workflows</text>
+    <text x="90" y="168" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Deduplication &amp; Scorecards</text>
+  </g>
+
+  <!-- Dotted Connector Line 2 -> 3 (matching user's Card 2) -->
+  <line x1="490" y1="197" x2="560" y2="197" stroke="#00D2FF" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <circle cx="525" cy="197" r="4" fill="#00D2FF"/>
+
+  <!-- Box 3: PostgreSQL (Validated records) -->
+  <g transform="translate(560, 105)">
+    <rect width="180" height="185" rx="10" fill="#071426" stroke="#00D2FF" stroke-width="1.5"/>
+    <rect x="35" y="20" width="110" height="75" rx="8" fill="#0C1F38" stroke="#162D4D"/>
+    <!-- PostgreSQL Database Cylinder Icon -->
+    <g transform="translate(75, 42)">
+      <ellipse cx="15" cy="8" rx="13" ry="5" fill="#162D4D" stroke="#00D2FF" stroke-width="1.2"/>
+      <path d="M2 8 v14 c0 3 6 5 13 5 s13 -2 13 -5 v-14" fill="#071426" stroke="#00D2FF" stroke-width="1.2"/>
+      <path d="M2 15 c0 3 6 5 13 5 s13 -2 13 -5" fill="none" stroke="#00D2FF" stroke-width="1"/>
+    </g>
+    <text x="90" y="125" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="14" font-weight="700" text-anchor="middle">PostgreSQL</text>
+    <text x="90" y="148" fill="#10B981" font-family="'Inter', sans-serif" font-size="11" font-weight="600" text-anchor="middle">Validated Records</text>
+    <text x="90" y="168" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">ACID Relational Storage</text>
+  </g>
+
+  <!-- Bottom Quality Assurance Modules Strip (Exact match with user's Card 2!) -->
+  <rect x="120" y="325" width="560" height="90" rx="9" fill="#071426" stroke="#1B3558"/>
+  <text x="400" y="354" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10" font-weight="700" letter-spacing="0.08em" text-anchor="middle">QUALITY ASSURANCE MODULES</text>
+  
+  <!-- The 4 Module Pills: [FEV] [FIUC] [FEC] [QA Dashboard] (Exact match with user's Card 2!) -->
+  <g transform="translate(170, 368)">
+    <rect x="0" y="0" width="95" height="28" rx="5" fill="#0C1F38" stroke="#00D2FF" stroke-width="1"/>
+    <text x="47" y="18" fill="#00D2FF" font-family="'Inter', sans-serif" font-size="10" font-weight="700" text-anchor="middle">FEV</text>
+
+    <rect x="115" y="0" width="95" height="28" rx="5" fill="#0C1F38" stroke="#00D2FF" stroke-width="1"/>
+    <text x="162" y="18" fill="#00D2FF" font-family="'Inter', sans-serif" font-size="10" font-weight="700" text-anchor="middle">FIUC</text>
+
+    <rect x="230" y="0" width="95" height="28" rx="5" fill="#0C1F38" stroke="#00D2FF" stroke-width="1"/>
+    <text x="277" y="18" fill="#00D2FF" font-family="'Inter', sans-serif" font-size="10" font-weight="700" text-anchor="middle">FEC</text>
+
+    <rect x="345" y="0" width="115" height="28" rx="5" fill="#0C1F38" stroke="#10B981" stroke-width="1"/>
+    <text x="402" y="18" fill="#10B981" font-family="'Inter', sans-serif" font-size="10" font-weight="700" text-anchor="middle">QA Dashboard</text>
+  </g>
+
+  <!-- Bottom Tagline -->
+  <text x="400" y="455" fill="#64748B" font-family="'Inter', sans-serif" font-size="9" font-weight="500" text-anchor="middle">VICIdial PBX Telephony • Anviz / Hikvision Biometric SDKs • Custom Odoo ERP Modules • HubSpot API</text>
+</svg>

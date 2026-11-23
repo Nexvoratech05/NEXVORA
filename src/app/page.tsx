@@ -57,24 +57,6 @@ const iconMap: Record<string, React.ReactNode> = {
   MessageSquare: <MessageSquare className="w-6 h-6 text-cyan-400" />,
 };
 
-const projectServiceIconMap: Record<string, React.ReactNode> = {
-  "data-engineering": <Database className="w-3.5 h-3.5 text-blue-600" />,
-  "artificial-intelligence": <Cpu className="w-3.5 h-3.5 text-cyan-600" />,
-  "generative-ai": <Cpu className="w-3.5 h-3.5 text-purple-600" />,
-  "cloud-devops": <Cloud className="w-3.5 h-3.5 text-blue-600" />,
-  "software-engineering": <Code2 className="w-3.5 h-3.5 text-blue-600" />,
-  "business-automation": <Users className="w-3.5 h-3.5 text-amber-600" />,
-};
-
-const categoryIconMap: Record<string, React.ReactNode> = {
-  "Data & Lakehouse": <Database className="w-4 h-4 text-blue-600" />,
-  "Artificial Intelligence & Vision": <Cpu className="w-4 h-4 text-cyan-600" />,
-  "Generative AI & Agentic Systems": <Cpu className="w-4 h-4 text-purple-600" />,
-  "Cloud & DevOps": <Cloud className="w-4 h-4 text-blue-600" />,
-  "Software & APIs": <Code2 className="w-4 h-4 text-blue-600" />,
-  "Enterprise Automation": <Users className="w-4 h-4 text-amber-600" />,
-};
-
 const industryIconMap: Record<string, React.ReactNode> = {
   Activity: <Activity className="w-6 h-6 text-cyan-400" />,
   TrendingUp: <TrendingUp className="w-6 h-6 text-cyan-400" />,
@@ -282,74 +264,89 @@ export default function HomePage() {
             {services.map((svc) => (
               <div
                 key={svc.slug}
-                className="group bg-white border border-gray-200 hover:border-blue-600 rounded-2xl p-6 sm:p-7 transition-all duration-200 shadow-sm hover:shadow-xl flex flex-col justify-between"
+                className="group bg-white rounded-2xl border border-gray-200 hover:border-blue-600 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-200 flex flex-col justify-between"
               >
-                <div className="space-y-5">
+                <div>
                   {/* Architecture Blueprint Diagram Header (Consistent with Case Study Cards) */}
                   {svc.diagramImage && (
-                    <div className="relative group/diag w-full overflow-hidden rounded-xl border border-navy-700/80 bg-navy-950 shadow-inner">
-                      <div className="aspect-[16/10] relative flex items-center justify-center p-2">
-                        <Image
-                          src={svc.diagramImage}
-                          alt={`Technical architecture blueprint for ${svc.title}`}
-                          fill
-                          className="object-contain p-1 transition-transform duration-300 group-hover:scale-[1.02]"
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        />
-                      </div>
-                    </div>
+                    <ArchitectureModalViewer
+                      imageSrc={svc.diagramImage}
+                      imageAlt={`Technical architecture blueprint for ${svc.title}`}
+                      title={svc.title}
+                      classification={svc.divisionNumber}
+                      deliverables={svc.subServices.slice(0, 3).map((s) => s.title)}
+                    />
                   )}
 
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-mono font-bold text-blue-600 bg-blue-50 border border-blue-200/60 px-2.5 py-1 rounded-full uppercase tracking-wider">
-                      {svc.divisionNumber}
-                    </span>
-                    <div className="w-10 h-10 rounded-xl bg-navy-950 flex items-center justify-center">
-                      {iconMap[svc.iconName] || <Code2 className="w-5 h-5 text-cyan-400" />}
+                  {/* Card Content */}
+                  <div className="p-6 sm:p-7 space-y-4">
+                    {/* Dual Badges matching reference mockup */}
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-mono font-bold bg-cyan-50 border border-cyan-200/80 text-cyan-900 uppercase tracking-wider">
+                        {iconMap[svc.iconName] ? (
+                          <span className="w-3.5 h-3.5 flex items-center justify-center text-cyan-600 [&>svg]:w-3.5 [&>svg]:h-3.5">
+                            {iconMap[svc.iconName]}
+                          </span>
+                        ) : (
+                          <Code2 className="w-3.5 h-3.5 text-cyan-600" />
+                        )}
+                        <span>{svc.divisionNumber}</span>
+                      </span>
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-mono font-bold bg-amber-50 border border-amber-200/80 text-amber-900 uppercase tracking-wider">
+                        <ShieldCheck className="w-3 h-3 text-amber-600" />
+                        <span>CORE DIVISION</span>
+                      </span>
                     </div>
-                  </div>
 
-                  <div>
-                    <h3 className="text-xl font-bold font-heading text-navy-950 group-hover:text-blue-600 transition-colors">
-                      {svc.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mt-2">
-                      {svc.heroOutcome}
-                    </p>
-                  </div>
+                    <div>
+                      <Link href={`/services/${svc.slug}`}>
+                        <h3 className="text-xl font-bold font-heading text-navy-950 group-hover:text-blue-600 transition-colors">
+                          {svc.title}
+                        </h3>
+                      </Link>
+                      <p className="text-xs text-gray-500 font-medium mt-1">
+                        {svc.heroHeadline || svc.shortTitle}
+                      </p>
+                      <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mt-2.5 line-clamp-3">
+                        {svc.heroOutcome}
+                      </p>
+                    </div>
 
-                  {/* Sub-services pills */}
-                  <div className="pt-3 border-t border-gray-100 space-y-1.5">
-                    <span className="text-[11px] font-mono text-gray-400 uppercase tracking-wider font-semibold block mb-1">
-                      Included Capabilities:
-                    </span>
-                    <div className="flex flex-wrap gap-1.5">
-                      {svc.subServices.slice(0, 3).map((sub, idx) => (
-                        <span
-                          key={idx}
-                          className="px-2 py-0.5 rounded text-[11px] font-mono bg-gray-50 border border-gray-200 text-gray-700"
-                        >
-                          {sub.title}
-                        </span>
-                      ))}
+                    {/* Sub-services pills */}
+                    <div className="pt-3 border-t border-gray-100 space-y-1.5">
+                      <span className="text-[11px] font-mono text-gray-400 uppercase tracking-wider font-semibold block mb-1">
+                        Included Capabilities:
+                      </span>
+                      <div className="flex flex-wrap gap-1.5">
+                        {svc.subServices.slice(0, 3).map((sub, idx) => (
+                          <span
+                            key={idx}
+                            className="px-2 py-0.5 rounded text-[11px] font-mono bg-gray-50 border border-gray-200 text-gray-700"
+                          >
+                            {sub.title}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-gray-100 flex items-center justify-between">
-                  <Link
-                    href={`/services/${svc.slug}`}
-                    className="text-xs sm:text-sm font-semibold text-blue-600 group-hover:text-blue-700 inline-flex items-center gap-1.5 transition-colors"
-                  >
-                    <span>Full Division Scope</span>
-                    <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                  <Link
-                    href={`/start-a-project?service=${svc.slug}`}
-                    className="text-xs font-medium text-gray-400 hover:text-navy-950 underline"
-                  >
-                    Inquire
-                  </Link>
+                <div className="p-6 sm:p-7 pt-0">
+                  <div className="pt-4 border-t border-gray-100 flex items-center justify-between text-xs">
+                    <Link
+                      href={`/services/${svc.slug}`}
+                      className="text-xs sm:text-sm font-semibold text-blue-600 group-hover:text-blue-700 inline-flex items-center gap-1.5 transition-colors"
+                    >
+                      <span>Full Division Scope</span>
+                      <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                    <Link
+                      href={`/start-a-project?service=${svc.slug}`}
+                      className="text-xs font-medium text-gray-400 hover:text-navy-950 underline"
+                    >
+                      Inquire
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
@@ -364,10 +361,7 @@ export default function HomePage() {
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
             <div className="space-y-3 max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/70 text-blue-700 text-xs font-mono font-semibold">
-                <Layers className="w-3.5 h-3.5 text-blue-600" />
-                <span>Verified Case Studies &amp; Benchmarks</span>
-              </div>
+              <span className="eyebrow text-blue-600">Verified Case Studies</span>
               <h2 className="text-3xl sm:text-4xl font-bold font-heading text-navy-950">
                 Architectural Decisions &amp; Measurable Outcomes
               </h2>
@@ -401,45 +395,32 @@ export default function HomePage() {
                   />
 
                   {/* Card Content */}
-                  <div className="p-6 space-y-4">
-                    {/* Visual Classification & Domain Badges (Matching Image 2) */}
-                    <div className="flex flex-wrap items-center justify-between gap-2">
-                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-mono font-bold bg-cyan-50 border border-cyan-200/80 text-cyan-900 uppercase tracking-wider">
-                        {projectServiceIconMap[project.serviceSlug] || <Cpu className="w-3.5 h-3.5 text-cyan-600" />}
-                        <span>{project.serviceName}</span>
+                  <div className="p-6 space-y-3">
+                    {/* Dual Badges matching reference mockup */}
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-mono font-bold bg-cyan-50 border border-cyan-200/80 text-cyan-900 uppercase tracking-wider">
+                        {project.serviceName}
                       </span>
                       <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-mono font-bold bg-amber-50 border border-amber-200/80 text-amber-900 uppercase tracking-wider">
-                        <ShieldCheck className="w-3.5 h-3.5 text-amber-600" />
-                        <span>{project.classification}</span>
+                        <ShieldCheck className="w-3 h-3 text-amber-600" />
+                        <span>FEATURED</span>
                       </span>
                     </div>
 
-                    <div className="space-y-1.5">
-                      <span className="text-[11px] font-medium text-gray-400 font-mono uppercase tracking-wider block">
-                        Industry: {project.industry}
-                      </span>
+                    <div>
                       <Link href={`/projects/${project.slug}`}>
-                        <h3 className="text-lg font-bold font-heading text-navy-950 group-hover:text-blue-600 transition-colors line-clamp-2">
+                        <h3 className="text-lg font-bold font-heading text-navy-950 group-hover:text-blue-600 transition-colors line-clamp-1">
                           {project.title}
                         </h3>
                       </Link>
-                      <p className="text-xs sm:text-sm text-gray-600 line-clamp-2 leading-relaxed">
-                        {project.summary}
+                      <p className="text-xs text-gray-500 font-medium line-clamp-1 mt-0.5">
+                        {project.classification}
                       </p>
                     </div>
 
-                    {/* Dedicated Measurable Outcome Callout Box */}
-                    <div className="p-3.5 rounded-xl bg-blue-50/70 border border-blue-100/90 flex items-start gap-2.5">
-                      <TrendingUp className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
-                      <div className="space-y-0.5">
-                        <span className="text-[11px] font-mono font-bold text-blue-900 uppercase tracking-wider block">
-                          Measurable Outcome
-                        </span>
-                        <p className="text-xs text-blue-950/80 leading-relaxed font-medium">
-                          {project.outcome}
-                        </p>
-                      </div>
-                    </div>
+                    <p className="text-xs sm:text-sm text-gray-600 line-clamp-2 leading-relaxed">
+                      {project.summary}
+                    </p>
                   </div>
                 </div>
 
@@ -465,7 +446,7 @@ export default function HomePage() {
           ========================================================================= */}
       <section className="py-20 sm:py-24 bg-gray-50 border-b border-gray-200">
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
             <div className="space-y-3 max-w-2xl">
               <span className="eyebrow text-blue-600">Enterprise Toolchain</span>
               <h2 className="text-3xl sm:text-4xl font-bold font-heading text-navy-950">
@@ -484,20 +465,6 @@ export default function HomePage() {
             </Link>
           </div>
 
-          {/* Master Technology Ecosystem & Active Cloud Toolchain Matrix Blueprint */}
-          <div className="mb-14 rounded-2xl overflow-hidden border border-navy-800/80 bg-navy-950 shadow-2xl relative group">
-            <div className="relative aspect-[16/9] w-full max-h-[540px]">
-              <Image
-                src="/images/technology-ecosystem-matrix.svg"
-                alt="NEXVORA Technology Ecosystem & Active Cloud Toolchain Matrix — 36+ Verified Frameworks"
-                fill
-                priority
-                className="object-contain p-2 sm:p-4 transition-transform duration-500 group-hover:scale-[1.01]"
-                sizes="(max-width: 1280px) 100vw, 1280px"
-              />
-            </div>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {techStackCategories.map((cat) => (
               <div
@@ -505,20 +472,14 @@ export default function HomePage() {
                 className="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 space-y-4 shadow-sm"
               >
                 <h3 className="text-base font-bold font-heading text-navy-950 border-b border-gray-100 pb-3 flex items-center justify-between">
-                  <span className="flex items-center gap-2">
-                    {categoryIconMap[cat.name]}
-                    <span>{cat.name}</span>
-                  </span>
+                  <span>{cat.name}</span>
                   <span className="text-xs font-mono text-blue-600 font-semibold">Active Toolchain</span>
                 </h3>
                 <ul className="space-y-3">
                   {cat.technologies.map((t) => (
                     <li key={t.name} className="text-xs space-y-0.5">
-                      <div className="font-semibold text-navy-950 font-mono flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-blue-600 flex-shrink-0" />
-                        <span>{t.name}</span>
-                      </div>
-                      <div className="text-gray-500 leading-relaxed pl-3.5">{t.description}</div>
+                      <div className="font-semibold text-navy-950 font-mono">{t.name}</div>
+                      <div className="text-gray-500 leading-relaxed">{t.description}</div>
                     </li>
                   ))}
                 </ul>

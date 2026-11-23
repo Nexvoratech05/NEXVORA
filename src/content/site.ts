@@ -1136,6 +1136,7 @@ export const industries: IndustryItem[] = [
 export const techStackCategories = [
   {
     name: "Data & Lakehouse",
+    diagramImage: "/images/tech/tech-01-data-lakehouse.svg",
     technologies: [
       { name: "Databricks", description: "Managed Spark clusters, Lakehouse jobs, and Auto Loader" },
       { name: "Delta Lake", description: "ACID transactions, time travel, and schema enforcement" },
@@ -1147,6 +1148,7 @@ export const techStackCategories = [
   },
   {
     name: "Artificial Intelligence & Vision",
+    diagramImage: "/images/tech/tech-02-ai-vision.svg",
     technologies: [
       { name: "PyTorch & TensorFlow", description: "Deep learning models, CNNs, and neural network training" },
       { name: "Vision Transformers (ViT)", description: "Self-attention visual feature extraction and classification" },
@@ -1158,6 +1160,7 @@ export const techStackCategories = [
   },
   {
     name: "Generative AI & Agentic Systems",
+    diagramImage: "/images/tech/tech-03-generative-ai.svg",
     technologies: [
       { name: "OpenAI & Gemini APIs", description: "Enterprise LLM inference with zero data retention" },
       { name: "LangChain & LlamaIndex", description: "RAG framework, semantic chunking, and agent tools" },
@@ -1168,6 +1171,7 @@ export const techStackCategories = [
   },
   {
     name: "Cloud & DevOps",
+    diagramImage: "/images/tech/tech-04-cloud-devops.svg",
     technologies: [
       { name: "Amazon Web Services (AWS)", description: "EC2, ECS, Lambda, RDS, S3, IoT Core, CloudWatch, VPC" },
       { name: "Microsoft Azure", description: "App Services, Azure SQL, Blob Storage, Virtual Networks" },
@@ -1179,6 +1183,7 @@ export const techStackCategories = [
   },
   {
     name: "Software & APIs",
+    diagramImage: "/images/tech/tech-05-software-apis.svg",
     technologies: [
       { name: "Next.js (App Router)", description: "Server-side rendering, static generation, and high SEO" },
       { name: "TypeScript", description: "Strict static typing and runtime predictability" },
@@ -1189,6 +1194,7 @@ export const techStackCategories = [
   },
   {
     name: "Enterprise Automation",
+    diagramImage: "/images/tech/tech-06-enterprise-automation.svg",
     technologies: [
       { name: "Odoo ERP API", description: "Custom modules, attendance synchronization, and inventory" },
       { name: "VICIdial API", description: "Contact center telephony sync, call records, and QA audits" },
