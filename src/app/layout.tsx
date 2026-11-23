@@ -106,6 +106,9 @@ export const metadata: Metadata = {
     creator: "@NexvoraTech",
     images: ["/og-image.png"],
   },
+  verification: {
+    google: "-k-daeooqXxEnjpRI6RarKtY1qg3Cj3gA_7f4TSvrRk",
+  },
   category: "technology",
 };
 
