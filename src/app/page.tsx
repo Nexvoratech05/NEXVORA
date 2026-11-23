@@ -241,7 +241,7 @@ export default function HomePage() {
           ========================================================================= */}
       <section id="divisions" className="py-20 sm:py-24 bg-gray-50 border-b border-gray-200">
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
             <div className="space-y-3 max-w-2xl">
               <span className="eyebrow text-blue-600">Six Core Divisions</span>
               <h2 className="text-3xl sm:text-4xl font-bold font-heading text-navy-950">
@@ -260,41 +260,28 @@ export default function HomePage() {
             </Link>
           </div>
 
-          {/* 3D Ecosystem Architecture Showcase */}
-          <div className="mb-14 rounded-2xl overflow-hidden border border-navy-800/80 bg-navy-950 shadow-2xl relative group">
-            <div className="relative aspect-[16/9] w-full max-h-[500px]">
-              <Image
-                src="/images/specialized-engineering-divisions-3d.jpg"
-                alt="NEXVORA 6 Specialized Engineering Divisions — 3D Architecture Visual"
-                fill
-                priority
-                className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.01]"
-                sizes="(max-width: 1280px) 100vw, 1280px"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pointer-events-none">
-                <div className="space-y-0.5">
-                  <span className="text-[11px] font-mono uppercase tracking-widest text-cyan-400 font-semibold block">
-                    6 Specialized Engineering Divisions
-                  </span>
-                  <p className="text-xs sm:text-sm text-gray-200 font-medium">
-                    Data Lakehouses • AI & Vision • Generative AI & Agents • Cloud & DevOps • Software & APIs • Business ERP
-                  </p>
-                </div>
-                <span className="text-[11px] font-mono text-gray-400 bg-navy-900/80 border border-navy-700/60 px-2.5 py-1 rounded-full backdrop-blur-md">
-                  Unified 3D Infrastructure Model
-                </span>
-              </div>
-            </div>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((svc) => (
               <div
                 key={svc.slug}
-                className="group bg-white border border-gray-200 hover:border-blue-600 rounded-2xl p-8 transition-all duration-200 shadow-sm hover:shadow-xl flex flex-col justify-between"
+                className="group bg-white border border-gray-200 hover:border-blue-600 rounded-2xl p-6 sm:p-7 transition-all duration-200 shadow-sm hover:shadow-xl flex flex-col justify-between"
               >
                 <div className="space-y-5">
+                  {/* Architecture Blueprint Diagram Header (Consistent with Case Study Cards) */}
+                  {svc.diagramImage && (
+                    <div className="relative group/diag w-full overflow-hidden rounded-xl border border-navy-700/80 bg-navy-950 shadow-inner">
+                      <div className="aspect-[16/10] relative flex items-center justify-center p-2">
+                        <Image
+                          src={svc.diagramImage}
+                          alt={`Technical architecture blueprint for ${svc.title}`}
+                          fill
+                          className="object-contain p-1 transition-transform duration-300 group-hover:scale-[1.02]"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        />
+                      </div>
+                    </div>
+                  )}
+
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-mono font-bold text-blue-600 bg-blue-50 border border-blue-200/60 px-2.5 py-1 rounded-full uppercase tracking-wider">
                       {svc.divisionNumber}

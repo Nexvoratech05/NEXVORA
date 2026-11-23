@@ -30,6 +30,7 @@ export interface ServiceDetail {
   heroHeadline: string;
   heroOutcome: string;
   iconName: string;
+  diagramImage?: string;
   subServices: SubService[];
   businessChallenges: string[];
   problemSolved?: string[];
@@ -231,6 +232,7 @@ export const services: ServiceDetail[] = [
     heroHeadline: "Scalable Data Platforms, Lakehouse Systems & Analytical Pipelines",
     heroOutcome: "We design robust ETL/ELT pipelines, distributed processing engines, and unified lakehouse architectures that turn complex data into reliable analytical assets.",
     iconName: "Database",
+    diagramImage: "/images/divisions/division-01-lakehouses.svg",
     subServices: [
       { title: "Data Engineering Consulting", description: "Architecture assessments, schema modeling, migration planning, and data strategy." },
       { title: "ETL and ELT Pipelines", description: "Batch and streaming pipeline construction with automated error handling and idempotency." },
@@ -315,6 +317,7 @@ export const services: ServiceDetail[] = [
     heroHeadline: "Predictive Models, Computer Vision & Statistical Machine Learning",
     heroOutcome: "We engineer production-grade machine learning models, computer vision classifiers, and predictive analytics that deliver measurable business value.",
     iconName: "Cpu",
+    diagramImage: "/images/divisions/division-02-ai-vision.svg",
     subServices: [
       { title: "Machine Learning Solutions", description: "Supervised and unsupervised learning models engineered for classification, regression, and clustering." },
       { title: "Deep Learning Architectures", description: "Custom neural network design utilizing PyTorch, TensorFlow, CNNs, and Vision Transformers." },
@@ -396,6 +399,7 @@ export const services: ServiceDetail[] = [
     heroHeadline: "Enterprise Large Language Models, Multi-Agent RAG & Intelligent Automation",
     heroOutcome: "We build private, context-grounded AI assistants, multi-agent orchestrations, and document intelligence systems with enterprise data privacy and strict VPC boundaries.",
     iconName: "Cpu",
+    diagramImage: "/images/divisions/division-03-generative-ai.svg",
     subServices: [
       { title: "Large Language Model Engineering", description: "Prompt architecture, model fine-tuning, context management, and enterprise API integration." },
       { title: "Retrieval-Augmented Generation (RAG)", description: "Hybrid vector search, semantic chunking, reranking, and citation verification over company assets." },
@@ -477,6 +481,7 @@ export const services: ServiceDetail[] = [
     heroHeadline: "Resilient Cloud Systems, Automated CI/CD & Infrastructure as Code",
     heroOutcome: "We architect zero-downtime AWS and Azure infrastructures, containerize workloads, and automate continuous delivery pipelines with founder-led precision.",
     iconName: "Cloud",
+    diagramImage: "/images/divisions/division-04-cloud-devops.svg",
     subServices: [
       { title: "AWS Cloud Engineering", description: "VPC architecture, ECS container services, RDS databases, S3 storage, and serverless Lambda systems." },
       { title: "Microsoft Azure Engineering", description: "Virtual networks, Azure App Services, Azure SQL, Blob Storage, and enterprise cloud operations." },
@@ -564,6 +569,7 @@ export const services: ServiceDetail[] = [
     heroHeadline: "Bespoke Web Applications, Backend Architectures & Scalable APIs",
     heroOutcome: "We build typed, scalable full-stack applications, robust backend microservices, and maintainable SaaS platforms tailored to your business operations.",
     iconName: "Code2",
+    diagramImage: "/images/divisions/division-05-software-api.svg",
     subServices: [
       { title: "Custom Software Development", description: "Ground-up architecture and engineering designed specifically around your operational bottlenecks." },
       { title: "Modern Web Applications", description: "Performant, accessible web platforms using Next.js App Router, TypeScript, and modern UI primitives." },
@@ -651,6 +657,7 @@ export const services: ServiceDetail[] = [
     heroHeadline: "Custom CRM Pipelines, ERP Integrations & Operational Automation",
     heroOutcome: "We automate manual business processes, synchronize contact center telephony with CRMs, and integrate biometric hardware with enterprise ERP platforms.",
     iconName: "Users",
+    diagramImage: "/images/divisions/division-06-business-erp.svg",
     subServices: [
       { title: "CRM Architecture & Development", description: "Bespoke CRM systems and enterprise integrations tailored for high-volume sales pipelines." },
       { title: "ERP & Odoo Development", description: "Custom Odoo modules, automated inventory reconciliation, and accounting workflow synchronization." },
