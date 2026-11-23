@@ -2,13 +2,20 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
-import { ArrowRight, ShieldCheck, Globe, ExternalLink } from "lucide-react";
+import {
+  ArrowRight,
+  ShieldCheck,
+  Globe,
+  ExternalLink,
+  GraduationCap,
+  Award,
+} from "lucide-react";
 import { founders, siteConfig } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Leadership — NEXVORA Technologies",
+  title: "Engineering Leadership & Founders — NEXVORA Technologies",
   description:
-    "Meet the founders of NEXVORA: Muhammad Azhar (software and cloud) and Owais Ahmad (data and CRM).",
+    "Meet the founding engineers behind NEXVORA Technologies: Muhammad Azhar (Co-Founder & Technical Lead) and Owais Ahmad (Co-Founder & Data Lead).",
   alternates: {
     canonical: "/team",
   },
@@ -38,13 +45,14 @@ export default function TeamPage() {
       ...founders.map((f) => ({
         "@type": "Person",
         "name": f.name,
-        "jobTitle": f.role,
+        "jobTitle": f.title,
         "worksFor": {
           "@type": "Organization",
           "name": siteConfig.name,
           "url": siteConfig.url,
         },
         "description": f.bio,
+        "sameAs": [f.linkedin, f.github, f.portfolioUrl].filter(Boolean),
       })),
     ],
   };
@@ -71,28 +79,31 @@ export default function TeamPage() {
           </nav>
 
           <div className="max-w-3xl space-y-4">
-            <span className="eyebrow text-cyan-400">Founder-Led Delivery</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-900 border border-navy-700 text-cyan-400 text-xs font-mono font-semibold">
+              <ShieldCheck className="w-4 h-4 text-cyan-400" />
+              <span>Founder-Led Technology Engineering</span>
+            </div>
             <h1 className="text-4xl sm:text-5xl font-extrabold font-heading text-white">
-              Engineering Leadership
+              Engineering Leadership &amp; Founders
             </h1>
             <p className="text-lg text-gray-300 leading-relaxed">
-              At NEXVORA Technologies, our founding engineers lead from the front. We do not maintain bloated account-management hierarchies or hand projects to unvetted contractors. You collaborate directly with practitioners who understand code, cloud topologies, and data architecture.
+              At NEXVORA Technologies, our founding engineers lead from the front. We do not maintain bloated account-management hierarchies or hand projects to unvetted contractors. You collaborate directly with senior practitioners who architect code, design distributed cloud topologies, and engineer modern data systems.
             </p>
           </div>
         </div>
       </section>
 
       {/* Founders Section */}
-      <section className="py-20 sm:py-24 bg-white border-b border-gray-200">
+      <section className="py-20 sm:py-24 bg-gray-50 border-b border-gray-200">
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-6xl mx-auto items-stretch">
             {founders.map((founder) => (
               <div
                 key={founder.name}
-                className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between space-y-6"
+                className="bg-white rounded-2xl border border-gray-200 p-8 sm:p-10 shadow-sm hover:shadow-xl transition-all duration-200 flex flex-col justify-between space-y-8"
               >
-                {/* Minimized Executive Headshot & Title Header on White Background */}
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 pb-5 border-b border-gray-100">
+                {/* Header with Photo and Title */}
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 pb-6 border-b border-gray-100">
                   <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden bg-white border border-gray-200 shadow-sm flex-shrink-0">
                     <Image
                       src={founder.image}
@@ -105,53 +116,99 @@ export default function TeamPage() {
                   </div>
                   <div className="space-y-1.5 flex-1">
                     <span className="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-blue-50 text-blue-700 border border-blue-200/60 uppercase tracking-wider">
-                      Executive Leadership
+                      Executive Engineering Lead
                     </span>
-                    <h2 className="text-2xl font-bold font-heading text-navy-950">{founder.name}</h2>
-                    <p className="text-xs font-semibold text-blue-600">{founder.role}</p>
-                    <p className="text-xs text-gray-500 font-mono">{founder.title}</p>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-heading text-navy-950">
+                      {founder.name}
+                    </h2>
+                    <p className="text-sm font-semibold text-blue-600">
+                      {founder.role}
+                    </p>
+                    <p className="text-xs text-gray-500 font-sans leading-tight">
+                      {founder.headline}
+                    </p>
                   </div>
                 </div>
 
                 {/* Profile Details */}
                 <div className="space-y-6 flex-1 flex flex-col justify-between">
-                  <div className="space-y-3">
-                    {founder.isDraftBio ? (
-                      <div className="p-3 bg-gray-50 rounded-lg border border-gray-200 text-xs text-gray-500 font-mono">
-                        [DRAFT BIO: Prepared from verified facts for founder approval]
-                      </div>
-                    ) : (
-                      <div className="flex items-center gap-2 p-2.5 bg-blue-50/80 rounded-lg border border-blue-200/60 text-xs text-blue-800">
-                        <ShieldCheck className="w-4 h-4 text-blue-600 flex-shrink-0" />
-                        <span className="font-medium">Verified Credentials &amp; Portfolio Reference</span>
-                      </div>
-                    )}
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-2 p-2.5 bg-blue-50/80 rounded-lg border border-blue-200/60 text-xs text-blue-800">
+                      <ShieldCheck className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                      <span className="font-medium">Verified Engineering Credentials &amp; Case Studies</span>
+                    </div>
+
                     <p className="text-sm text-gray-700 leading-relaxed">
                       {founder.bio}
                     </p>
-                  </div>
 
-                  {/* Expertise Tags */}
-                  <div className="pt-4 border-t border-gray-100 space-y-2.5">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-navy-950 font-heading block">
-                      Core Technical Domains:
-                    </span>
-                    <div className="flex flex-wrap gap-1.5">
-                      {founder.expertiseTags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-3 py-1 rounded-tag bg-gray-50 text-navy-950 text-xs font-medium border border-gray-200"
-                        >
-                          {tag}
+                    {/* Education */}
+                    {founder.education && (
+                      <div className="flex items-start gap-2.5 pt-2 text-xs text-gray-700">
+                        <GraduationCap className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
+                        <div>
+                          <strong className="text-navy-950 font-semibold block">Education:</strong>
+                          <span>{founder.education}</span>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Certifications */}
+                    {founder.certifications && founder.certifications.length > 0 && (
+                      <div className="space-y-2 pt-2">
+                        <div className="flex items-center gap-2 text-xs font-semibold text-navy-950 font-heading">
+                          <Award className="w-4 h-4 text-blue-600" />
+                          <span>Verified Certifications &amp; Accreditations:</span>
+                        </div>
+                        <ul className="space-y-1.5 pl-6 list-disc text-xs text-gray-600">
+                          {founder.certifications.map((cert, idx) => (
+                            <li key={idx}>{cert}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {/* Technical Breakdown if Owais */}
+                    {founder.technicalExpertise && (
+                      <div className="pt-3 border-t border-gray-100 space-y-2.5">
+                        <span className="text-xs font-semibold uppercase tracking-wider text-navy-950 font-heading block">
+                          Technical Specializations:
                         </span>
-                      ))}
-                    </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                          {Object.entries(founder.technicalExpertise).map(([cat, val]) => (
+                            <div key={cat} className="p-2.5 rounded-lg bg-gray-50 border border-gray-200/80">
+                              <span className="text-[11px] font-bold text-blue-600 block">{cat}</span>
+                              <span className="text-[11px] text-gray-700">{val}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Technical Focus if Azhar */}
+                    {founder.technicalFocus && (
+                      <div className="pt-3 border-t border-gray-100 space-y-2">
+                        <span className="text-xs font-semibold uppercase tracking-wider text-navy-950 font-heading block">
+                          Core Technical Focus:
+                        </span>
+                        <div className="flex flex-wrap gap-1.5">
+                          {founder.technicalFocus.map((focus) => (
+                            <span
+                              key={focus}
+                              className="px-2.5 py-1 rounded-tag bg-gray-50 text-navy-950 text-xs font-medium border border-gray-200"
+                            >
+                              {focus}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
 
                   {/* Verified Links & Direct Inquiry */}
-                  <div className="pt-4 border-t border-gray-100 flex flex-wrap items-center justify-between gap-3 text-xs text-gray-500">
+                  <div className="pt-6 border-t border-gray-100 flex flex-wrap items-center justify-between gap-4 text-xs">
                     <div className="flex items-center gap-3">
-                      {founder.portfolioUrl ? (
+                      {founder.portfolioUrl && (
                         <a
                           href={founder.portfolioUrl}
                           target="_blank"
@@ -159,11 +216,11 @@ export default function TeamPage() {
                           className="text-blue-600 hover:text-blue-800 font-semibold underline flex items-center gap-1"
                         >
                           <Globe className="w-3.5 h-3.5" />
-                          <span>Portfolio</span>
+                          <span>Personal Portfolio</span>
                           <ExternalLink className="w-3 h-3" />
                         </a>
-                      ) : null}
-                      {founder.linkedin ? (
+                      )}
+                      {founder.linkedin && (
                         <a
                           href={founder.linkedin}
                           target="_blank"
@@ -173,8 +230,8 @@ export default function TeamPage() {
                           <span>LinkedIn</span>
                           <ExternalLink className="w-3 h-3" />
                         </a>
-                      ) : null}
-                      {founder.github ? (
+                      )}
+                      {founder.github && (
                         <a
                           href={founder.github}
                           target="_blank"
@@ -184,14 +241,14 @@ export default function TeamPage() {
                           <span>GitHub</span>
                           <ExternalLink className="w-3 h-3" />
                         </a>
-                      ) : null}
+                      )}
                     </div>
 
                     <Link
-                      href="/contact"
+                      href={`/start-a-project?founder=${encodeURIComponent(founder.name)}`}
                       className="text-blue-600 font-semibold hover:underline inline-flex items-center gap-1 ml-auto"
                     >
-                      <span>Connect with {founder.name.split(" ")[0]}</span> →
+                      <span>Inquire with {founder.name.split(" ")[0]}</span> →
                     </Link>
                   </div>
                 </div>
@@ -200,11 +257,11 @@ export default function TeamPage() {
           </div>
 
           {/* Credibility Statement Box */}
-          <div className="mt-16 max-w-3xl mx-auto p-6 rounded-card bg-gray-50 border border-gray-200 flex items-start gap-4 text-xs text-gray-600 leading-relaxed">
+          <div className="mt-16 max-w-3xl mx-auto p-6 rounded-card bg-white border border-gray-200 shadow-sm flex items-start gap-4 text-xs text-gray-600 leading-relaxed">
             <ShieldCheck className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
             <div>
-              <strong className="text-navy-950 block mb-1">Authentic Team Policy:</strong>
-              In accordance with NEXVORA&apos;s corporate governance and PRD requirements, we only list verified founding team members. No stock-photo employees, fictitious advisory boards, or unverified staff are ever published.
+              <strong className="text-navy-950 block mb-1">Authentic Team Governance:</strong>
+              In strict accordance with NEXVORA&apos;s corporate governance, all technical credentials, institutional affiliations, and code repositories are verified. We do not publish stock-photo personnel, fictitious advisory boards, or unverified staff.
             </div>
           </div>
         </div>

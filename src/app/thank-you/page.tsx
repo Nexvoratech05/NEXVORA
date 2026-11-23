@@ -40,15 +40,15 @@ export default function ThankYouPage() {
           <h2 className="text-sm font-bold font-heading text-navy-950 uppercase tracking-wider border-b border-gray-100 pb-2">
             What to Expect Next:
           </h2>
-          <ol className="space-y-3 text-xs text-gray-600 leading-relaxed list-decimal pl-4">
+          <ol className="space-y-3.5 text-xs text-gray-600 leading-relaxed list-decimal pl-4">
             <li>
-              <strong className="text-navy-950">Confirmation Email:</strong> A confirmation receipt has been dispatched to your submitted address.
+              <strong className="text-navy-950">Technical Scope Assessment:</strong> Our founding engineering leads Muhammad Azhar and Owais Ahmad will personally review your technical requirements and objectives.
             </li>
             <li>
-              <strong className="text-navy-950">Technical Review:</strong> The founders will review your architecture requirements and project goals.
+              <strong className="text-navy-950">Mutual NDA:</strong> Mutual NDAs are available upon request and subject to agreement prior to reviewing proprietary architectures or private datasets.
             </li>
             <li>
-              <strong className="text-navy-950">Guaranteed Response:</strong> You will hear back within <span className="font-semibold text-navy-950">{siteConfig.contact.responseTime}</span> with our initial assessment or an invite to a discovery call.
+              <strong className="text-navy-950">Direct Discovery Session:</strong> {siteConfig.contact.responseTime} We will provide an initial architecture evaluation and propose a structured discovery session.
             </li>
           </ol>
         </div>

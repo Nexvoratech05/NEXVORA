@@ -1,47 +1,64 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Metadata } from "next";
 import {
   ShieldCheck,
   Zap,
   Lock,
-  Users2,
   ArrowRight,
   CheckCircle2,
+  Target,
+  Eye,
+  Compass,
+  HeartHandshake,
 } from "lucide-react";
-import { siteConfig, founders } from "@/content/site";
+import { siteConfig } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "About NEXVORA — Founder-Led Engineering",
+  title: "About NEXVORA Technologies — Engineering Intelligence. Building Tomorrow.",
   description:
-    "Meet the team behind NEXVORA: engineers in software, cloud, data and CRM building reliable digital products.",
+    "Learn about NEXVORA Technologies: our mission, vision, core engineering values, and founder-led delivery approach across data, AI, cloud, and software.",
   alternates: {
     canonical: "/about",
   },
 };
 
 export default function AboutPage() {
-  const values = [
+  const coreValues = [
     {
-      title: "Engineering Rigor Over Surface Polish",
-      behavior: "We prioritize solid architecture, type-safety, automated tests, and documentation over superficial shortcuts.",
+      title: "Engineering Excellence",
+      description: "We prioritize solid architecture, type-safety, automated tests, and clear documentation over superficial shortcuts.",
       icon: <ShieldCheck className="w-6 h-6 text-blue-600" />,
     },
     {
-      title: "Radical Transparency",
-      behavior: "No hidden subcontracting, no vague estimates, and no vanity metrics. We share weekly milestone demos and repository access from sprint one.",
+      title: "Innovation",
+      description: "We apply modern technologies like Medallion Lakehouses, Vision Transformers, and multi-agent RAG where they deliver genuine business leverage.",
       icon: <Zap className="w-6 h-6 text-blue-600" />,
     },
     {
-      title: "Data Integrity & Security by Default",
-      behavior: "Every system is designed with least-privilege access, encrypted connections, and zero unnecessary data storage.",
+      title: "Transparency",
+      description: "No hidden subcontracting, no vague estimates, and no vanity metrics. We provide weekly milestone demos and repository access from sprint one.",
+      icon: <Eye className="w-6 h-6 text-blue-600" />,
+    },
+    {
+      title: "Ownership",
+      description: "We take full accountability for our code, system architectures, and deadlines. When we take on a project, we treat it with absolute dedication.",
+      icon: <Target className="w-6 h-6 text-blue-600" />,
+    },
+    {
+      title: "Reliability",
+      description: "Every platform is built with least-privilege security, idempotent data pipelines, automated error recovery, and zero downtime deployments.",
       icon: <Lock className="w-6 h-6 text-blue-600" />,
     },
     {
-      title: "Direct Founder Ownership",
-      behavior: "Clients communicate directly with the engineers responsible for their codebase, ensuring zero misinterpretation.",
-      icon: <Users2 className="w-6 h-6 text-blue-600" />,
+      title: "Continuous Learning",
+      description: "Technology evolves rapidly. Our engineers continually upskill, test emerging research, and bring verified industry practices to every client system.",
+      icon: <Compass className="w-6 h-6 text-blue-600" />,
+    },
+    {
+      title: "Client Success",
+      description: "We measure our success not by hours billed, but by the tangible operational efficiency, uptime, and growth our software delivers to our partners.",
+      icon: <HeartHandshake className="w-6 h-6 text-blue-600" />,
     },
   ];
 
@@ -62,97 +79,88 @@ export default function AboutPage() {
           </nav>
 
           <div className="max-w-3xl space-y-4">
-            <span className="eyebrow text-cyan-400">Our Story &amp; Philosophy</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-900 border border-navy-700 text-cyan-400 text-xs font-mono font-semibold">
+              <span>Engineering Intelligence. Building Tomorrow.</span>
+            </div>
             <h1 className="text-4xl sm:text-5xl font-extrabold font-heading text-white">
-              Engineering Built on Substance, Not Subcontracting
+              About NEXVORA Technologies
             </h1>
             <p className="text-lg text-gray-300 leading-relaxed">
-              NEXVORA Technologies was founded to provide growing businesses with dependable software, resilient cloud operations, and clean data architectures, delivered directly by experienced engineers.
+              NEXVORA Technologies is an engineering-focused technology company building intelligent digital solutions across data engineering, artificial intelligence, cloud infrastructure and software development. We combine engineering expertise, modern architecture and practical innovation to help organizations solve complex technical challenges.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Mission & Vision Statement */}
+      {/* Mission & Vision Section */}
       <section className="py-20 bg-white border-b border-gray-200">
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <span className="eyebrow text-blue-600">Company Mission</span>
-              <h2 className="text-3xl font-bold font-heading text-navy-950">
-                Empowering Businesses to Build Beyond Operational Limits
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {/* Mission Box */}
+            <div className="p-8 sm:p-10 rounded-2xl bg-gray-50 border border-gray-200 space-y-4 hover:border-blue-600 transition-colors shadow-sm">
+              <div className="w-12 h-12 rounded-xl bg-blue-600/10 flex items-center justify-center text-blue-600">
+                <Target className="w-6 h-6" />
+              </div>
+              <span className="text-xs font-mono font-bold text-blue-600 uppercase tracking-wider block">
+                Our Purpose
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold font-heading text-navy-950">
+                Our Mission
               </h2>
               <p className="text-base text-gray-700 leading-relaxed">
-                Most companies struggle with fragmented technology: custom web apps that break under load, CRM records cluttered with duplicates, and unmonitored cloud servers running up massive monthly bills.
+                To engineer reliable, intelligent and scalable technology solutions that help businesses innovate, automate and make better decisions.
               </p>
-              <p className="text-base text-gray-700 leading-relaxed">
-                NEXVORA brings software engineering, cloud architecture, and data pipelines together under one roof. We eliminate the friction of managing multiple agencies and deliver cohesive, well-documented digital products that stand the test of time.
-              </p>
-              <div className="p-4 rounded-xl bg-gray-50 border border-gray-200 text-xs text-gray-500 font-mono">
-                [PLACEHOLDER: Mission &amp; Vision statement draft pending final founder sign-off]
-              </div>
             </div>
 
-            {/* Operating Principles Grid */}
-            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 space-y-6">
-              <h3 className="text-xl font-bold font-heading text-navy-950 border-b border-gray-200 pb-3">
-                How We Operate
-              </h3>
-              <ul className="space-y-4 text-sm text-gray-700">
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <strong className="text-navy-950 block">Founder-Led Engineering:</strong>
-                    Founders Muhammad Azhar and Owais Ahmad architect and supervise every repository commit.
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <strong className="text-navy-950 block">Remote-Ready &amp; Globally Minded:</strong>
-                    Serving regional clients in Pakistan and the Gulf (UAE, Saudi Arabia) alongside international partners in the UK and US with seamless async workflows.
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <strong className="text-navy-950 block">Documented Delivery:</strong>
-                    Comprehensive handover kits, architecture schematics, deployment scripts, and 100% intellectual property transfer.
-                  </div>
-                </li>
-              </ul>
+            {/* Vision Box */}
+            <div className="p-8 sm:p-10 rounded-2xl bg-navy-950 text-white border border-navy-700 space-y-4 shadow-sm">
+              <div className="w-12 h-12 rounded-xl bg-cyan-400/10 flex items-center justify-center text-cyan-400">
+                <Eye className="w-6 h-6" />
+              </div>
+              <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">
+                Our Horizon
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold font-heading text-white">
+                Our Vision
+              </h2>
+              <p className="text-base text-gray-300 leading-relaxed">
+                To become a trusted global engineering partner for organizations transforming their operations through data, AI, cloud and software technologies.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Core Values */}
+      {/* Core Values Section */}
       <section className="py-20 sm:py-24 bg-gray-50 border-b border-gray-200">
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <span className="eyebrow text-blue-600">Core Values</span>
+          <div className="max-w-3xl mb-14 space-y-3">
+            <span className="eyebrow text-blue-600">Our Foundation</span>
             <h2 className="text-3xl sm:text-4xl font-bold font-heading text-navy-950">
-              The Principles That Guide Every Build
+              Core Engineering Values
             </h2>
             <p className="text-base text-gray-600">
-              Our culture is rooted in craftsmanship, accountability, and demonstrable outcomes.
+              The fundamental principles that guide our technical design decisions, client partnerships, and team standards.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((val) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {coreValues.map((val, idx) => (
               <div
                 key={val.title}
-                className="bg-white border border-gray-200 rounded-card p-6 space-y-4 shadow-sm hover:border-blue-600 transition-colors"
+                className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 space-y-3 shadow-sm hover:border-blue-600 transition-colors"
               >
-                <div className="w-12 h-12 rounded-lg bg-gray-50 border border-gray-200 flex items-center justify-center">
-                  {val.icon}
+                <div className="flex items-center justify-between">
+                  <div className="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center border border-gray-200/60">
+                    {val.icon}
+                  </div>
+                  <span className="text-xs font-mono font-bold text-gray-400">0{idx + 1}</span>
                 </div>
                 <h3 className="text-lg font-bold font-heading text-navy-950">
                   {val.title}
                 </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {val.behavior}
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                  {val.description}
                 </p>
               </div>
             ))}
@@ -160,61 +168,68 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Founders Preview Section */}
-      <section className="py-20 bg-white border-b border-gray-200">
+      {/* Founder-Led Difference */}
+      <section className="py-20 sm:py-24 bg-white border-b border-gray-200">
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-            <span className="eyebrow text-blue-600">Leadership Team</span>
-            <h2 className="text-3xl font-bold font-heading text-navy-950">
-              Led Directly by Experienced Practitioners
-            </h2>
-            <p className="text-sm text-gray-600">
-              Learn more about the technical depth and background behind NEXVORA.
-            </p>
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-6 space-y-6">
+              <span className="eyebrow text-blue-600">The NEXVORA Standard</span>
+              <h2 className="text-3xl sm:text-4xl font-bold font-heading text-navy-950 leading-tight">
+                Why Emerging Enterprises Choose NEXVORA
+              </h2>
+              <p className="text-base text-gray-700 leading-relaxed">
+                Too many development agencies act as brokerages — marketing senior talent, then quietly passing the actual coding and architectural decisions to offshore contractors.
+              </p>
+              <p className="text-base text-gray-700 leading-relaxed">
+                NEXVORA is deliberately founder-led. When you work with us, founders Muhammad Azhar and Owais Ahmad directly design your schemas, architect your cloud environments, review code, and verify every release. You get unfiltered access to technical depth without translation layers.
+              </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {founders.map((f) => (
-              <div
-                key={f.name}
-                className="bg-gray-50 rounded-card border border-gray-200 p-6 flex flex-col sm:flex-row items-center gap-6"
-              >
-                <div className="w-24 h-24 rounded-2xl overflow-hidden bg-white flex-shrink-0 border border-gray-200 shadow-sm">
-                  <Image
-                    src={f.image}
-                    alt={f.name}
-                    width={200}
-                    height={250}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="space-y-2 text-center sm:text-left flex-1">
-                  <h3 className="text-lg font-bold font-heading text-navy-950">{f.name}</h3>
-                  <p className="text-xs font-semibold text-blue-600">{f.role}</p>
-                  <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
-                    {f.bio}
-                  </p>
-                  <Link
-                    href="/team"
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-blue-600 hover:underline pt-1"
-                  >
-                    View Full Profile &amp; Focus Domains →
-                  </Link>
-                </div>
+              <div className="pt-2">
+                <Link
+                  href="/team"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 underline"
+                >
+                  <span>Meet Our Engineering Leadership</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
-            ))}
+            </div>
+
+            <div className="lg:col-span-6 bg-navy-950 rounded-2xl p-8 sm:p-10 text-white border border-navy-700 space-y-6">
+              <h3 className="text-xl font-bold font-heading text-white border-b border-navy-700 pb-4">
+                Our Non-Negotiable Commitments
+              </h3>
+              <ul className="space-y-4 text-sm text-gray-300">
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
+                  <span><strong>Documented IP Terms:</strong> Project-specific IP ownership and transfer terms are documented in signed agreements.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
+                  <span><strong>Founder-Led Engineering:</strong> Architecture design, core code delivery, and technical reviews are led directly by our founding engineers.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
+                  <span><strong>Weekly Live Demos:</strong> You inspect working preview software and staging databases every sprint.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
+                  <span><strong>Security by Default:</strong> Least-privilege IAM, encrypted connections, and zero data retention enterprise AI.</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Closing CTA */}
+      {/* CTA Banner */}
       <section className="py-20 bg-navy-950 text-white text-center">
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl space-y-6">
           <h2 className="text-3xl font-bold font-heading">
-            Ready to Work With a Dedicated Engineering Partner?
+            Partner With Our Engineering Team
           </h2>
           <p className="text-base text-gray-300">
-            Tell us about your technical goals, timeline, and challenges. We respond within {siteConfig.contact.responseTime}.
+            Tell us about your upcoming software initiative, data migration, or AI workflow. We provide clear architectural feedback and fixed-scope roadmaps within {siteConfig.contact.responseTime}.
           </p>
           <div className="pt-2">
             <Link

@@ -31,7 +31,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "NEXVORA Technologies — Build Beyond Limits",
+    default: "NEXVORA Technologies — Engineering Intelligence. Building Tomorrow.",
     template: "%s | NEXVORA Technologies",
   },
   description: siteConfig.description,
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     apple: "/logo-icon.svg",
   },
   openGraph: {
-    title: "NEXVORA Technologies — Build Beyond Limits",
+    title: "NEXVORA Technologies — Engineering Intelligence. Building Tomorrow.",
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: "NEXVORA Technologies",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "NEXVORA Technologies — Build Beyond Limits",
+    title: "NEXVORA Technologies — Engineering Intelligence. Building Tomorrow.",
     description: siteConfig.description,
   },
 };

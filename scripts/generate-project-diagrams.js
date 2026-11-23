@@ -34,7 +34,7 @@ function wrapSvg(title, content) {
 }
 
 // 1. LMS & Command Center Portal (Azhar)
-const lmsSvg = wrapSvg("ENTERPRISE LMS &amp; EMPLOYEE COMMAND CENTER — UMS BPO", `
+const lmsSvg = wrapSvg("ENTERPRISE LMS &amp; EMPLOYEE COMMAND CENTER — ARCHITECTURE SPECIFICATION", `
   <!-- Column 1: Ingestion & Devices -->
   <rect x="40" y="110" width="160" height="80" rx="8" fill="#071426" stroke="#1B3558"/>
   <text x="120" y="140" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="600" text-anchor="middle">Hikvision Devices</text>

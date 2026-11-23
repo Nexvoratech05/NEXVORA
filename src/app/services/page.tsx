@@ -10,26 +10,25 @@ import {
   Layout,
   ArrowRight,
   CheckCircle2,
-  HelpCircle,
 } from "lucide-react";
 import { services } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Services — Software, Cloud, Data, CRM & AI",
+  title: "Engineering Divisions & Technical Services — NEXVORA Technologies",
   description:
-    "Custom software, cloud infrastructure, data engineering, CRM solutions, AI automation and web design from NEXVORA.",
+    "Explore NEXVORA's six engineering divisions: Data Engineering, AI & Machine Learning, Generative AI, Cloud & DevOps, Software Engineering, and Business Automation.",
   alternates: {
     canonical: "/services",
   },
 };
 
 const iconMap: Record<string, React.ReactNode> = {
-  Code2: <Code2 className="w-7 h-7 text-blue-600" />,
-  Cloud: <Cloud className="w-7 h-7 text-blue-600" />,
-  Database: <Database className="w-7 h-7 text-blue-600" />,
-  Users: <Users className="w-7 h-7 text-blue-600" />,
-  Cpu: <Cpu className="w-7 h-7 text-blue-600" />,
-  Layout: <Layout className="w-7 h-7 text-blue-600" />,
+  Code2: <Code2 className="w-6 h-6 text-cyan-400" />,
+  Cloud: <Cloud className="w-6 h-6 text-cyan-400" />,
+  Database: <Database className="w-6 h-6 text-cyan-400" />,
+  Users: <Users className="w-6 h-6 text-cyan-400" />,
+  Cpu: <Cpu className="w-6 h-6 text-cyan-400" />,
+  Layout: <Layout className="w-6 h-6 text-cyan-400" />,
 };
 
 export default function ServicesPage() {
@@ -50,36 +49,61 @@ export default function ServicesPage() {
           </nav>
 
           <div className="max-w-3xl space-y-4">
-            <span className="eyebrow text-cyan-400">Engineering Capabilities</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-900 border border-navy-700 text-cyan-400 text-xs font-mono font-semibold">
+              <span>Six Major Engineering Divisions</span>
+            </div>
             <h1 className="text-4xl sm:text-5xl font-extrabold font-heading text-white">
-              Core Technical Services
+              Engineering Disciplines &amp; Technical Capabilities
             </h1>
             <p className="text-lg text-gray-300 leading-relaxed">
-              We specialize in the critical engineering disciplines required to scale modern digital operations: custom software systems, resilient cloud infrastructure, automated data pipelines, sales CRM integration, and practical business automation.
+              We specialize in the foundational engineering pillars that power modern digital enterprises: scalable data platforms, deep AI/ML systems, enterprise Generative AI, resilient cloud topologies, bespoke software systems, and end-to-end business automation.
             </p>
           </div>
         </div>
       </section>
 
-      {/* 6 Service Cards in a 3x2 Grid (Desktop), Stacked on Mobile */}
-      <section className="py-20 sm:py-24 bg-white border-b border-gray-200">
+      {/* 6 Engineering Divisions in Detail */}
+      <section className="py-20 sm:py-24 bg-gray-50 border-b border-gray-200">
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((svc) => (
               <div
                 key={svc.slug}
-                className="group bg-white rounded-card border border-gray-200 hover:border-blue-600 p-8 transition-all duration-200 shadow-sm hover:shadow-lg flex flex-col justify-between"
+                className="group bg-white rounded-2xl border border-gray-200 hover:border-blue-600 p-8 transition-all duration-200 shadow-sm hover:shadow-xl flex flex-col justify-between"
               >
-                <div className="space-y-4">
-                  <div className="w-14 h-14 rounded-xl bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:bg-blue-600/10 transition-colors">
-                    {iconMap[svc.iconName] || <Code2 className="w-7 h-7 text-blue-600" />}
+                <div className="space-y-5">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-bold text-blue-600 bg-blue-50 border border-blue-200/60 px-2.5 py-1 rounded-full uppercase tracking-wider">
+                      {svc.divisionNumber}
+                    </span>
+                    <div className="w-10 h-10 rounded-xl bg-navy-950 flex items-center justify-center">
+                      {iconMap[svc.iconName] || <Code2 className="w-5 h-5 text-cyan-400" />}
+                    </div>
                   </div>
-                  <h2 className="text-2xl font-bold font-heading text-navy-950 group-hover:text-blue-600 transition-colors">
-                    {svc.title}
-                  </h2>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    {svc.heroOutcome}
-                  </p>
+
+                  <div>
+                    <h2 className="text-2xl font-bold font-heading text-navy-950 group-hover:text-blue-600 transition-colors">
+                      {svc.title}
+                    </h2>
+                    <p className="text-sm text-gray-600 leading-relaxed mt-2.5">
+                      {svc.heroOutcome}
+                    </p>
+                  </div>
+
+                  {/* Sub-services highlight */}
+                  <div className="pt-3 border-t border-gray-100">
+                    <span className="text-[11px] font-mono text-gray-500 uppercase tracking-wider font-semibold block mb-2.5">
+                      Specialized Capabilities:
+                    </span>
+                    <ul className="space-y-1.5 text-xs text-gray-700">
+                      {svc.subServices.slice(0, 4).map((sub, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 flex-shrink-0 mt-0.5" />
+                          <span>{sub.title}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
 
                 <div className="pt-6 mt-6 border-t border-gray-100 flex items-center justify-between">
@@ -92,107 +116,56 @@ export default function ServicesPage() {
                   </Link>
                   <Link
                     href={`/start-a-project?service=${svc.slug}`}
-                    className="text-xs text-gray-400 hover:text-navy-950 underline"
+                    className="text-xs text-gray-400 hover:text-navy-950 font-medium underline"
                   >
-                    Get Quote
+                    Request Scope
                   </Link>
                 </div>
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* "Not Sure What You Need?" Panel */}
-          <div className="mt-16 bg-navy-900 border border-navy-700 text-white rounded-2xl p-8 sm:p-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8 shadow-xl">
-            <div className="space-y-3 max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-950 border border-navy-700 text-cyan-400 text-xs font-semibold">
-                <HelpCircle className="w-4 h-4" />
-                <span>Architecture Discovery</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-bold font-heading">
-                Not sure what you need or where to start?
-              </h2>
-              <p className="text-sm text-gray-300 leading-relaxed">
-                Book a direct technical discovery call with founders Muhammad Azhar and Owais Ahmad. We will map your bottlenecks, evaluate your existing architecture, and provide honest recommendations on scope and feasibility.
-              </p>
-            </div>
-
-            <div className="flex-shrink-0">
-              <Link
-                href="/contact"
-                className="h-12 px-6 rounded-btn font-semibold text-sm bg-blue-600 hover:bg-blue-700 text-white shadow-md flex items-center justify-center gap-2 transition-colors whitespace-nowrap"
-              >
-                <span>Schedule a Discovery Call</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
+      {/* Cross-Discipline Synergy */}
+      <section className="py-20 sm:py-24 bg-navy-950 text-white">
+        <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-12 space-y-3">
+            <span className="eyebrow text-cyan-400">Architectural Cohesion</span>
+            <h2 className="text-3xl sm:text-4xl font-bold font-heading text-white">
+              Why Full-Stack Engineering Matters
+            </h2>
+            <p className="text-base text-gray-300">
+              Isolated specialists create brittle integration seams. We connect cloud architecture, data pipelines, and intelligent software into unified, high-performance engines.
+            </p>
           </div>
 
-          {/* Engagement Models Section */}
-          <div className="mt-20">
-            <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
-              <span className="eyebrow text-blue-600">Flexible Collaboration</span>
-              <h2 className="text-3xl font-bold font-heading text-navy-950">
-                Engagement Models
-              </h2>
-              <p className="text-sm text-gray-600">
-                Transparent commercial terms tailored to your timeline, certainty needs, and governance constraints.
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-6 rounded-2xl bg-navy-900 border border-navy-700 space-y-3">
+              <h3 className="text-lg font-bold font-heading text-white">
+                1. Data-Informed Software
+              </h3>
+              <p className="text-xs text-gray-300 leading-relaxed">
+                We build web applications that interact with normalized data models, sub-second analytical caches, and event-driven data streaming layers.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gray-50 border border-gray-200 rounded-card p-6 space-y-3">
-                <span className="text-xs font-mono font-bold text-blue-600">MODEL 01</span>
-                <h3 className="text-lg font-bold font-heading text-navy-950">Fixed-Scope Project</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  Best for MVPs, specific feature sets, cloud migrations, or website builds with clearly defined deliverables and fixed delivery deadlines.
-                </p>
-                <ul className="text-xs text-gray-500 space-y-1.5 pt-2">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 flex-shrink-0" />
-                    Guaranteed milestone budget
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 flex-shrink-0" />
-                    Bi-weekly demo checkpoints
-                  </li>
-                </ul>
-              </div>
+            <div className="p-6 rounded-2xl bg-navy-900 border border-navy-700 space-y-3">
+              <h3 className="text-lg font-bold font-heading text-white">
+                2. Private, Grounded AI
+              </h3>
+              <p className="text-xs text-gray-300 leading-relaxed">
+                Rather than generic wrappers, we embed RAG architectures grounded in your proprietary databases and private object stores with strict security controls.
+              </p>
+            </div>
 
-              <div className="bg-gray-50 border border-blue-600/50 rounded-card p-6 space-y-3 relative shadow-sm">
-                <span className="text-xs font-mono font-bold text-blue-600">MODEL 02</span>
-                <h3 className="text-lg font-bold font-heading text-navy-950">Dedicated Engineering Team</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  Best for growing companies needing dedicated monthly engineering capacity across software, cloud, and data without long-term hiring overhead.
-                </p>
-                <ul className="text-xs text-gray-500 space-y-1.5 pt-2">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 flex-shrink-0" />
-                    Direct founder steering
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 flex-shrink-0" />
-                    Flexible backlog sprint planning
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-gray-50 border border-gray-200 rounded-card p-6 space-y-3">
-                <span className="text-xs font-mono font-bold text-blue-600">MODEL 03</span>
-                <h3 className="text-lg font-bold font-heading text-navy-950">Technical Advisory</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  Best for technical due diligence, cloud architecture audits, vendor evaluation, and CRM data strategy before committing large budgets.
-                </p>
-                <ul className="text-xs text-gray-500 space-y-1.5 pt-2">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 flex-shrink-0" />
-                    Comprehensive audit reports
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 flex-shrink-0" />
-                    Actionable architecture blueprints
-                  </li>
-                </ul>
-              </div>
+            <div className="p-6 rounded-2xl bg-navy-900 border border-navy-700 space-y-3">
+              <h3 className="text-lg font-bold font-heading text-white">
+                3. Automated Reliability
+              </h3>
+              <p className="text-xs text-gray-300 leading-relaxed">
+                Every solution ships with automated CI/CD pipelines, containerized Docker runtimes, and multi-region disaster recovery topologies.
+              </p>
             </div>
           </div>
         </div>
@@ -200,4 +173,3 @@ export default function ServicesPage() {
     </div>
   );
 }
-

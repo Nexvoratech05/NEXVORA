@@ -67,7 +67,9 @@ export function MultiStepQuoteForm() {
         const parsed = JSON.parse(saved);
         setFormData(parsed);
       } else if (preSelectedService) {
-        const matched = services.find((s) => s.slug === preSelectedService);
+        const matched = services.find(
+          (s) => s.slug === preSelectedService || s.aliases?.includes(preSelectedService)
+        );
         if (matched) {
           setFormData((prev) => ({
             ...prev,

@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Metadata } from "next";
 import { siteConfig } from "@/content/site";
-import { AlertCircle } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — NEXVORA Technologies",
@@ -34,7 +34,7 @@ export default function PrivacyPolicyPage() {
               Privacy Policy
             </h1>
             <p className="text-sm text-gray-400 font-mono">
-              Last Updated: November 19, 2026 · Effective Immediately
+              Last Updated: November 22, 2026 · Effective Immediately
             </p>
           </div>
         </div>
@@ -43,12 +43,12 @@ export default function PrivacyPolicyPage() {
       {/* Policy Content */}
       <section className="py-16 sm:py-24 bg-white border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 text-sm text-gray-700 leading-relaxed">
-          {/* Legal Review Disclaimer */}
-          <div className="p-4 rounded-xl bg-yellow-50 border border-yellow-200 text-xs text-yellow-900 flex items-start gap-3">
-            <AlertCircle className="w-5 h-5 flex-shrink-0 text-yellow-700 mt-0.5" />
+          {/* Data Commitment */}
+          <div className="p-4 rounded-xl bg-blue-50 border border-blue-200 text-xs text-blue-900 flex items-start gap-3">
+            <ShieldCheck className="w-5 h-5 flex-shrink-0 text-blue-600 mt-0.5" />
             <div>
-              <strong className="block mb-0.5">Legal Notice &amp; Disclaimer:</strong>
-              [PLACEHOLDER: Legal text and entity details]. This privacy statement outlines current operational data practices of {siteConfig.name}. It must be reviewed and customized by a qualified legal advisor prior to enterprise production operations.
+              <strong className="block mb-0.5 text-navy-950 font-heading">Data Protection Commitment:</strong>
+              This privacy policy outlines the operational data governance standards of {siteConfig.name}. We prioritize user confidentiality, strict data minimization, least-privilege access, and end-to-end transport encryption.
             </div>
           </div>
 
@@ -62,10 +62,10 @@ export default function PrivacyPolicyPage() {
                 <strong>Contact Information:</strong> Full name, professional work email address, telephone/WhatsApp number, country of operation, and company name.
               </li>
               <li>
-                <strong>Project Scope Details:</strong> System requirements, timeline selections, budget bracket estimates, architecture briefs, and optional specification attachments (PDF, Word, or image formats).
+                <strong>Project Scope Details:</strong> System requirements, timeline selections, budget bracket estimates, architecture briefs, and optional technical specifications.
               </li>
               <li>
-                <strong>Technical Analytics Data:</strong> Anonymized usage metadata (e.g., page views, button clicks) collected via privacy-first, cookie-less or consent-governed analytics. We do not store personally identifiable IP addresses in our telemetry logs.
+                <strong>Technical Analytics Data:</strong> Anonymized usage metadata (e.g., page views, button clicks) collected via privacy-first, cookie-less telemetry. We do not store personally identifiable IP addresses in our telemetry logs.
               </li>
             </ul>
           </div>
@@ -76,8 +76,8 @@ export default function PrivacyPolicyPage() {
               We process submitted data exclusively for the following legitimate commercial and engineering purposes:
             </p>
             <ul className="list-disc pl-6 space-y-2">
-              <li>Evaluating technical project feasibility, estimating milestones, and generating commercial proposals.</li>
-              <li>Direct founder communication via email, WhatsApp, or video calls in response to your explicit inquiry.</li>
+              <li>Evaluating technical project feasibility, estimating milestones, and generating formal engineering proposals.</li>
+              <li>Direct founder communication via email, WhatsApp, or scheduled video calls in response to your explicit inquiry.</li>
               <li>Enforcing bot and abuse prevention mechanisms (e.g. rate limiting and Cloudflare Turnstile).</li>
             </ul>
             <p className="font-semibold text-navy-950">
@@ -100,7 +100,7 @@ export default function PrivacyPolicyPage() {
           <div className="space-y-4">
             <h2 className="text-xl font-bold font-heading text-navy-950">4. Data Retention &amp; Security Controls</h2>
             <p>
-              We retain submitted inquiries for a defined retention period [PLACEHOLDER: 12 months from submission] unless an ongoing client contract requires archival retention. All data in transit is encrypted using modern TLS 1.3 encryption, and data stored in databases or CRM systems is encrypted at rest. Access is strictly restricted to founders Muhammad Azhar and Owais Ahmad.
+              We retain submitted inquiries for a standard operational period of 12 months unless an active client engagement requires ongoing archival retention. All data in transit is encrypted using modern TLS 1.3 encryption, and data stored in databases or CRM systems is encrypted at rest. Access is strictly restricted to founders Muhammad Azhar and Owais Ahmad.
             </p>
           </div>
 
@@ -115,17 +115,18 @@ export default function PrivacyPolicyPage() {
               <li>Correct or update inaccurate contact records.</li>
             </ul>
             <p>
-              To execute any data rights, submit your request through our{" "}
-              {siteConfig.contact.hasRealEmail && siteConfig.contact.displayEmail ? (
-                <a href={`mailto:${siteConfig.contact.displayEmail}`} className="text-blue-600 underline font-medium">
-                  {siteConfig.contact.displayEmail}
-                </a>
-              ) : (
-                <Link href="/contact" className="text-blue-600 underline font-medium">
-                  contact inquiry portal
-                </Link>
-              )}{" "}
-              with the subject line &quot;Data Subject Access / Erasure Request&quot;. We process verified requests within 3 business days.
+              To execute any data rights, submit your request to{" "}
+              <a href={`mailto:${siteConfig.contact.displayEmail}`} className="text-blue-600 underline font-medium">
+                {siteConfig.contact.displayEmail}
+              </a>
+              . Requests are reviewed and honored within 3 business days.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-xl font-bold font-heading text-navy-950">6. Policy Updates</h2>
+            <p>
+              Any changes to this policy will be posted on this page with an updated revision date.
             </p>
           </div>
         </div>

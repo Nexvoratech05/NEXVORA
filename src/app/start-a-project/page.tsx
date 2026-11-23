@@ -96,10 +96,10 @@ export default function StartAProjectPage() {
               <div className="p-6 rounded-2xl bg-navy-950 text-white border border-navy-700 space-y-3">
                 <div className="flex items-center gap-2 text-cyan-400 text-xs font-bold font-heading">
                   <ShieldCheck className="w-4 h-4" />
-                  <span>Confidentiality &amp; NDA</span>
+                  <span>Confidentiality &amp; Mutual NDA</span>
                 </div>
                 <p className="text-xs text-gray-300 leading-relaxed">
-                  All submitted system details, credentials, and attachments are treated as strictly confidential. We are happy to execute an NDA before deep technical disclosure.
+                  All submitted system details and project summaries are treated as confidential. Mutual NDAs are available upon request and subject to agreement before deep technical disclosure.
                 </p>
               </div>
             </div>

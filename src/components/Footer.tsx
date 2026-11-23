@@ -106,6 +106,16 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/technologies" className="hover:text-cyan-400 transition-colors">
+                  Technology Ecosystem
+                </Link>
+              </li>
+              <li>
+                <Link href="/insights" className="hover:text-cyan-400 transition-colors">
+                  Technical Insights
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="hover:text-cyan-400 transition-colors">
                   Contact Us
                 </Link>
@@ -139,7 +149,7 @@ export function Footer() {
               </li>
               <li className="pt-2 text-xs text-gray-400">
                 <span className="block font-medium text-gray-300">Response Promise:</span>
-                Within {siteConfig.contact.responseTime}
+                Our team aims to respond within one business day.
               </li>
               <li className="text-xs text-gray-400">
                 <span className="block font-medium text-gray-300">Target Markets:</span>

@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import * as z from "zod";
+
+export const dynamic = "force-dynamic";
 import { checkRateLimit, getClientIp } from "@/lib/server/rate-limit";
 import { verifyTurnstile } from "@/lib/server/turnstile";
 import { sendEmail } from "@/lib/server/email";
@@ -49,14 +51,13 @@ export async function POST(req: NextRequest) {
     // 1. Rate Limit Check (5 submissions per IP per hour)
     const rateLimit = await checkRateLimit(ip, 5, 60);
     if (!rateLimit.success) {
-      const isConfigError = Boolean(rateLimit.error);
       return NextResponse.json(
         {
           error:
             rateLimit.error ||
             "Rate limit exceeded. Please wait a while or contact us directly on WhatsApp.",
         },
-        { status: isConfigError ? 500 : 429 }
+        { status: 429 }
       );
     }
 
@@ -170,17 +171,11 @@ export async function POST(req: NextRequest) {
     });
 
     if (!quoteNotification.success) {
-      console.error("[Email Delivery Failure] /api/quote:", quoteNotification.error);
-      if (process.env.NODE_ENV === "production") {
-        return NextResponse.json(
-          { error: quoteNotification.error || "Email delivery failed in production." },
-          { status: 500 }
-        );
-      }
+      console.warn("[Email Notification Warning] Quote lead saved but founder email dispatch was skipped or failed:", quoteNotification.error);
     }
 
     // 8. Send Confirmation to Prospect
-    await sendEmail({
+    const clientConfirmation = await sendEmail({
       to: safeEmail,
       subject: `Project Scope Confirmation — NEXVORA Technologies`,
       isConfirmationReceipt: true,
@@ -201,26 +196,9 @@ export async function POST(req: NextRequest) {
       `,
     });
 
-    // 7. Send Confirmation to Prospect
-    await sendEmail({
-      to: safeEmail,
-      subject: `Project Scope Confirmation — NEXVORA Technologies`,
-      html: `
-        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; color: #071426;">
-          <h2 style="color: #087BCE;">We have received your project details, ${safeName}</h2>
-          <p>Thank you for submitting your project specifications for <strong>${safeProjectName}</strong>.</p>
-          <p>Founders Muhammad Azhar and Owais Ahmad will personally examine your scope, timeline, and architectural requirements. We respond to every qualified inquiry within <strong>${siteConfig.contact.responseTime}</strong>.</p>
-          
-          <div style="background: #F4F7FB; border: 1px solid #DCE4EE; border-radius: 8px; padding: 16px; margin: 20px 0; font-size: 13px;">
-            <p style="margin: 0 0 6px 0;"><strong>Summary of Submitted Information:</strong></p>
-            <p style="margin: 0;"><strong>Services:</strong> ${safeServices}<br><strong>Timeline:</strong> ${safeTimeline}<br><strong>Budget:</strong> ${safeBudget}</p>
-          </div>
-
-          <p style="font-size: 13px; color: #4A5B73;">If you need to provide additional architecture documents, reply directly to this email or reach us on WhatsApp.</p>
-          <p style="margin-top: 24px; font-size: 13px;">Sincerely,<br><strong>NEXVORA Technologies Founding Engineers</strong><br><em>Build Beyond Limits.</em></p>
-        </div>
-      `,
-    });
+    if (!clientConfirmation.success) {
+      console.warn("[Email Confirmation Warning] Quote lead saved but client confirmation dispatch was skipped or failed:", clientConfirmation.error);
+    }
 
     return NextResponse.json({
       success: true,

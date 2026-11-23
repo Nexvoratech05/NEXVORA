@@ -20,7 +20,7 @@
   <circle cx="65" cy="50" r="5" fill="#55B9FF"/>
   <circle cx="82" cy="50" r="5" fill="#087BCE"/>
   <circle cx="99" cy="50" r="5" fill="#1F9D6B"/>
-  <text x="120" y="55" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="12" font-weight="600" letter-spacing="0.05em">ENTERPRISE LMS &amp; EMPLOYEE COMMAND CENTER — UMS BPO</text>
+  <text x="120" y="55" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="12" font-weight="600" letter-spacing="0.05em">ENTERPRISE LMS &amp; EMPLOYEE COMMAND CENTER — ARCHITECTURE SPECIFICATION</text>
 
   
   <!-- Column 1: Ingestion & Devices -->

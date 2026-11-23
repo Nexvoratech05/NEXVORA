@@ -1,0 +1,144 @@
+const fs = require('fs');
+const path = require('path');
+
+const dir = path.join(__dirname, '../public/images/projects');
+if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+
+function wrapSvg(title, content) {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" class="w-full h-full">
+  <rect width="800" height="500" fill="#0C1F38" rx="12"/>
+  <defs>
+    <pattern id="diagGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1B3558" stroke-width="0.5" stroke-opacity="0.6"/>
+    </pattern>
+    <linearGradient id="blueG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#087BCE"/>
+      <stop offset="100%" stop-color="#55B9FF"/>
+    </linearGradient>
+    <linearGradient id="cyanG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#55B9FF"/>
+      <stop offset="100%" stop-color="#1F9D6B"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#diagGrid)" rx="12"/>
+
+  <!-- Diagram Title / Header -->
+  <rect x="40" y="30" width="720" height="40" rx="6" fill="#071426" stroke="#1B3558"/>
+  <circle cx="65" cy="50" r="5" fill="#55B9FF"/>
+  <circle cx="82" cy="50" r="5" fill="#087BCE"/>
+  <circle cx="99" cy="50" r="5" fill="#1F9D6B"/>
+  <text x="120" y="55" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="12" font-weight="600" letter-spacing="0.05em">${title}</text>
+
+  ${content}
+</svg>`;
+}
+
+// 1. Knee Osteoarthritis SVG
+const kneeSvg = wrapSvg("AI KNEE OSTEOARTHRITIS DETECTION &amp; KL GRADING PIPELINE", `
+  <!-- Ingestion / X-Ray Source -->
+  <rect x="40" y="110" width="180" height="95" rx="8" fill="#071426" stroke="#1B3558"/>
+  <text x="130" y="140" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="12" font-weight="600" text-anchor="middle">Medical Imaging Source</text>
+  <text x="130" y="160" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="10" text-anchor="middle">Digital X-Ray DICOM / PNG</text>
+  <text x="130" y="180" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Knee Joint Preprocessing</text>
+
+  <!-- Mobile / Client -->
+  <rect x="40" y="240" width="180" height="95" rx="8" fill="#071426" stroke="#1B3558"/>
+  <text x="130" y="270" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="12" font-weight="600" text-anchor="middle">Android Kotlin Client</text>
+  <text x="130" y="290" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="10" text-anchor="middle">Direct Radiograph Capture</text>
+  <text x="130" y="310" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Instant Diagnostic Feedback</text>
+
+  <!-- Connectors -->
+  <path d="M220 157 L270 230" stroke="#087BCE" stroke-width="1.5"/>
+  <path d="M220 287 L270 240" stroke="#087BCE" stroke-width="1.5"/>
+
+  <!-- Center: Model Architecture -->
+  <rect x="270" y="100" width="260" height="280" rx="10" fill="#071426" stroke="#087BCE" stroke-width="2"/>
+  <text x="400" y="130" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="13" font-weight="700" text-anchor="middle">Deep Learning &amp; ViT Inference</text>
+
+  <rect x="290" y="150" width="220" height="45" rx="6" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="400" y="170" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">ResNet-50 &amp; Vision Transformer</text>
+  <text x="400" y="185" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Multi-Scale Feature Extraction</text>
+
+  <rect x="290" y="205" width="220" height="45" rx="6" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="400" y="225" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Kellgren-Lawrence (KL0 - KL4)</text>
+  <text x="400" y="240" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Multi-Class Severity Grading</text>
+
+  <rect x="290" y="260" width="220" height="45" rx="6" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="400" y="280" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Grad-CAM Explainability Map</text>
+  <text x="400" y="295" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Joint Space Narrowing Heatmap</text>
+
+  <rect x="290" y="315" width="220" height="45" rx="6" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="400" y="335" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">FastAPI REST Inference API</text>
+  <text x="400" y="350" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Sub-Second Prediction Latency</text>
+
+  <!-- Connectors to Output -->
+  <path d="M530 235 L580 235" stroke="#087BCE" stroke-width="1.5"/>
+
+  <!-- Output Column -->
+  <rect x="580" y="110" width="180" height="95" rx="8" fill="#071426" stroke="#1B3558"/>
+  <text x="670" y="140" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="12" font-weight="600" text-anchor="middle">Diagnostic Output</text>
+  <text x="670" y="160" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="10" text-anchor="middle">Confidence Probabilities</text>
+  <text x="670" y="180" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">KL Classification Report</text>
+
+  <rect x="580" y="240" width="180" height="95" rx="8" fill="#071426" stroke="#1B3558"/>
+  <text x="670" y="270" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="12" font-weight="600" text-anchor="middle">Clinical Visualizer</text>
+  <text x="670" y="290" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="10" text-anchor="middle">Superimposed Heatmaps</text>
+  <text x="670" y="310" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Physician Validation Overlay</text>
+`);
+
+// 2. AI Assistant & Multi-Agent RAG SVG
+const aiAssistantSvg = wrapSvg("ENTERPRISE AI ASSISTANT &amp; MULTI-AGENT RAG ARCHITECTURE", `
+  <!-- Ingestion / Document Sources -->
+  <rect x="40" y="110" width="180" height="95" rx="8" fill="#071426" stroke="#1B3558"/>
+  <text x="130" y="140" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="12" font-weight="600" text-anchor="middle">Enterprise Knowledge Base</text>
+  <text x="130" y="160" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="10" text-anchor="middle">PDFs, SQL, Confluence, APIs</text>
+  <text x="130" y="180" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Document Chunking &amp; Parse</text>
+
+  <!-- Query Interface -->
+  <rect x="40" y="240" width="180" height="95" rx="8" fill="#071426" stroke="#1B3558"/>
+  <text x="130" y="270" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="12" font-weight="600" text-anchor="middle">User &amp; System Clients</text>
+  <text x="130" y="290" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="10" text-anchor="middle">Chatbot, Slack, REST Webhook</text>
+  <text x="130" y="310" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Role-Based Context Token</text>
+
+  <!-- Connectors -->
+  <path d="M220 157 L270 230" stroke="#087BCE" stroke-width="1.5"/>
+  <path d="M220 287 L270 240" stroke="#087BCE" stroke-width="1.5"/>
+
+  <!-- Center: Agentic Orchestration -->
+  <rect x="270" y="100" width="260" height="280" rx="10" fill="#071426" stroke="#087BCE" stroke-width="2"/>
+  <text x="400" y="130" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="13" font-weight="700" text-anchor="middle">Multi-Agent RAG Orchestrator</text>
+
+  <rect x="290" y="150" width="220" height="45" rx="6" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="400" y="170" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Hybrid Vector &amp; Keyword Search</text>
+  <text x="400" y="185" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">pgvector / Pinecone Embeddings</text>
+
+  <rect x="290" y="205" width="220" height="45" rx="6" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="400" y="225" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Context Reranking &amp; Filtering</text>
+  <text x="400" y="240" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Cross-Encoder Relevance Scoring</text>
+
+  <rect x="290" y="260" width="220" height="45" rx="6" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="400" y="280" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">LLM Inference &amp; Guardrails</text>
+  <text x="400" y="295" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Citation Verification &amp; Safety</text>
+
+  <rect x="290" y="315" width="220" height="45" rx="6" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="400" y="335" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Automated Action Execution</text>
+  <text x="400" y="350" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">ERP/CRM Mutation Handlers</text>
+
+  <!-- Connectors to Output -->
+  <path d="M530 235 L580 235" stroke="#087BCE" stroke-width="1.5"/>
+
+  <!-- Output Column -->
+  <rect x="580" y="110" width="180" height="95" rx="8" fill="#071426" stroke="#1B3558"/>
+  <text x="670" y="140" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="12" font-weight="600" text-anchor="middle">Grounded AI Response</text>
+  <text x="670" y="160" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="10" text-anchor="middle">Source Document Citations</text>
+  <text x="670" y="180" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Zero-Hallucination Guardrails</text>
+
+  <rect x="580" y="240" width="180" height="95" rx="8" fill="#071426" stroke="#1B3558"/>
+  <text x="670" y="270" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="12" font-weight="600" text-anchor="middle">Workflow Automation</text>
+  <text x="670" y="290" fill="#1F9D6B" font-family="'Inter', sans-serif" font-size="10" text-anchor="middle">Automated Ticket Resolution</text>
+  <text x="670" y="310" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9" text-anchor="middle">Structured Database Sync</text>
+`);
+
+fs.writeFileSync(path.join(dir, 'knee-osteoarthritis-diagram.svg'), kneeSvg);
+fs.writeFileSync(path.join(dir, 'ai-assistant-rag-diagram.svg'), aiAssistantSvg);
+console.log('Successfully generated knee-osteoarthritis-diagram.svg and ai-assistant-rag-diagram.svg');

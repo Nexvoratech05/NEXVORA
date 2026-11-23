@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import * as z from "zod";
+
+export const dynamic = "force-dynamic";
 import { checkRateLimit, getClientIp } from "@/lib/server/rate-limit";
 import { verifyTurnstile } from "@/lib/server/turnstile";
 import { sendEmail } from "@/lib/server/email";
@@ -44,14 +46,13 @@ export async function POST(req: NextRequest) {
     // 1. Rate Limit: 5 submissions per IP per hour
     const rateLimit = await checkRateLimit(ip, 5, 60);
     if (!rateLimit.success) {
-      const isConfigError = Boolean(rateLimit.error);
       return NextResponse.json(
         {
           error:
             rateLimit.error ||
             "Submission rate limit exceeded. Please wait a while or reach out directly via email or WhatsApp.",
         },
-        { status: isConfigError ? 500 : 429 }
+        { status: 429 }
       );
     }
 
@@ -140,13 +141,7 @@ export async function POST(req: NextRequest) {
     });
 
     if (!founderNotification.success) {
-      console.error("[Email Delivery Failure] /api/contact:", founderNotification.error);
-      if (process.env.NODE_ENV === "production") {
-        return NextResponse.json(
-          { error: founderNotification.error || "Email delivery failed in production." },
-          { status: 500 }
-        );
-      }
+      console.warn("[Email Notification Warning] Lead saved but email dispatch was skipped or failed:", founderNotification.error);
     }
 
     // 8. Send Confirmation Email to Sender

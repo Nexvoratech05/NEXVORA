@@ -203,14 +203,14 @@ export default function ContactPage() {
                   </div>
                 ) : null}
 
-                {/* Business Hours & Response Guarantee */}
+                {/* Business Hours & Response Window */}
                 <div className="p-5 rounded-2xl bg-navy-950 text-white border border-navy-700 space-y-3">
                   <div className="flex items-center gap-2 text-cyan-400 text-xs font-bold font-heading">
                     <Clock className="w-4 h-4" />
                     <span>Response-Time Promise</span>
                   </div>
                   <p className="text-xs text-gray-300 leading-relaxed">
-                    We operate Monday to Friday during PKT (UTC+5) / GST (UTC+4) hours and guarantee an initial response to qualified inquiries within <strong className="text-white">{siteConfig.contact.responseTime}</strong>.
+                    We operate Monday to Friday during PKT (UTC+5) / GST (UTC+4) hours and aim to respond to qualified inquiries within <strong className="text-white">{siteConfig.contact.responseTime}</strong>.
                   </p>
                 </div>
               </div>

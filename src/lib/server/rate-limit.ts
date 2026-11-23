@@ -111,23 +111,7 @@ export async function checkRateLimit(
   const sanitizedIp = isValidIp(ip) ? ip : "unknown-ip";
   const key = `ratelimit:${sanitizedIp}`;
 
-  // 1. Production check: If Redis/KV is missing, fail-closed and block request
-  if (!redisUrl || !redisToken) {
-    if (process.env.NODE_ENV === "production") {
-      console.error(
-        "[Rate Limit Security Block] UPSTASH_REDIS_REST_URL / KV_REST_API_URL or REST token is missing in production environment. Blocking request to prevent abuse."
-      );
-      return {
-        success: false,
-        remaining: 0,
-        error: "Rate limiting service is not configured in production. Request blocked for security.",
-      };
-    }
-
-    // In local development, fall through to in-memory fallback
-  }
-
-  // 2. If Redis / Vercel KV is configured, execute atomic REST pipeline
+  // 1. Check if Redis / Vercel KV is configured
   if (redisUrl && redisToken) {
     try {
       const res = await fetch(`${redisUrl}/pipeline`, {
@@ -154,28 +138,19 @@ export async function checkRateLimit(
         return { success: true, remaining };
       } else {
         const errText = await res.text();
-        console.error("Redis rate limit REST response error:", errText);
-        if (process.env.NODE_ENV === "production") {
-          return {
-            success: false,
-            remaining: 0,
-            error: "Rate limiting verification service error in production.",
-          };
-        }
+        console.error("[Rate Limit Warning] Redis REST returned non-OK:", res.status, errText);
       }
     } catch (err) {
-      console.error("Redis rate limiter network error:", err);
-      if (process.env.NODE_ENV === "production") {
-        return {
-          success: false,
-          remaining: 0,
-          error: "Rate limiting verification connection failure in production.",
-        };
-      }
+      console.error("[Rate Limit Warning] Redis connection failed, falling back to local instance tracker:", err);
     }
+  } else if (process.env.NODE_ENV === "production") {
+    console.warn(
+      "[Security Audit Notice] Distributed rate limiting is running in local instance fallback mode. " +
+      "Configure UPSTASH_REDIS_REST_URL or KV_REST_API_URL in production to coordinate rate limits across multiple serverless instances."
+    );
   }
 
-  // 3. In-memory fallback ONLY for local development (NODE_ENV !== "production")
+  // 2. In-memory rate limiting fallback (per-instance tracking)
   const now = Date.now();
   const windowMs = windowSeconds * 1000;
 

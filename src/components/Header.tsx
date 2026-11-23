@@ -144,38 +144,45 @@ export function Header() {
               )}
             </button>
 
-            {/* Accessible Dropdown Menu */}
+            {/* Accessible Dropdown Menu (2-Column Mega-Menu) */}
             {servicesDropdownOpen && (
               <div
                 id="services-menu"
                 role="menu"
                 aria-label="Services dropdown"
-                className="absolute top-full left-0 mt-1 w-80 bg-navy-900 border border-navy-700 rounded-xl shadow-2xl p-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150"
+                className="absolute top-full left-0 mt-1 w-[580px] bg-navy-950 border border-navy-700 rounded-2xl shadow-2xl p-4 z-50 animate-in fade-in slide-in-from-top-2 duration-150"
               >
-                <div className="px-3 py-2 border-b border-navy-700/60 mb-1">
+                <div className="px-3 py-2 border-b border-navy-800 mb-2 flex items-center justify-between">
+                  <span className="text-[11px] font-mono font-semibold text-cyan-400 uppercase tracking-wider">
+                    Engineering Divisions
+                  </span>
                   <Link
                     href="/services"
-                    className="text-xs font-semibold text-cyan-400 uppercase tracking-wider flex items-center justify-between hover:underline"
+                    className="text-xs font-semibold text-white/80 hover:text-cyan-400 flex items-center gap-1 transition-colors"
                     onClick={() => setServicesDropdownOpen(false)}
                   >
-                    All Services Overview <ArrowRight className="w-3.5 h-3.5 ml-1" />
+                    All Services Hub <ArrowRight className="w-3 h-3" />
                   </Link>
                 </div>
-                <div className="space-y-1">
+                <div className="grid grid-cols-2 gap-2">
                   {services.map((svc) => (
                     <Link
                       key={svc.slug}
                       href={`/services/${svc.slug}`}
                       role="menuitem"
                       onClick={() => setServicesDropdownOpen(false)}
-                      className={`block px-3 py-2 rounded-lg text-sm transition-colors ${
+                      className={`p-3 rounded-xl text-left transition-all group ${
                         pathname === `/services/${svc.slug}`
-                          ? "bg-navy-700 text-cyan-400 font-medium"
-                          : "text-white/80 hover:bg-navy-700/60 hover:text-white"
+                          ? "bg-navy-800 text-cyan-400 border border-navy-700"
+                          : "text-white/90 hover:bg-navy-900 border border-transparent hover:border-navy-700/60"
                       }`}
                     >
-                      <div className="font-medium text-white">{svc.shortTitle}</div>
-                      <div className="text-xs text-gray-400 line-clamp-1">{svc.title}</div>
+                      <div className="font-semibold text-sm text-white group-hover:text-cyan-400 transition-colors flex items-center justify-between">
+                        <span>{svc.title}</span>
+                      </div>
+                      <div className="text-xs text-gray-400 line-clamp-1 mt-0.5">
+                        {svc.heroHeadline}
+                      </div>
                     </Link>
                   ))}
                 </div>
@@ -197,6 +204,18 @@ export function Header() {
           </Link>
 
           <Link
+            href="/technologies"
+            className={`px-3.5 py-2 text-sm font-medium transition-colors relative rounded-md text-white/90 hover:text-white ${
+              pathname === "/technologies" ? "text-white" : ""
+            }`}
+          >
+            Technologies
+            {pathname === "/technologies" && (
+              <span className="absolute bottom-0 left-3.5 right-3.5 h-[2px] bg-cyan-400 rounded-full" />
+            )}
+          </Link>
+
+          <Link
             href="/about"
             className={`px-3.5 py-2 text-sm font-medium transition-colors relative rounded-md text-white/90 hover:text-white ${
               pathname === "/about" ? "text-white" : ""
@@ -204,18 +223,6 @@ export function Header() {
           >
             About
             {pathname === "/about" && (
-              <span className="absolute bottom-0 left-3.5 right-3.5 h-[2px] bg-cyan-400 rounded-full" />
-            )}
-          </Link>
-
-          <Link
-            href="/team"
-            className={`px-3.5 py-2 text-sm font-medium transition-colors relative rounded-md text-white/90 hover:text-white ${
-              pathname === "/team" ? "text-white" : ""
-            }`}
-          >
-            Team
-            {pathname === "/team" && (
               <span className="absolute bottom-0 left-3.5 right-3.5 h-[2px] bg-cyan-400 rounded-full" />
             )}
           </Link>
@@ -330,6 +337,22 @@ export function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Projects
+            </Link>
+
+            <Link
+              href="/technologies"
+              className="block py-2 text-lg font-semibold text-white border-b border-navy-700/50"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Technologies
+            </Link>
+
+            <Link
+              href="/insights"
+              className="block py-2 text-lg font-semibold text-white border-b border-navy-700/50"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Insights
             </Link>
 
             <Link
