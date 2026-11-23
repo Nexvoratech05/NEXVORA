@@ -5,10 +5,17 @@ import { siteConfig } from "@/content/site";
 import { ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — NEXVORA Technologies",
-  description: "Privacy policy and data governance practices at NEXVORA Technologies.",
+  title: "Privacy Policy | NEXVORA Technologies",
+  description: "Privacy policy, data protection governance, and mutual confidentiality terms at NEXVORA Technologies.",
   alternates: {
     canonical: "/privacy-policy",
+  },
+  openGraph: {
+    title: "Privacy Policy | NEXVORA Technologies",
+    description: "Privacy policy, data protection governance, and mutual confidentiality terms at NEXVORA Technologies.",
+    url: `${siteConfig.url}/privacy-policy`,
+    type: "website",
+    images: ["/og-image.png"],
   },
 };
 

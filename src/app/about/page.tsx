@@ -15,11 +15,26 @@ import {
 import { siteConfig } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "About NEXVORA Technologies — Engineering Intelligence. Building Tomorrow.",
+  title: "About NEXVORA Technologies — Mission, Values & Engineering Leadership",
   description:
-    "Learn about NEXVORA Technologies: our mission, vision, core engineering values, and founder-led delivery approach across data, AI, cloud, and software.",
+    "Discover NEXVORA Technologies: our engineering philosophy, remote-first operational model, technical leadership, and commitment to verifiable system architectures.",
   alternates: {
     canonical: "/about",
+  },
+  openGraph: {
+    title: "About NEXVORA Technologies — Mission, Values & Engineering Leadership",
+    description:
+      "Discover NEXVORA Technologies: our engineering philosophy, remote-first operational model, technical leadership, and commitment to verifiable system architectures.",
+    url: `${siteConfig.url}/about`,
+    type: "website",
+    images: ["/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About NEXVORA Technologies — Mission, Values & Engineering Leadership",
+    description:
+      "Discover NEXVORA Technologies: our engineering philosophy, remote-first operational model, technical leadership, and commitment to verifiable system architectures.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -62,8 +77,48 @@ export default function AboutPage() {
     },
   ];
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: siteConfig.url,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "About Us",
+            item: `${siteConfig.url}/about`,
+          },
+        ],
+      },
+      {
+        "@type": "AboutPage",
+        name: "About NEXVORA Technologies",
+        description:
+          "Mission, engineering values, and leadership principles of NEXVORA Technologies.",
+        url: `${siteConfig.url}/about`,
+        about: {
+          "@type": "Organization",
+          name: siteConfig.name,
+          url: siteConfig.url,
+          description: siteConfig.description,
+        },
+      },
+    ],
+  };
+
   return (
     <div className="w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero */}
       <section className="bg-navy-950 text-white pt-32 pb-20 border-b border-navy-700">
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">

@@ -11,14 +11,29 @@ import {
   ArrowRight,
   CheckCircle2,
 } from "lucide-react";
-import { services } from "@/content/site";
+import { services, siteConfig } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Engineering Divisions & Technical Services — NEXVORA Technologies",
+  title: "Specialized Engineering Divisions & Solutions | NEXVORA Technologies",
   description:
-    "Explore NEXVORA's six engineering divisions: Data Engineering, AI & Machine Learning, Generative AI, Cloud & DevOps, Software Engineering, and Business Automation.",
+    "Explore NEXVORA's six specialized engineering divisions: Data Lakehouses, AI & Vision, Generative AI & Agents, Cloud & DevOps, Software & APIs, and Enterprise ERP Automation.",
   alternates: {
     canonical: "/services",
+  },
+  openGraph: {
+    title: "Specialized Engineering Divisions & Solutions | NEXVORA Technologies",
+    description:
+      "Explore NEXVORA's six specialized engineering divisions: Data Lakehouses, AI & Vision, Generative AI & Agents, Cloud & DevOps, Software & APIs, and Enterprise ERP Automation.",
+    url: `${siteConfig.url}/services`,
+    type: "website",
+    images: ["/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Specialized Engineering Divisions & Solutions | NEXVORA Technologies",
+    description:
+      "Explore NEXVORA's six specialized engineering divisions: Data Lakehouses, AI & Vision, Generative AI & Agents, Cloud & DevOps, Software & APIs, and Enterprise ERP Automation.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -32,8 +47,53 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 export default function ServicesPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: siteConfig.url,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Services",
+            item: `${siteConfig.url}/services`,
+          },
+        ],
+      },
+      {
+        "@type": "CollectionPage",
+        name: "Specialized Engineering Divisions & Solutions",
+        description:
+          "Explore NEXVORA's six core engineering divisions spanning Lakehouses, AI, Generative AI, Cloud DevOps, Custom Software, and ERP Automation.",
+        url: `${siteConfig.url}/services`,
+        hasPart: services.map((svc) => ({
+          "@type": "Service",
+          name: svc.title,
+          description: svc.heroOutcome,
+          url: `${siteConfig.url}/services/${svc.slug}`,
+          provider: {
+            "@type": "Organization",
+            name: siteConfig.name,
+            url: siteConfig.url,
+          },
+        })),
+      },
+    ],
+  };
+
   return (
     <div className="w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Page Hero */}
       <section className="bg-navy-950 text-white pt-32 pb-20 border-b border-navy-700">
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">

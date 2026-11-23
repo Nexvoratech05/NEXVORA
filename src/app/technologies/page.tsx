@@ -6,11 +6,26 @@ import { siteConfig, technologiesData } from "@/content/site";
 import { TechnologiesDirectory } from "@/components/TechnologiesDirectory";
 
 export const metadata: Metadata = {
-  title: "Technology Ecosystem & Engineering Toolchain — NEXVORA Technologies",
+  title: "Technology Ecosystem & Cloud Toolchain Directory | NEXVORA Technologies",
   description:
-    "Explore the engineering frameworks, databases, cloud platforms, and AI toolchains utilized by NEXVORA Technologies across modern data lakehouses, serverless systems, and custom software.",
+    "Explore the 36+ verified frameworks, distributed data platforms, and cloud environments engineered at NEXVORA: Spark, Databricks, PyTorch, FastAPI, Next.js, AWS & Azure.",
   alternates: {
     canonical: "/technologies",
+  },
+  openGraph: {
+    title: "Technology Ecosystem & Cloud Toolchain Directory | NEXVORA Technologies",
+    description:
+      "Explore the 36+ verified frameworks, distributed data platforms, and cloud environments engineered at NEXVORA: Spark, Databricks, PyTorch, FastAPI, Next.js, AWS & Azure.",
+    url: `${siteConfig.url}/technologies`,
+    type: "website",
+    images: ["/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Technology Ecosystem & Cloud Toolchain Directory | NEXVORA Technologies",
+    description:
+      "Explore the 36+ verified frameworks, distributed data platforms, and cloud environments engineered at NEXVORA: Spark, Databricks, PyTorch, FastAPI, Next.js, AWS & Azure.",
+    images: ["/og-image.png"],
   },
 };
 

@@ -6,11 +6,26 @@ import { MultiStepQuoteForm } from "@/components/MultiStepQuoteForm";
 import { ShieldCheck, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Start a Project — Request a Quote — NEXVORA",
+  title: "Start an Engineering Project | Proposal & Architecture Inquiry | NEXVORA",
   description:
-    "Tell us about your project and receive a tailored engineering proposal from founders Muhammad Azhar and Owais Ahmad.",
+    "Request a detailed technical proposal and architecture consultation from NEXVORA Technologies founders Muhammad Azhar and Owais Ahmad. Direct lead engineer review.",
   alternates: {
     canonical: "/start-a-project",
+  },
+  openGraph: {
+    title: "Start an Engineering Project | Proposal & Architecture Inquiry | NEXVORA",
+    description:
+      "Request a detailed technical proposal and architecture consultation from NEXVORA Technologies founders Muhammad Azhar and Owais Ahmad. Direct lead engineer review.",
+    url: `${siteConfig.url}/start-a-project`,
+    type: "website",
+    images: ["/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Start an Engineering Project | Proposal & Architecture Inquiry | NEXVORA",
+    description:
+      "Request a detailed technical proposal and architecture consultation from NEXVORA Technologies founders Muhammad Azhar and Owais Ahmad. Direct lead engineer review.",
+    images: ["/og-image.png"],
   },
 };
 

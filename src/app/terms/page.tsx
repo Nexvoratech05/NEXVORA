@@ -5,10 +5,17 @@ import { siteConfig } from "@/content/site";
 import { ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Terms and Conditions — NEXVORA Technologies",
-  description: "Terms and conditions governing the use of the NEXVORA Technologies website and commercial engineering inquiries.",
+  title: "Terms and Conditions | NEXVORA Technologies",
+  description: "Terms and conditions governing the use of the NEXVORA Technologies website, IP ownership documentation, and commercial engineering inquiries.",
   alternates: {
     canonical: "/terms",
+  },
+  openGraph: {
+    title: "Terms and Conditions | NEXVORA Technologies",
+    description: "Terms and conditions governing the use of the NEXVORA Technologies website, IP ownership documentation, and commercial engineering inquiries.",
+    url: `${siteConfig.url}/terms`,
+    type: "website",
+    images: ["/og-image.png"],
   },
 };
 

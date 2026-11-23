@@ -5,14 +5,17 @@ import { siteConfig } from "@/content/site";
 import { Users, Mail, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Careers — Talent Network — NEXVORA Technologies",
-  description: "Join the NEXVORA Technologies talent network for upcoming software and data engineering opportunities.",
-  robots: {
-    index: false,
-    follow: false,
-  },
+  title: "Careers & Talent Network | NEXVORA Technologies",
+  description: "Explore engineering careers and talent network opportunities in AI, data lakehouses, cloud infrastructure, and software engineering at NEXVORA Technologies.",
   alternates: {
     canonical: "/careers",
+  },
+  openGraph: {
+    title: "Careers & Talent Network | NEXVORA Technologies",
+    description: "Explore engineering careers and talent network opportunities in AI, data lakehouses, cloud infrastructure, and software engineering at NEXVORA Technologies.",
+    url: `${siteConfig.url}/careers`,
+    type: "website",
+    images: ["/og-image.png"],
   },
 };
 

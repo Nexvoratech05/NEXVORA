@@ -5,11 +5,26 @@ import { BookOpen, Clock, ArrowRight } from "lucide-react";
 import { siteConfig, insightsArticles } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Engineering Insights & Architecture Guides — NEXVORA Technologies",
+  title: "Technical Insights & Engineering Architecture Guides | NEXVORA Technologies",
   description:
-    "Technical whitepapers, architectural deep-dives, and engineering guides authored by NEXVORA Technologies founders Muhammad Azhar and Owais Ahmad.",
+    "In-depth technical whitepapers, architectural deep-dives, and engineering guides on Medallion Lakehouses, computer vision explainability, and enterprise microservices.",
   alternates: {
     canonical: "/insights",
+  },
+  openGraph: {
+    title: "Technical Insights & Engineering Architecture Guides | NEXVORA Technologies",
+    description:
+      "In-depth technical whitepapers, architectural deep-dives, and engineering guides on Medallion Lakehouses, computer vision explainability, and enterprise microservices.",
+    url: `${siteConfig.url}/insights`,
+    type: "website",
+    images: ["/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Technical Insights & Engineering Architecture Guides | NEXVORA Technologies",
+    description:
+      "In-depth technical whitepapers, architectural deep-dives, and engineering guides on Medallion Lakehouses, computer vision explainability, and enterprise microservices.",
+    images: ["/og-image.png"],
   },
 };
 

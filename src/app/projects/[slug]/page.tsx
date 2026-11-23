@@ -29,17 +29,33 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   );
   if (!project) return {};
 
+  const seoTitle = `${project.title} — System Architecture Case Study | NEXVORA`;
+
   return {
-    title: `${project.title} — Case Study | NEXVORA`,
-    description: project.summary,
+    title: seoTitle,
+    description: `${project.summary} Engineered with ${project.technologies.slice(0, 4).join(", ")}.`,
     alternates: {
       canonical: `/projects/${project.slug}`,
     },
     openGraph: {
-      title: `${project.title} | NEXVORA Case Study`,
+      title: seoTitle,
       description: project.summary,
       url: `${siteConfig.url}/projects/${project.slug}`,
       type: "article",
+      images: [
+        {
+          url: project.images[0] || "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: `${project.title} Technical Architecture Blueprint`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: seoTitle,
+      description: project.summary,
+      images: [project.images[0] || "/og-image.png"],
     },
   };
 }
@@ -103,6 +119,8 @@ export default function ProjectDetailPage({ params }: PageProps) {
           "name": siteConfig.name,
           "url": siteConfig.url,
         },
+        "image": project.images[0] ? `${siteConfig.url}${project.images[0]}` : undefined,
+        "keywords": project.technologies.join(", "),
       },
     ],
   };

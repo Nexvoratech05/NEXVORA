@@ -91,7 +91,7 @@ export interface InsightArticle {
   slug: string;
   title: string;
   excerpt: string;
-  category: "Data Engineering" | "Software Engineering" | "AI & Vision";
+  category: "Data Engineering" | "Software Engineering" | "AI & Vision" | "Generative AI" | "Cloud & DevOps" | "Business Automation";
   readingTime: string;
   author: {
     name: string;
@@ -108,13 +108,13 @@ export interface InsightArticle {
 export const siteConfig = {
   name: "NEXVORA Technologies",
   legalName: "NEXVORA Technologies",
-  tagline: "Build Beyond Limits.",
-  heroHeadline: "Build Beyond Limits.",
+  tagline: "Engineering Intelligence. Building What's Next.",
+  heroHeadline: "Engineering Intelligence. Building What's Next.",
   positioning:
     "We engineer scalable software, modern data platforms, cloud infrastructure, and intelligent AI solutions that empower growing enterprises and startups to automate and lead.",
-  url: "https://nexvora-technologies.vercel.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://nexvora-gray.vercel.app",
   description:
-    "We engineer scalable software, modern data platforms, cloud infrastructure, and intelligent AI solutions that empower growing enterprises and startups to automate and lead.",
+    "NEXVORA Technologies engineers enterprise AI solutions, data engineering pipelines, cloud infrastructure, custom software, RAG systems, and intelligent business automation for global businesses.",
   
   contact: {
     email: "nexvora.code@gmail.com",
@@ -562,7 +562,7 @@ export const services: ServiceDetail[] = [
   },
   {
     slug: "software-engineering",
-    aliases: ["custom-software", "web-design"],
+    aliases: ["custom-software", "web-design", "software-api-development"],
     divisionNumber: "Division 05",
     title: "Software & API Engineering",
     shortTitle: "Software & APIs",
@@ -650,7 +650,7 @@ export const services: ServiceDetail[] = [
   },
   {
     slug: "business-automation",
-    aliases: ["crm-solutions"],
+    aliases: ["crm-solutions", "business-automation-erp"],
     divisionNumber: "Division 06",
     title: "Business Automation & Enterprise ERP",
     shortTitle: "Automation & ERP",
@@ -1837,6 +1837,133 @@ class GradCAMExplainer:
 1. **Validation Against Anatomical Landmarks:** By overlaying Grad-CAM heatmaps on test radiographs, physicians verified that the model focused on medial and lateral joint compartments rather than background artifacts.
 2. **Detection of Confounding Features:** Explainability revealed early training runs where the network mistakenly learned to attend to radiographic markers or patient positioners, allowing us to retrain with strict spatial cropping.
 3. **Bedside Inferences:** Serving the model via a lightweight, typed FastAPI endpoint allowed rapid integration with mobile client applications while keeping inference latency under 250 milliseconds.
+    `,
+  },
+  {
+    slug: "enterprise-rag-architecture-vector-databases",
+    title: "Enterprise RAG Architecture and Vector Databases: Production Retrieval Guide",
+    excerpt: "Architectural blueprint for engineering context-grounded AI assistants with hybrid vector search, reciprocal rank fusion, metadata filtering, and strict VPC privacy boundaries.",
+    category: "Generative AI",
+    readingTime: "9 min read",
+    author: {
+      name: "Owais Ahmad",
+      role: "Co-Founder & Data Lead",
+    },
+    publishedAt: "2026-04-02",
+    updatedAt: "2026-04-10",
+    tags: ["Generative AI", "RAG", "Vector Databases", "Embeddings", "LLM", "Information Retrieval"],
+    serviceSlug: "generative-ai",
+    projectSlug: "enterprise-ai-assistant-rag",
+    content: `
+## The Need for Context-Grounded Generative AI
+
+Deploying large language models (LLMs) in enterprise environments presents two persistent engineering obstacles: hallucination risk and the inability to inspect dynamic, proprietary documents behind corporate firewalls. Fine-tuning models on sensitive data is both cost-prohibitive for high-velocity corpora and vulnerable to catastrophic forgetting.
+
+Retrieval-Augmented Generation (RAG) resolves this challenge by separating parametric model knowledge from non-parametric external document indices. However, moving from an experimental notebook proof-of-concept to a production enterprise system requires sophisticated ingestion chunking, hybrid retrieval strategies, and strict security isolation.
+
+### 1. Ingestion & Semantic Chunking Strategy
+
+Naive fixed-length character chunking often fractures logical contexts—separating table headers from numeric values or splitting paragraphs mid-sentence. In our production RAG pipelines, we employ **semantic document chunking**:
+
+- **Hierarchical Markdown / Structure Parsing:** Documents are split along structural section boundaries (H1, H2, tables, lists).
+- **Context-Preserving Overlap:** A sliding token window (512 tokens with 64-token overlap) ensures boundary sentences retain syntactic context.
+- **Metadata Enrichment:** Each vector record is embedded alongside structured metadata: tenant ID, document access control lists (ACLs), creation timestamps, and source file URLs.
+
+### 2. Hybrid Retrieval: Dense Vectors + Sparse BM25
+
+Dense vector embeddings (e.g., text-embedding-3-large) excel at capturing conceptual meaning and synonym relationships, but frequently struggle with exact product codes, acronyms, or SKU identifiers. 
+
+To overcome this, we implement **Hybrid Search with Reciprocal Rank Fusion (RRF)**:
+1. **Dense Search:** Cosine similarity across HNSW indices within Qdrant / pgvector.
+2. **Sparse Search:** BM25 inverted index query across exact lexical tokens.
+3. **Re-Ranking:** Top-20 retrieved candidate chunks from both retrieval channels are passed through a cross-encoder model (e.g., bge-reranker-large) to score contextual relevance before prompt synthesis.
+
+### 3. Strict VPC Isolation & Data Privacy
+
+Enterprise compliance requires that proprietary IP never leaves customer boundaries:
+- Embeddings and vector stores are deployed within dedicated Virtual Private Clouds (VPCs).
+- Zero-retention enterprise API endpoints or local open-weights models (Llama 3 / Mistral) ensure query telemetry is never retained for external model training.
+    `,
+  },
+  {
+    slug: "aws-vs-azure-enterprise-cloud-infrastructure",
+    title: "AWS vs Azure for Enterprise Cloud Infrastructure: Engineering Decision Framework",
+    excerpt: "A technical evaluation framework comparing compute, managed Kubernetes, serverless runtimes, and identity federation between AWS and Microsoft Azure for scaling organizations.",
+    category: "Cloud & DevOps",
+    readingTime: "10 min read",
+    author: {
+      name: "Muhammad Azhar",
+      role: "Co-Founder & Technical Lead",
+    },
+    publishedAt: "2026-04-18",
+    updatedAt: "2026-04-22",
+    tags: ["Cloud Infrastructure", "AWS", "Azure", "DevOps", "Terraform", "Kubernetes"],
+    serviceSlug: "cloud-devops",
+    projectSlug: "cloud-infrastructure-modernization",
+    content: `
+## Multi-Cloud Reality & Strategic Decision Criteria
+
+When scaling modern software systems, technology leaders frequently face the strategic choice between Amazon Web Services (AWS) and Microsoft Azure. Rather than viewing this as an ideological debate, engineering teams must evaluate platform trade-offs through the lens of workload architecture, compliance demands, existing software licensing, and operational maturity.
+
+### 1. Compute & Container Orchestration: EKS vs AKS
+
+Both cloud providers deliver production-grade managed Kubernetes engines, but their configuration ergonomics and cost drivers differ:
+
+- **Amazon Elastic Kubernetes Service (EKS):** Offers superior granular IAM roles for service accounts (IRSA), deep integration with AWS Nitro instances, and predictable performance at massive scale.
+- **Azure Kubernetes Service (AKS):** Provides native Azure Active Directory (Entra ID) authentication out of the box, zero-cost cluster management tiers for standard workloads, and seamless integration with Azure Key Vault via CSI secrets store drivers.
+
+### 2. Infrastructure as Code (IaC) & Immutable GitOps
+
+Regardless of the target cloud provider, our engineering practice mandates immutable, declarative infrastructure management:
+- **Terraform Modules:** Modularized HCL code establishing VPC networking, subnets, NAT gateways, and least-privilege security group rules.
+- **Automated Drift Detection:** GitHub Actions CI/CD workflows run \`terraform plan\` on pull requests and apply state updates with remote state locking in S3 DynamoDB or Azure Blob Storage.
+
+### 3. Hybrid Overlap & Cost Governance
+
+For organizations with existing Microsoft enterprise agreements (Active Directory, Office 365, Windows Server), Azure offers compelling hybrid benefit licensing discounts. Conversely, for high-throughput data processing and cloud-native serverless microservices, AWS API Gateway, Lambda, and DynamoDB deliver industry-leading execution predictability.
+    `,
+  },
+  {
+    slug: "odoo-erp-integration-business-process-automation",
+    title: "Odoo ERP Integration and Business Process Automation: Hardware & API Bridges",
+    excerpt: "Designing resilient event-driven synchronization pipelines between biometric hardware, VICIdial telephony, and Odoo ERP systems with idempotent recovery mechanisms.",
+    category: "Business Automation",
+    readingTime: "8 min read",
+    author: {
+      name: "Muhammad Azhar",
+      role: "Co-Founder & Technical Lead",
+    },
+    publishedAt: "2026-05-05",
+    updatedAt: "2026-05-10",
+    tags: ["Odoo ERP", "Business Automation", "Python", "REST APIs", "PostgreSQL", "Hardware Integration"],
+    serviceSlug: "business-automation",
+    projectSlug: "biometric-attendance-odoo-erp",
+    content: `
+## Bridging Physical Operations and Enterprise Systems
+
+In workforce-heavy enterprises, physical operational realities often live in disconnect from accounting and HR software. Attendance clocks run isolated firmware protocols; contact center dialers write raw call detail records into isolated SQL schemas; and finance teams spend hours manually re-keying data into ERP systems.
+
+Automating these workflows requires resilient, decoupled middleware that guarantees message delivery even during intermittent branch network outages.
+
+### 1. Protocol Translation: ZKTeco Standalone Devices to REST / JSON
+
+Physical biometric hardware devices communicate using low-level socket protocols (such as ZK protocols on port 4370). Exposing ERP database credentials directly to edge clocks is an unacceptable security vulnerability.
+
+Our architecture introduces a **hardened local edge agent**:
+- Connects locally to physical devices via socket protocol.
+- Pulls raw punch records and serial numbers into a local SQLite queue.
+- Cryptographically signs and delivers batches over HTTPS to a central FastAPI service.
+
+### 2. XML-RPC & JSON-RPC Odoo API Gateway
+
+Odoo exposes robust XML-RPC and JSON-RPC interfaces for programmatic interaction with models like \`hr.attendance\`, \`res.partner\`, and \`account.move\`:
+
+- **Idempotency Keys:** Every sync transaction is assigned a deterministic hash (\`sha256(device_id + user_id + timestamp)\`). Duplicate pushes are acknowledged and safely discarded.
+- **Batch Processing:** High-frequency call logs and punch records are batched into transactional payloads of 200 items, preventing ERP thread exhaustion during shift start and end windows.
+
+### 3. Measurable Operational Outcomes
+
+By replacing manual spreadsheet reconciliations with an automated, self-healing pipeline, enterprises achieve zero lost attendance punches, real-time payroll readiness, and automated exception alerts dispatched directly to managers via secure webhooks.
     `,
   },
 ];

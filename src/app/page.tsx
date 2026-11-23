@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Metadata } from "next";
 import {
   Code2,
   Cloud,
@@ -69,6 +70,39 @@ const industryIconMap: Record<string, React.ReactNode> = {
   Building2: <Building2 className="w-6 h-6 text-cyan-400" />,
 };
 
+export const metadata: Metadata = {
+  title: "NEXVORA Technologies | AI, Data Engineering & Cloud Solutions",
+  description:
+    "NEXVORA Technologies engineers enterprise AI solutions, data engineering pipelines, cloud infrastructure, custom software, RAG systems, and intelligent business automation for global businesses.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "NEXVORA Technologies | AI, Data Engineering & Cloud Solutions",
+    description:
+      "NEXVORA Technologies engineers enterprise AI solutions, data engineering pipelines, cloud infrastructure, custom software, RAG systems, and intelligent business automation for global businesses.",
+    url: siteConfig.url,
+    siteName: "NEXVORA Technologies",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "NEXVORA Technologies — Engineering Intelligence. Building What's Next.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NEXVORA Technologies | AI, Data Engineering & Cloud Solutions",
+    description:
+      "NEXVORA Technologies engineers enterprise AI solutions, data engineering pipelines, cloud infrastructure, custom software, RAG systems, and intelligent business automation for global businesses.",
+    images: ["/og-image.png"],
+  },
+};
+
 export default function HomePage() {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -76,15 +110,32 @@ export default function HomePage() {
       {
         "@type": "Organization",
         "name": siteConfig.name,
+        "legalName": siteConfig.legalName,
         "url": siteConfig.url,
         "logo": `${siteConfig.url}/logo.svg`,
+        "image": `${siteConfig.url}/og-image.png`,
         "sameAs": Object.values(siteConfig.socials).filter(Boolean),
         "description": siteConfig.description,
+        "founders": founders.map((f) => ({
+          "@type": "Person",
+          "name": f.name,
+          "jobTitle": f.role,
+        })),
+        "knowsAbout": [
+          "Data Engineering",
+          "Databricks & Medallion Lakehouses",
+          "Apache Spark & PySpark",
+          "Artificial Intelligence & Computer Vision",
+          "Generative AI & Agentic RAG Systems",
+          "Cloud Architecture & DevOps",
+          "Next.js & FastAPI Microservices",
+          "Enterprise Business Automation & ERP",
+        ],
         ...(siteConfig.contact.hasRealEmail && siteConfig.contact.displayEmail
           ? {
               contactPoint: {
                 "@type": "ContactPoint",
-                "contactType": "customer service",
+                "contactType": "technical inquiry",
                 "email": siteConfig.contact.displayEmail,
                 "telephone": siteConfig.contact.phone,
                 "availableLanguage": ["English", "Urdu"],

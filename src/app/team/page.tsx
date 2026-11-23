@@ -13,11 +13,26 @@ import {
 import { founders, siteConfig } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Engineering Leadership & Founders — NEXVORA Technologies",
+  title: "Engineering Leadership & Technical Founders | NEXVORA Technologies",
   description:
     "Meet the founding engineers behind NEXVORA Technologies: Muhammad Azhar (Co-Founder & Technical Lead) and Owais Ahmad (Co-Founder & Data Lead).",
   alternates: {
     canonical: "/team",
+  },
+  openGraph: {
+    title: "Engineering Leadership & Technical Founders | NEXVORA Technologies",
+    description:
+      "Meet the founding engineers behind NEXVORA Technologies: Muhammad Azhar (Co-Founder & Technical Lead) and Owais Ahmad (Co-Founder & Data Lead).",
+    url: `${siteConfig.url}/team`,
+    type: "website",
+    images: ["/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Engineering Leadership & Technical Founders | NEXVORA Technologies",
+    description:
+      "Meet the founding engineers behind NEXVORA Technologies: Muhammad Azhar (Co-Founder & Technical Lead) and Owais Ahmad (Co-Founder & Data Lead).",
+    images: ["/og-image.png"],
   },
 };
 

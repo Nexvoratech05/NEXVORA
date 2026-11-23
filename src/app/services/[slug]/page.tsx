@@ -35,23 +35,48 @@ export async function generateStaticParams() {
   return slugs;
 }
 
+const divisionKeywordTitles: Record<string, string> = {
+  "data-engineering": "Data Engineering Services & Lakehouse Architecture | NEXVORA",
+  "artificial-intelligence": "AI Development & Computer Vision Engineering Services | NEXVORA",
+  "generative-ai": "Generative AI Development & Agentic RAG Systems | NEXVORA",
+  "cloud-devops": "Cloud Engineering & DevOps Infrastructure Services | NEXVORA",
+  "software-engineering": "Custom Software & API Engineering Services | NEXVORA",
+  "business-automation": "Business Automation & Enterprise ERP Integration Services | NEXVORA",
+};
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const service = services.find(
     (s) => s.slug === params.slug || s.aliases?.includes(params.slug)
   );
   if (!service) return {};
 
+  const seoTitle = divisionKeywordTitles[service.slug] || `${service.title} — ${service.divisionNumber} | NEXVORA Technologies`;
+
   return {
-    title: `${service.title} — ${service.divisionNumber} | NEXVORA`,
-    description: service.heroOutcome,
+    title: seoTitle,
+    description: `${service.heroHeadline}. ${service.heroOutcome}`,
     alternates: {
       canonical: `/services/${service.slug}`,
     },
     openGraph: {
-      title: `${service.title} | NEXVORA Technologies`,
-      description: service.heroOutcome,
+      title: seoTitle,
+      description: `${service.heroHeadline}. ${service.heroOutcome}`,
       url: `${siteConfig.url}/services/${service.slug}`,
       type: "website",
+      images: [
+        {
+          url: service.diagramImage || "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: `${service.title} Architecture Blueprint`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: seoTitle,
+      description: service.heroOutcome,
+      images: [service.diagramImage || "/og-image.png"],
     },
   };
 }

@@ -6,11 +6,26 @@ import { siteConfig } from "@/content/site";
 import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact NEXVORA Technologies",
+  title: "Contact NEXVORA Technologies | Technical Project Inquiry",
   description:
-    "Reach us by form, email or WhatsApp. We respond within 24 business hours.",
+    "Directly connect with the technical leads at NEXVORA Technologies. We respond within one business day with direct lead engineer feedback.",
   alternates: {
     canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact NEXVORA Technologies | Technical Project Inquiry",
+    description:
+      "Directly connect with the technical leads at NEXVORA Technologies. We respond within one business day with direct lead engineer feedback.",
+    url: `${siteConfig.url}/contact`,
+    type: "website",
+    images: ["/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact NEXVORA Technologies | Technical Project Inquiry",
+    description:
+      "Directly connect with the technical leads at NEXVORA Technologies. We respond within one business day with direct lead engineer feedback.",
+    images: ["/og-image.png"],
   },
 };
 

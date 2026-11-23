@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "NEXVORA Technologies — Build Beyond Limits";
+export const alt = "NEXVORA Technologies — Engineering Intelligence. Building What's Next.";
 export const size = {
   width: 1200,
   height: 630,
@@ -20,9 +20,10 @@ export default async function Image() {
           alignItems: "flex-start",
           justifyContent: "space-between",
           backgroundColor: "#071426",
-          padding: "80px",
+          padding: "70px 80px",
           fontFamily: "sans-serif",
           position: "relative",
+          border: "4px solid #1B3558",
         }}
       >
         {/* Subtle decorative background glow */}
@@ -34,7 +35,7 @@ export default async function Image() {
             width: "600px",
             height: "600px",
             borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(8, 123, 206, 0.25) 0%, rgba(7, 20, 38, 0) 70%)",
+            background: "radial-gradient(circle, rgba(0, 102, 255, 0.25) 0%, rgba(7, 20, 38, 0) 70%)",
           }}
         />
 
@@ -44,14 +45,14 @@ export default async function Image() {
             style={{
               width: "48px",
               height: "48px",
-              borderRadius: "10px",
-              background: "linear-gradient(135deg, #087BCE 0%, #55B9FF 100%)",
+              borderRadius: "12px",
+              background: "linear-gradient(135deg, #0066FF 0%, #00D2FF 100%)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               color: "#ffffff",
-              fontSize: "24px",
-              fontWeight: 800,
+              fontSize: "26px",
+              fontWeight: 900,
             }}
           >
             N
@@ -68,11 +69,11 @@ export default async function Image() {
           </span>
           <span
             style={{
-              color: "#55B9FF",
+              color: "#00D2FF",
               fontSize: "14px",
-              fontWeight: 600,
+              fontWeight: 700,
               letterSpacing: "0.2em",
-              marginLeft: "8px",
+              marginLeft: "6px",
               paddingTop: "6px",
             }}
           >
@@ -81,27 +82,47 @@ export default async function Image() {
         </div>
 
         {/* Center Tagline and Mission */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "16px", maxWidth: "950px" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "16px", maxWidth: "980px" }}>
+          <div
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              backgroundColor: "rgba(0, 210, 255, 0.12)",
+              border: "1px solid rgba(0, 210, 255, 0.4)",
+              padding: "6px 16px",
+              borderRadius: "999px",
+              color: "#00D2FF",
+              fontSize: "14px",
+              fontWeight: 700,
+              letterSpacing: "0.15em",
+              textTransform: "uppercase",
+              width: "fit-content",
+            }}
+          >
+            Engineering Intelligence. Building What&apos;s Next.
+          </div>
+
           <h1
             style={{
-              fontSize: "56px",
-              fontWeight: 800,
+              fontSize: "52px",
+              fontWeight: 900,
               color: "#FFFFFF",
               lineHeight: 1.15,
               margin: 0,
             }}
           >
-            Build Beyond Limits.
+            AI, Data Engineering &amp; Cloud Infrastructure Solutions
           </h1>
           <p
             style={{
-              fontSize: "24px",
-              color: "#93C5FD",
+              fontSize: "22px",
+              color: "#94A3B8",
               margin: 0,
               lineHeight: 1.4,
             }}
           >
-            Software, Cloud &amp; Data Engineering for Growing Businesses.
+            Production-grade Lakehouses, Computer Vision, Multi-Agent RAG &amp; Enterprise Automation.
           </p>
         </div>
 
@@ -116,18 +137,20 @@ export default async function Image() {
             paddingTop: "24px",
           }}
         >
-          <div style={{ display: "flex", gap: "32px", color: "#55B9FF", fontSize: "16px", fontWeight: 600 }}>
-            <span>Cloud Infrastructure</span>
+          <div style={{ display: "flex", gap: "20px", color: "#00D2FF", fontSize: "14px", fontWeight: 600 }}>
+            <span>Data Lakehouses</span>
             <span>·</span>
-            <span>Data Pipelines</span>
+            <span>AI &amp; Vision</span>
             <span>·</span>
-            <span>Custom Software</span>
+            <span>Generative AI</span>
             <span>·</span>
-            <span>CRM &amp; AI</span>
+            <span>Cloud &amp; DevOps</span>
+            <span>·</span>
+            <span>FastAPI &amp; Next.js</span>
           </div>
 
-          <span style={{ color: "#4A5B73", fontSize: "15px", fontFamily: "monospace" }}>
-            nexvora.com
+          <span style={{ color: "#64748B", fontSize: "14px", fontFamily: "monospace" }}>
+            nexvora-gray.vercel.app
           </span>
         </div>
       </div>

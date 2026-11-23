@@ -27,20 +27,37 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const article = insightsArticles.find((a) => a.slug === params.slug);
   if (!article) return {};
 
+  const seoTitle = `${article.title} | NEXVORA Technical Insights`;
+
   return {
-    title: `${article.title} — NEXVORA Technologies`,
+    title: seoTitle,
     description: article.excerpt,
     alternates: {
       canonical: `/insights/${article.slug}`,
     },
     openGraph: {
-      title: `${article.title} — NEXVORA Technologies`,
+      title: seoTitle,
       description: article.excerpt,
       type: "article",
+      url: `${siteConfig.url}/insights/${article.slug}`,
       publishedTime: article.publishedAt,
       modifiedTime: article.updatedAt,
       authors: [article.author.name],
       tags: article.tags,
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: seoTitle,
+      description: article.excerpt,
+      images: ["/og-image.png"],
     },
   };
 }

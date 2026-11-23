@@ -1,21 +1,79 @@
 import React, { Suspense } from "react";
 import Link from "next/link";
 import { Metadata } from "next";
-import { projectsData } from "@/content/site";
+import { projectsData, siteConfig } from "@/content/site";
 import { ProjectFilters } from "@/components/ProjectFilters";
 
 export const metadata: Metadata = {
-  title: "Projects & Architecture Reference — NEXVORA Technologies",
+  title: "Architecture Case Studies & System Blueprints | NEXVORA Technologies",
   description:
-    "Selected software, data and cloud engineering architecture by NEXVORA. Technical reference designs and internal concept builds.",
+    "Explore production-grade architectures and case studies across lakehouses, medical computer vision, telephony CRM, biometric ERP integration, and multi-agent RAG.",
   alternates: {
     canonical: "/projects",
+  },
+  openGraph: {
+    title: "Architecture Case Studies & System Blueprints | NEXVORA Technologies",
+    description:
+      "Explore production-grade architectures and case studies across lakehouses, medical computer vision, telephony CRM, biometric ERP integration, and multi-agent RAG.",
+    url: `${siteConfig.url}/projects`,
+    type: "website",
+    images: ["/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Architecture Case Studies & System Blueprints | NEXVORA Technologies",
+    description:
+      "Explore production-grade architectures and case studies across lakehouses, medical computer vision, telephony CRM, biometric ERP integration, and multi-agent RAG.",
+    images: ["/og-image.png"],
   },
 };
 
 export default function ProjectsPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: siteConfig.url,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Case Studies & Architecture",
+            item: `${siteConfig.url}/projects`,
+          },
+        ],
+      },
+      {
+        "@type": "CollectionPage",
+        name: "Architecture Case Studies & System Blueprints",
+        description:
+          "Production-grade technical case studies and architectural reference designs engineered by NEXVORA Technologies.",
+        url: `${siteConfig.url}/projects`,
+        hasPart: projectsData.map((p) => ({
+          "@type": "CreativeWork",
+          name: p.title,
+          headline: p.title,
+          description: p.summary,
+          url: `${siteConfig.url}/projects/${p.slug}`,
+          image: p.images[0] ? `${siteConfig.url}${p.images[0]}` : undefined,
+          keywords: p.technologies.join(", "),
+        })),
+      },
+    ],
+  };
+
   return (
     <div className="w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Header Banner */}
       <section className="bg-navy-950 text-white pt-32 pb-20 border-b border-navy-700">
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
