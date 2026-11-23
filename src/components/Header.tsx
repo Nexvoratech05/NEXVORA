@@ -115,6 +115,19 @@ export function Header() {
 
         {/* Center / Right Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Main Navigation">
+          {/* Home Link */}
+          <Link
+            href="/"
+            className={`px-3.5 py-2 text-sm font-medium transition-colors relative rounded-md text-white/90 hover:text-white ${
+              pathname === "/" ? "text-white" : ""
+            }`}
+          >
+            Home
+            {pathname === "/" && (
+              <span className="absolute bottom-0 left-3.5 right-3.5 h-[2px] bg-cyan-400 rounded-full" />
+            )}
+          </Link>
+
           {/* Services Dropdown */}
           <div
             ref={dropdownRef}
@@ -293,6 +306,17 @@ export function Header() {
 
           {/* Navigation Links with Accordion for Services */}
           <div className="px-6 py-6 space-y-4 flex-1">
+            {/* Home Link */}
+            <Link
+              href="/"
+              className={`block py-2 text-lg font-semibold border-b border-navy-700/50 ${
+                pathname === "/" ? "text-cyan-400" : "text-white"
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Home
+            </Link>
+
             {/* Services Accordion */}
             <div>
               <button
