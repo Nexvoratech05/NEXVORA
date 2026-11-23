@@ -1,98 +1,151 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" class="w-full h-full">
   <rect width="800" height="500" fill="#0C1F38" rx="12"/>
   <defs>
-    <pattern id="diagGrid3" width="30" height="30" patternUnits="userSpaceOnUse">
-      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1B3558" stroke-width="0.5" stroke-opacity="0.6"/>
+    <pattern id="grid3" width="25" height="25" patternUnits="userSpaceOnUse">
+      <path d="M 25 0 L 0 0 0 25" fill="none" stroke="#162D4D" stroke-width="0.5"/>
     </pattern>
+    <radialGradient id="starPulse" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C084FC"/>
+      <stop offset="60%" stop-color="#9333EA"/>
+      <stop offset="100%" stop-color="#071426" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <rect width="800" height="500" fill="url(#diagGrid3)" rx="12"/>
+  <rect width="800" height="500" fill="url(#grid3)" rx="12"/>
 
   <!-- Window Header -->
-  <rect x="40" y="30" width="720" height="40" rx="6" fill="#071426" stroke="#1B3558"/>
-  <circle cx="65" cy="50" r="5" fill="#EF4444"/>
-  <circle cx="82" cy="50" r="5" fill="#F59E0B"/>
-  <circle cx="99" cy="50" r="5" fill="#10B981"/>
-  <text x="120" y="55" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="12" font-weight="600" letter-spacing="0.05em">DIVISION 03 — GENERATIVE AI &amp; MULTI-AGENT SYSTEMS</text>
+  <rect x="30" y="24" width="740" height="38" rx="7" fill="#071426" stroke="#1B3558"/>
+  <circle cx="54" cy="43" r="5" fill="#EF4444"/>
+  <circle cx="70" cy="43" r="5" fill="#F59E0B"/>
+  <circle cx="86" cy="43" r="5" fill="#10B981"/>
+  <text x="110" y="47" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="12" font-weight="700" letter-spacing="0.05em">GENERATIVE AI &amp; MULTI-AGENT RAG SYSTEMS</text>
 
-  <!-- Knowledge Corpus -->
-  <rect x="40" y="100" width="170" height="270" rx="8" fill="#071426" stroke="#1B3558"/>
-  <text x="125" y="125" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle">COMPANY KNOWLEDGE</text>
+  <!-- Left: Knowledge Corpus with Document Icon -->
+  <rect x="30" y="80" width="180" height="295" rx="10" fill="#071426" stroke="#1B3558"/>
+  <text x="120" y="108" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle">ENTERPRISE KNOWLEDGE</text>
 
-  <rect x="55" y="145" width="140" height="42" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="125" y="165" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">PDFs &amp; Documentation</text>
-  <text x="125" y="178" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Markdown &amp; Internal Wikis</text>
+  <!-- Document Intelligence Graphic (matching Image 2 style) -->
+  <rect x="45" y="125" width="150" height="110" rx="7" fill="#0C1F38" stroke="#1B3558"/>
+  <!-- File/Document Icon with Folded Corner -->
+  <g transform="translate(60, 140)">
+    <path d="M4 0 H26 L36 10 V46 H4 Z" fill="#162D4D" stroke="#00D2FF" stroke-width="1.5"/>
+    <path d="M26 0 V10 H36" fill="none" stroke="#00D2FF" stroke-width="1.5"/>
+    <!-- Document lines -->
+    <line x1="10" y1="18" x2="30" y2="18" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+    <line x1="10" y1="26" x2="30" y2="26" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="10" y1="34" x2="24" y2="34" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <text x="112" y="160" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="700">Enterprise Corpus</text>
+  <text x="112" y="176" fill="#00D2FF" font-family="'Inter', sans-serif" font-size="9">PDFs, Contracts</text>
+  <text x="112" y="190" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8">Markdown &amp; Wikis</text>
+  <text x="112" y="215" fill="#10B981" font-family="'Inter', sans-serif" font-size="9" font-weight="600">Recursive Chunks</text>
 
-  <rect x="55" y="200" width="140" height="42" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="125" y="220" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">ERP &amp; CRM Schemas</text>
-  <text x="125" y="233" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Relational Entities</text>
+  <!-- Vector DB pgvector Icon Card -->
+  <rect x="45" y="248" width="150" height="112" rx="7" fill="#0C1F38" stroke="#A855F7"/>
+  <!-- Vector Points Constellation Icon -->
+  <g transform="translate(56, 260)">
+    <circle cx="16" cy="18" r="14" fill="#162D4D" stroke="#A855F7" stroke-width="1"/>
+    <line x1="10" y1="12" x2="22" y2="14" stroke="#C084FC" stroke-width="1"/>
+    <line x1="10" y1="12" x2="14" y2="24" stroke="#C084FC" stroke-width="1"/>
+    <line x1="22" y1="14" x2="14" y2="24" stroke="#C084FC" stroke-width="1"/>
+    <circle cx="10" cy="12" r="3" fill="#00D2FF"/>
+    <circle cx="22" cy="14" r="3" fill="#C084FC"/>
+    <circle cx="14" cy="24" r="3" fill="#F59E0B"/>
+  </g>
+  <text x="96" y="275" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="700">pgvector DB</text>
+  <text x="96" y="291" fill="#C084FC" font-family="'Inter', sans-serif" font-size="9">Dense Embeddings</text>
+  <text x="56" y="325" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9">Cosine Similarity Search</text>
+  <text x="56" y="342" fill="#10B981" font-family="'Inter', sans-serif" font-size="8">Sub-50ms Vector Query</text>
 
-  <rect x="55" y="255" width="140" height="42" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="125" y="275" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Semantic Chunking</text>
-  <text x="125" y="288" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Recursive Token Splitter</text>
+  <!-- Connector Flow -->
+  <path d="M210 227 L250 227" stroke="#C084FC" stroke-width="2" stroke-dasharray="4 2"/>
+  <circle cx="230" cy="227" r="4" fill="#C084FC"/>
 
-  <rect x="55" y="310" width="140" height="42" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="125" y="330" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">pgvector Embeddings</text>
-  <text x="125" y="343" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Dense Vector Indices</text>
+  <!-- Center: Agentic Core with Glowing 8-Point Star (matching Image 2 Card 3) -->
+  <rect x="250" y="80" width="300" height="295" rx="10" fill="#071426" stroke="#A855F7" stroke-width="1.5"/>
+  <text x="400" y="108" fill="#C084FC" font-family="'Inter', sans-serif" font-size="12" font-weight="700" text-anchor="middle">AUTONOMOUS MULTI-AGENT CORE</text>
 
-  <path d="M210 235 L260 235" stroke="#55B9FF" stroke-width="2" stroke-dasharray="4 2"/>
+  <!-- Glowing Agent Star Graphic (Iconic symbol from Image 2) -->
+  <g transform="translate(350, 130)">
+    <circle cx="50" cy="50" r="45" fill="url(#starPulse)"/>
+    <circle cx="50" cy="50" r="32" fill="#162D4D" stroke="#A855F7" stroke-width="2"/>
+    <!-- 8-Point Agent Star -->
+    <path d="M50 24 L54 44 L74 50 L54 56 L50 76 L46 56 L26 50 L46 44 Z" fill="#00D2FF"/>
+    <circle cx="50" cy="50" r="5" fill="#FFFFFF"/>
+  </g>
+  <text x="400" y="245" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="12" font-weight="800" text-anchor="middle">Agent Workflow Orchestration</text>
+  <text x="400" y="262" fill="#C084FC" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Dynamic Tool Calling • Reasoning Loop</text>
 
-  <!-- RAG & Agentic Core -->
-  <rect x="260" y="100" width="280" height="270" rx="10" fill="#071426" stroke="#087BCE" stroke-width="1.5"/>
-  <text x="400" y="125" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle">AGENTIC ORCHESTRATION &amp; RAG</text>
+  <!-- Hybrid Search & Citation Strip -->
+  <rect x="270" y="278" width="260" height="42" rx="6" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="285" y="296" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="700">BM25 + Dense RAG Reranking</text>
+  <text x="285" y="310" fill="#10B981" font-family="'Inter', sans-serif" font-size="9">Zero-Hallucination Citation Enforced</text>
 
-  <rect x="280" y="145" width="240" height="48" rx="6" fill="#0C1F38" stroke="#087BCE" stroke-width="1.5"/>
-  <text x="300" y="165" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="700">Hybrid Search &amp; Cross-Encoder</text>
-  <text x="300" y="180" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9">BM25 Lexical + Cosine Similarity Rerank</text>
+  <!-- Privacy VPC Shield Strip -->
+  <rect x="270" y="328" width="260" height="32" rx="5" fill="#162D4D" stroke="#10B981" stroke-width="0.8"/>
+  <text x="400" y="348" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">🔒 Strict Private VPC • Zero Data Retention</text>
 
-  <path d="M400 193 L400 203" stroke="#087BCE" stroke-width="2"/>
+  <!-- Flow Connector -->
+  <path d="M550 227 L590 227" stroke="#00D2FF" stroke-width="2" stroke-dasharray="4 2"/>
+  <circle cx="570" cy="227" r="4" fill="#00D2FF"/>
 
-  <rect x="280" y="205" width="240" height="48" rx="6" fill="#0C1F38" stroke="#A855F7" stroke-width="1.5"/>
-  <text x="300" y="225" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="700">Autonomous Multi-Agent Loops</text>
-  <text x="300" y="240" fill="#C084FC" font-family="'Inter', sans-serif" font-size="9">Tool Calling • Planning • Verification Gates</text>
+  <!-- Right: Delivery Channels & Output Action Cards -->
+  <rect x="590" y="80" width="180" height="295" rx="10" fill="#071426" stroke="#1B3558"/>
+  <text x="680" y="108" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle">ACTION CHANNELS</text>
 
-  <path d="M400 253 L400 263" stroke="#087BCE" stroke-width="2"/>
+  <!-- Executive Copilot Card -->
+  <rect x="605" y="130" width="150" height="66" rx="6" fill="#0C1F38" stroke="#C084FC"/>
+  <!-- Chat Bubble with Sparkles Icon -->
+  <g transform="translate(615, 142)">
+    <rect width="28" height="24" rx="4" fill="#162D4D" stroke="#C084FC" stroke-width="1.2"/>
+    <path d="M10 24 L6 30 L16 24 Z" fill="#162D4D"/>
+    <circle cx="9" cy="12" r="2" fill="#00D2FF"/>
+    <circle cx="14" cy="12" r="2" fill="#00D2FF"/>
+    <circle cx="19" cy="12" r="2" fill="#00D2FF"/>
+  </g>
+  <text x="652" y="156" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="700">AI Copilot</text>
+  <text x="652" y="172" fill="#C084FC" font-family="'Inter', sans-serif" font-size="9">Internal Chat Companion</text>
+  <text x="652" y="186" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8">Verified Answers</text>
 
-  <rect x="280" y="265" width="240" height="48" rx="6" fill="#0C1F38" stroke="#10B981" stroke-width="1.5"/>
-  <text x="300" y="285" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="700">Enterprise LLMs &amp; Strict VPC</text>
-  <text x="300" y="300" fill="#10B981" font-family="'Inter', sans-serif" font-size="9">Zero Data Retention • Citation Enforced</text>
+  <!-- ERP Tool Mutation Card -->
+  <rect x="605" y="208" width="150" height="66" rx="6" fill="#0C1F38" stroke="#10B981"/>
+  <!-- Tool Wrench / Database Icon -->
+  <g transform="translate(615, 222)">
+    <circle cx="14" cy="14" r="12" fill="#162D4D" stroke="#10B981" stroke-width="1.2"/>
+    <path d="M9 14 L12 17 L19 10" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <text x="652" y="234" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="700">Tool Execution</text>
+  <text x="652" y="250" fill="#10B981" font-family="'Inter', sans-serif" font-size="9">CRM &amp; ERP Actions</text>
+  <text x="652" y="264" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8">Audited API Mutators</text>
 
-  <rect x="280" y="325" width="240" height="30" rx="4" fill="#1B3558"/>
-  <text x="400" y="344" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Redis Semantic Caching &amp; Latency Guard</text>
+  <!-- Document Extraction Report Card -->
+  <rect x="605" y="286" width="150" height="66" rx="6" fill="#0C1F38" stroke="#F59E0B"/>
+  <g transform="translate(615, 300)">
+    <!-- Report Bar Chart Icon -->
+    <rect width="26" height="26" rx="3" fill="#162D4D" stroke="#F59E0B" stroke-width="1"/>
+    <line x1="6" y1="20" x2="6" y2="12" stroke="#F59E0B" stroke-width="2"/>
+    <line x1="13" y1="20" x2="13" y2="8" stroke="#FCD34D" stroke-width="2"/>
+    <line x1="20" y1="20" x2="20" y2="15" stroke="#F59E0B" stroke-width="2"/>
+  </g>
+  <text x="652" y="312" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="700">Doc Insights</text>
+  <text x="652" y="328" fill="#FCD34D" font-family="'Inter', sans-serif" font-size="9">Structured JSON</text>
+  <text x="652" y="342" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8">Contract Summaries</text>
 
-  <path d="M540 235 L590 235" stroke="#55B9FF" stroke-width="2" stroke-dasharray="4 2"/>
+  <!-- Bottom Capability Badges -->
+  <rect x="30" y="395" width="740" height="80" rx="8" fill="#071426" stroke="#1B3558"/>
+  <text x="50" y="420" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11" font-weight="700">CORE DIVISION TECHNOLOGIES &amp; PROTOCOLS:</text>
 
-  <!-- Enterprise Actions & Outputs -->
-  <rect x="590" y="100" width="170" height="270" rx="8" fill="#071426" stroke="#1B3558"/>
-  <text x="675" y="125" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle">ACTION CHANNELS</text>
+  <rect x="50" y="432" width="130" height="26" rx="5" fill="#0C1F38" stroke="#C084FC"/>
+  <text x="115" y="449" fill="#C084FC" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">OpenAI &amp; Gemini APIs</text>
 
-  <rect x="605" y="150" width="140" height="50" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="675" y="172" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Enterprise Assistants</text>
-  <text x="675" y="188" fill="#C084FC" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Chatbots &amp; Copilots</text>
+  <rect x="195" y="432" width="130" height="26" rx="5" fill="#0C1F38" stroke="#00D2FF"/>
+  <text x="260" y="449" fill="#00D2FF" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Multi-Agent Loops</text>
 
-  <rect x="605" y="215" width="140" height="50" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="675" y="237" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Automated Actions</text>
-  <text x="675" y="253" fill="#10B981" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">ERP &amp; CRM Mutation Tools</text>
+  <rect x="340" y="432" width="130" height="26" rx="5" fill="#0C1F38" stroke="#A855F7"/>
+  <text x="405" y="449" fill="#C084FC" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">pgvector Similarity</text>
 
-  <rect x="605" y="280" width="140" height="50" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="675" y="302" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Document Audits</text>
-  <text x="675" y="318" fill="#FCD34D" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">PDF &amp; Contract Extraction</text>
+  <rect x="485" y="432" width="130" height="26" rx="5" fill="#0C1F38" stroke="#10B981"/>
+  <text x="550" y="449" fill="#10B981" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Zero Data Retention</text>
 
-  <!-- Bottom Spec Pills -->
-  <rect x="40" y="400" width="720" height="60" rx="8" fill="#071426" stroke="#1B3558"/>
-  <text x="60" y="425" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10" font-weight="600">CORE CAPABILITIES:</text>
-  
-  <rect x="60" y="433" width="130" height="18" rx="4" fill="#0C1F38" stroke="#087BCE"/>
-  <text x="125" y="446" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" font-weight="600" text-anchor="middle">Enterprise LLM APIs</text>
-
-  <rect x="200" y="433" width="130" height="18" rx="4" fill="#0C1F38" stroke="#087BCE"/>
-  <text x="265" y="446" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" font-weight="600" text-anchor="middle">Multi-Agent RAG</text>
-
-  <rect x="340" y="433" width="130" height="18" rx="4" fill="#0C1F38" stroke="#087BCE"/>
-  <text x="405" y="446" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" font-weight="600" text-anchor="middle">pgvector Similarity</text>
-
-  <rect x="480" y="433" width="130" height="18" rx="4" fill="#0C1F38" stroke="#087BCE"/>
-  <text x="545" y="446" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" font-weight="600" text-anchor="middle">Autonomous Tools</text>
-
-  <rect x="620" y="433" width="125" height="18" rx="4" fill="#0C1F38" stroke="#087BCE"/>
-  <text x="682" y="446" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" font-weight="600" text-anchor="middle">Private VPC Guardrails</text>
+  <rect x="630" y="432" width="125" height="26" rx="5" fill="#0C1F38" stroke="#F59E0B"/>
+  <text x="692" y="449" fill="#FCD34D" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Redis Semantic Cache</text>
 </svg>

@@ -1,103 +1,168 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" class="w-full h-full">
   <rect width="800" height="500" fill="#0C1F38" rx="12"/>
   <defs>
-    <pattern id="diagGrid2" width="30" height="30" patternUnits="userSpaceOnUse">
-      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1B3558" stroke-width="0.5" stroke-opacity="0.6"/>
+    <pattern id="grid2" width="25" height="25" patternUnits="userSpaceOnUse">
+      <path d="M 25 0 L 0 0 0 25" fill="none" stroke="#162D4D" stroke-width="0.5"/>
     </pattern>
-    <radialGradient id="gradcamG" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#EF4444" stop-opacity="0.9"/>
-      <stop offset="60%" stop-color="#F59E0B" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#0C1F38" stop-opacity="0"/>
+    <radialGradient id="heatRadial" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="45%" stop-color="#F59E0B"/>
+      <stop offset="75%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#071426" stop-opacity="0"/>
     </radialGradient>
   </defs>
-  <rect width="800" height="500" fill="url(#diagGrid2)" rx="12"/>
+  <rect width="800" height="500" fill="url(#grid2)" rx="12"/>
 
   <!-- Window Header -->
-  <rect x="40" y="30" width="720" height="40" rx="6" fill="#071426" stroke="#1B3558"/>
-  <circle cx="65" cy="50" r="5" fill="#EF4444"/>
-  <circle cx="82" cy="50" r="5" fill="#F59E0B"/>
-  <circle cx="99" cy="50" r="5" fill="#10B981"/>
-  <text x="120" y="55" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="12" font-weight="600" letter-spacing="0.05em">DIVISION 02 — ARTIFICIAL INTELLIGENCE &amp; VISION</text>
+  <rect x="30" y="24" width="740" height="38" rx="7" fill="#071426" stroke="#1B3558"/>
+  <circle cx="54" cy="43" r="5" fill="#EF4444"/>
+  <circle cx="70" cy="43" r="5" fill="#F59E0B"/>
+  <circle cx="86" cy="43" r="5" fill="#10B981"/>
+  <text x="110" y="47" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="12" font-weight="700" letter-spacing="0.05em">ARTIFICIAL INTELLIGENCE &amp; COMPUTER VISION PIPELINE</text>
 
-  <!-- Input Feeds -->
-  <rect x="40" y="100" width="170" height="270" rx="8" fill="#071426" stroke="#1B3558"/>
-  <text x="125" y="125" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle">DATA &amp; VISUAL FEEDS</text>
+  <!-- Left: Medical & Visual Feeds with Illustrated Scan Target -->
+  <rect x="30" y="80" width="210" height="295" rx="10" fill="#071426" stroke="#1B3558"/>
+  <text x="135" y="108" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle">OPTICAL &amp; RADIOGRAPH INPUTS</text>
 
-  <rect x="55" y="145" width="140" height="42" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="125" y="165" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Medical DICOM / X-Rays</text>
-  <text x="125" y="178" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Anterior-Posterior Radiographs</text>
+  <!-- X-Ray Scanner Graphic Container -->
+  <rect x="45" y="125" width="180" height="155" rx="8" fill="#0C1F38" stroke="#00D2FF" stroke-width="1.2"/>
+  <!-- Scanning Corner Brackets -->
+  <path d="M55 145 H65 M55 145 V155" stroke="#00D2FF" stroke-width="2"/>
+  <path d="M215 145 H205 M215 145 V155" stroke="#00D2FF" stroke-width="2"/>
+  <path d="M55 265 H65 M55 265 V255" stroke="#00D2FF" stroke-width="2"/>
+  <path d="M215 265 H205 M215 265 V255" stroke="#00D2FF" stroke-width="2"/>
 
-  <rect x="55" y="200" width="140" height="42" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="125" y="220" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Industrial Camera Feeds</text>
-  <text x="125" y="233" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Defect &amp; Quality Inspection</text>
+  <!-- Knee Joint / Bone Contour Silhouette Icon -->
+  <g transform="translate(100, 150)">
+    <path d="M15 10 C25 10, 32 18, 32 35 C32 46, 25 50, 18 55 C25 60, 32 64, 32 75 C32 92, 25 100, 15 100" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+    <path d="M55 10 C45 10, 38 18, 38 35 C38 46, 45 50, 52 55 C45 60, 38 64, 38 75 C38 92, 45 100, 55 100" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+    <!-- Joint Gap Target Glow -->
+    <ellipse cx="35" cy="55" rx="14" ry="7" fill="#00D2FF" fill-opacity="0.35" stroke="#00D2FF" stroke-width="1.5"/>
+    <circle cx="35" cy="55" r="3" fill="#00D2FF"/>
+  </g>
+  <text x="135" y="270" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">DICOM Radiograph / Camera</text>
 
-  <rect x="55" y="255" width="140" height="42" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="125" y="275" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Time-Series Signals</text>
-  <text x="125" y="288" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Forecasting &amp; Risk Metrics</text>
+  <!-- Input Spec Card -->
+  <rect x="45" y="295" width="180" height="65" rx="6" fill="#0C1F38" stroke="#1B3558"/>
+  <text x="55" y="315" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600">Spatial Preprocessing</text>
+  <text x="55" y="330" fill="#10B981" font-family="'Inter', sans-serif" font-size="9">Auto-Cropping &amp; CLAHE Norm</text>
+  <text x="55" y="345" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8">512x512 High-Resolution Tensor</text>
 
-  <rect x="55" y="310" width="140" height="42" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="125" y="330" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Text &amp; Sequence Logs</text>
-  <text x="125" y="343" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">NLP &amp; Entity Classification</text>
+  <!-- Flow Connector -->
+  <path d="M240 227 L270 227" stroke="#00D2FF" stroke-width="2" stroke-dasharray="4 2"/>
+  <circle cx="255" cy="227" r="4" fill="#00D2FF"/>
 
-  <path d="M210 235 L260 235" stroke="#55B9FF" stroke-width="2" stroke-dasharray="4 2"/>
+  <!-- Center: Neural Network Architecture & Explainability Visuals -->
+  <rect x="270" y="80" width="280" height="295" rx="10" fill="#071426" stroke="#00D2FF" stroke-width="1.5"/>
+  <text x="410" y="108" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="12" font-weight="700" text-anchor="middle">DEEP LEARNING &amp; EXPLAINABILITY</text>
 
-  <!-- Neural Processing Backbone -->
-  <rect x="260" y="100" width="280" height="270" rx="10" fill="#071426" stroke="#087BCE" stroke-width="1.5"/>
-  <text x="400" y="125" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle">DEEP LEARNING BACKBONE</text>
+  <!-- Neural Network Mesh Graphic -->
+  <g transform="translate(290, 125)">
+    <rect width="240" height="100" rx="7" fill="#0C1F38" stroke="#087BCE" stroke-width="1.2"/>
+    <!-- Synapse lines -->
+    <line x1="35" y1="30" x2="90" y2="20" stroke="#162D4D" stroke-width="1.5"/>
+    <line x1="35" y1="30" x2="90" y2="50" stroke="#00D2FF" stroke-width="1"/>
+    <line x1="35" y1="50" x2="90" y2="20" stroke="#162D4D" stroke-width="1"/>
+    <line x1="35" y1="50" x2="90" y2="50" stroke="#00D2FF" stroke-width="1.5"/>
+    <line x1="35" y1="70" x2="90" y2="50" stroke="#00D2FF" stroke-width="1"/>
+    <line x1="35" y1="70" x2="90" y2="80" stroke="#162D4D" stroke-width="1"/>
 
-  <rect x="280" y="145" width="240" height="48" rx="6" fill="#0C1F38" stroke="#087BCE" stroke-width="1.5"/>
-  <text x="300" y="165" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="700">ResNet-50 &amp; Vision Transformers</text>
-  <text x="300" y="180" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9">Multi-Scale Spatial Feature Maps</text>
+    <line x1="90" y1="20" x2="150" y2="35" stroke="#00D2FF" stroke-width="1"/>
+    <line x1="90" y1="50" x2="150" y2="35" stroke="#00D2FF" stroke-width="1.5"/>
+    <line x1="90" y1="50" x2="150" y2="65" stroke="#00D2FF" stroke-width="1"/>
+    <line x1="90" y1="80" x2="150" y2="65" stroke="#162D4D" stroke-width="1"/>
 
-  <path d="M400 193 L400 203" stroke="#087BCE" stroke-width="2"/>
+    <line x1="150" y1="35" x2="205" y2="50" stroke="#10B981" stroke-width="1.5"/>
+    <line x1="150" y1="65" x2="205" y2="50" stroke="#10B981" stroke-width="1.5"/>
 
-  <rect x="280" y="205" width="240" height="48" rx="6" fill="#0C1F38" stroke="#10B981" stroke-width="1.5"/>
-  <text x="300" y="225" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="700">Grad-CAM Model Explainability</text>
-  <text x="300" y="240" fill="#10B981" font-family="'Inter', sans-serif" font-size="9">Class Activation Maps &amp; Heatmaps</text>
+    <!-- Nodes: Layer 1 (Input) -->
+    <circle cx="35" cy="30" r="6" fill="#0C1F38" stroke="#55B9FF" stroke-width="2"/>
+    <circle cx="35" cy="50" r="6" fill="#0C1F38" stroke="#55B9FF" stroke-width="2"/>
+    <circle cx="35" cy="70" r="6" fill="#0C1F38" stroke="#55B9FF" stroke-width="2"/>
 
-  <path d="M400 253 L400 263" stroke="#087BCE" stroke-width="2"/>
+    <!-- Nodes: Layer 2 (ResNet Conv) -->
+    <circle cx="90" cy="20" r="6" fill="#0C1F38" stroke="#00D2FF" stroke-width="2"/>
+    <circle cx="90" cy="50" r="7" fill="#00D2FF"/>
+    <circle cx="90" cy="80" r="6" fill="#0C1F38" stroke="#00D2FF" stroke-width="2"/>
 
-  <rect x="280" y="265" width="240" height="48" rx="6" fill="#0C1F38" stroke="#F59E0B" stroke-width="1.5"/>
-  <text x="300" y="285" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="700">Multi-Class Severity Grading</text>
-  <text x="300" y="300" fill="#FCD34D" font-family="'Inter', sans-serif" font-size="9">Kellgren-Lawrence KL0 - KL4 Output</text>
+    <!-- Nodes: Layer 3 (ViT Attention) -->
+    <circle cx="150" cy="35" r="7" fill="#00D2FF"/>
+    <circle cx="150" cy="65" r="6" fill="#0C1F38" stroke="#00D2FF" stroke-width="2"/>
 
-  <rect x="280" y="325" width="240" height="30" rx="4" fill="#1B3558"/>
-  <text x="400" y="344" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">PyTorch &amp; OpenCV Accelerated Inference</text>
+    <!-- Nodes: Layer 4 (Output Dense) -->
+    <circle cx="205" cy="50" r="8" fill="#10B981"/>
 
-  <path d="M540 235 L590 235" stroke="#55B9FF" stroke-width="2" stroke-dasharray="4 2"/>
+    <text x="120" y="93" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">ResNet-50 + Vision Transformer (ViT)</text>
+  </g>
 
-  <!-- Output Inference API -->
-  <rect x="590" y="100" width="170" height="270" rx="8" fill="#071426" stroke="#1B3558"/>
-  <text x="675" y="125" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle">PRODUCTION INFERENCE</text>
+  <!-- Grad-CAM Visual Heatmap Target Graphic -->
+  <g transform="translate(290, 235)">
+    <rect width="240" height="85" rx="7" fill="#0C1F38" stroke="#F59E0B" stroke-width="1.2"/>
+    <!-- Radar Grad-CAM Target (matching Image 2) -->
+    <circle cx="45" cy="42" r="32" fill="url(#heatRadial)"/>
+    <circle cx="45" cy="42" r="32" fill="none" stroke="#162D4D" stroke-width="1"/>
+    <circle cx="45" cy="42" r="22" fill="none" stroke="#F59E0B" stroke-width="1" stroke-dasharray="3 2"/>
+    <circle cx="45" cy="42" r="10" fill="#EF4444" stroke="#FFFFFF" stroke-width="1.5"/>
+    <circle cx="45" cy="42" r="3" fill="#FFFFFF"/>
 
-  <rect x="605" y="150" width="140" height="50" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="675" y="172" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">FastAPI Endpoints</text>
-  <text x="675" y="188" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">&lt; 200ms Latency</text>
+    <text x="90" y="32" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="700">GRAD-CAM EXPLAINABILITY</text>
+    <text x="90" y="48" fill="#F59E0B" font-family="'Inter', sans-serif" font-size="9" font-weight="600">Visual Joint Heatmap Attention</text>
+    <text x="90" y="64" fill="#10B981" font-family="'Inter', sans-serif" font-size="9">Clinically Interpretable Focus</text>
+  </g>
 
-  <rect x="605" y="215" width="140" height="50" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="675" y="237" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Explainability Visuals</text>
-  <text x="675" y="253" fill="#10B981" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Overlay Heatmap PNGs</text>
+  <!-- Fast Inference Runtime Tag -->
+  <rect x="290" y="332" width="240" height="28" rx="5" fill="#162D4D" stroke="#00D2FF" stroke-width="0.8"/>
+  <text x="410" y="350" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">⚡ PyTorch GPU Accelerated &lt; 150ms</text>
 
-  <rect x="605" y="280" width="140" height="50" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="675" y="302" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Client Integration</text>
-  <text x="675" y="318" fill="#FCD34D" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Android / Web / Cloud</text>
+  <!-- Flow Connector -->
+  <path d="M550 227 L580 227" stroke="#00D2FF" stroke-width="2" stroke-dasharray="4 2"/>
+  <circle cx="565" cy="227" r="4" fill="#00D2FF"/>
 
-  <!-- Bottom Spec Pills -->
-  <rect x="40" y="400" width="720" height="60" rx="8" fill="#071426" stroke="#1B3558"/>
-  <text x="60" y="425" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10" font-weight="600">CORE CAPABILITIES:</text>
+  <!-- Right: Severity Grading & Production API Output -->
+  <rect x="580" y="80" width="190" height="295" rx="10" fill="#071426" stroke="#1B3558"/>
+  <text x="675" y="108" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle">DIAGNOSTIC OUTCOME</text>
+
+  <!-- KL Severity Classification Card (matching Image 2) -->
+  <rect x="595" y="125" width="160" height="110" rx="7" fill="#0C1F38" stroke="#00D2FF" stroke-width="1.5"/>
+  <text x="675" y="145" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9" font-weight="700" text-anchor="middle">KL SEVERITY PREDICTION</text>
   
-  <rect x="60" y="433" width="130" height="18" rx="4" fill="#0C1F38" stroke="#087BCE"/>
-  <text x="125" y="446" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" font-weight="600" text-anchor="middle">PyTorch &amp; TensorFlow</text>
+  <rect x="610" y="155" width="130" height="32" rx="6" fill="#087BCE"/>
+  <text x="675" y="176" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="12" font-weight="800" text-anchor="middle">KL2 — Moderate</text>
+  
+  <text x="675" y="205" fill="#10B981" font-family="'Inter', sans-serif" font-size="10" font-weight="700" text-anchor="middle">98.4% Confidence</text>
+  <text x="675" y="222" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Multi-Class KL0 - KL4</text>
 
-  <rect x="200" y="433" width="130" height="18" rx="4" fill="#0C1F38" stroke="#087BCE"/>
-  <text x="265" y="446" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" font-weight="600" text-anchor="middle">Vision Transformers</text>
+  <!-- FastAPI Output Card -->
+  <rect x="595" y="248" width="160" height="112" rx="7" fill="#0C1F38" stroke="#1B3558"/>
+  <!-- API Lightning Bolt Icon -->
+  <g transform="translate(605, 260)">
+    <rect width="28" height="28" rx="5" fill="#162D4D" stroke="#00D2FF" stroke-width="1"/>
+    <path d="M15 4 L7 16 H14 L13 24 L21 12 H14 Z" fill="#00D2FF"/>
+  </g>
+  <text x="642" y="272" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="700">FastAPI API</text>
+  <text x="642" y="286" fill="#00D2FF" font-family="'Inter', sans-serif" font-size="9">JSON Diagnostics</text>
 
-  <rect x="340" y="433" width="130" height="18" rx="4" fill="#0C1F38" stroke="#087BCE"/>
-  <text x="405" y="446" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" font-weight="600" text-anchor="middle">Grad-CAM Heatmaps</text>
+  <rect x="605" y="300" width="140" height="22" rx="4" fill="#162D4D"/>
+  <text x="675" y="315" fill="#10B981" font-family="monospace" font-size="9" text-anchor="middle">{ "status": "verified" }</text>
+  
+  <text x="675" y="342" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Web &amp; Android Client Delivery</text>
 
-  <rect x="480" y="433" width="130" height="18" rx="4" fill="#0C1F38" stroke="#087BCE"/>
-  <text x="545" y="446" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" font-weight="600" text-anchor="middle">KL Multi-Class Grading</text>
+  <!-- Bottom Capability Badges -->
+  <rect x="30" y="395" width="740" height="80" rx="8" fill="#071426" stroke="#1B3558"/>
+  <text x="50" y="420" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11" font-weight="700">CORE DIVISION TECHNOLOGIES &amp; PROTOCOLS:</text>
 
-  <rect x="620" y="433" width="125" height="18" rx="4" fill="#0C1F38" stroke="#087BCE"/>
-  <text x="682" y="446" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" font-weight="600" text-anchor="middle">Dockerized Inference</text>
+  <rect x="50" y="432" width="130" height="26" rx="5" fill="#0C1F38" stroke="#00D2FF"/>
+  <text x="115" y="449" fill="#00D2FF" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">PyTorch &amp; TensorFlow</text>
+
+  <rect x="195" y="432" width="130" height="26" rx="5" fill="#0C1F38" stroke="#F59E0B"/>
+  <text x="260" y="449" fill="#FCD34D" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Vision Transformers (ViT)</text>
+
+  <rect x="340" y="432" width="130" height="26" rx="5" fill="#0C1F38" stroke="#10B981"/>
+  <text x="405" y="449" fill="#10B981" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Grad-CAM Heatmaps</text>
+
+  <rect x="485" y="432" width="130" height="26" rx="5" fill="#0C1F38" stroke="#00D2FF"/>
+  <text x="550" y="449" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Medical Image AI</text>
+
+  <rect x="630" y="432" width="125" height="26" rx="5" fill="#0C1F38" stroke="#F59E0B"/>
+  <text x="692" y="449" fill="#FCD34D" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">FastAPI Inference</text>
 </svg>

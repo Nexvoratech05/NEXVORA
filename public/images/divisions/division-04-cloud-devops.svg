@@ -1,98 +1,164 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" class="w-full h-full">
   <rect width="800" height="500" fill="#0C1F38" rx="12"/>
   <defs>
-    <pattern id="diagGrid4" width="30" height="30" patternUnits="userSpaceOnUse">
-      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1B3558" stroke-width="0.5" stroke-opacity="0.6"/>
+    <pattern id="grid4" width="25" height="25" patternUnits="userSpaceOnUse">
+      <path d="M 25 0 L 0 0 0 25" fill="none" stroke="#162D4D" stroke-width="0.5"/>
     </pattern>
   </defs>
-  <rect width="800" height="500" fill="url(#diagGrid4)" rx="12"/>
+  <rect width="800" height="500" fill="url(#grid4)" rx="12"/>
 
   <!-- Window Header -->
-  <rect x="40" y="30" width="720" height="40" rx="6" fill="#071426" stroke="#1B3558"/>
-  <circle cx="65" cy="50" r="5" fill="#EF4444"/>
-  <circle cx="82" cy="50" r="5" fill="#F59E0B"/>
-  <circle cx="99" cy="50" r="5" fill="#10B981"/>
-  <text x="120" y="55" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="12" font-weight="600" letter-spacing="0.05em">DIVISION 04 — CLOUD &amp; DEVOPS ENGINEERING</text>
+  <rect x="30" y="24" width="740" height="38" rx="7" fill="#071426" stroke="#1B3558"/>
+  <circle cx="54" cy="43" r="5" fill="#EF4444"/>
+  <circle cx="70" cy="43" r="5" fill="#F59E0B"/>
+  <circle cx="86" cy="43" r="5" fill="#10B981"/>
+  <text x="110" y="47" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="12" font-weight="700" letter-spacing="0.05em">CLOUD INFRASTRUCTURE &amp; AUTOMATED DEVOPS CI/CD</text>
 
-  <!-- IaC & Version Control -->
-  <rect x="40" y="100" width="170" height="270" rx="8" fill="#071426" stroke="#1B3558"/>
-  <text x="125" y="125" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle">DECLARATIVE IaC &amp; GIT</text>
+  <!-- Left: Git & Terraform IaC with Code/Git Branch Icon -->
+  <rect x="30" y="80" width="180" height="295" rx="10" fill="#071426" stroke="#1B3558"/>
+  <text x="120" y="108" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle">DECLARATIVE IaC &amp; GIT</text>
 
-  <rect x="55" y="145" width="140" height="42" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="125" y="165" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">GitHub Repository</text>
-  <text x="125" y="178" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">GitOps Branching Triggers</text>
+  <!-- Git Branch Card -->
+  <rect x="45" y="125" width="150" height="66" rx="6" fill="#0C1F38" stroke="#1B3558"/>
+  <!-- Git Branch Visual Icon -->
+  <g transform="translate(56, 137)">
+    <circle cx="10" cy="8" r="4" fill="#00D2FF"/>
+    <circle cx="10" cy="32" r="4" fill="#00D2FF"/>
+    <circle cx="26" cy="18" r="4" fill="#10B981"/>
+    <line x1="10" y1="12" x2="10" y2="28" stroke="#00D2FF" stroke-width="2"/>
+    <path d="M10 24 C10 18, 26 24, 26 18" fill="none" stroke="#10B981" stroke-width="2"/>
+  </g>
+  <text x="96" y="149" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="700">GitHub Repo</text>
+  <text x="96" y="165" fill="#00D2FF" font-family="'Inter', sans-serif" font-size="9">GitOps Workflow</text>
+  <text x="96" y="179" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8">Trigger on Push</text>
 
-  <rect x="55" y="200" width="140" height="42" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="125" y="220" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Terraform Manifests</text>
-  <text x="125" y="233" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Modular Cloud IaC Modules</text>
+  <!-- Terraform Manifest Card -->
+  <rect x="45" y="202" width="150" height="74" rx="6" fill="#0C1F38" stroke="#1B3558"/>
+  <!-- Terraform Geometric Diamond Icon -->
+  <g transform="translate(56, 216)">
+    <polygon points="6,2 14,8 14,18 6,12" fill="#55B9FF"/>
+    <polygon points="16,8 24,14 24,24 16,18" fill="#087BCE"/>
+    <polygon points="6,16 14,22 14,32 6,26" fill="#A855F7"/>
+  </g>
+  <text x="96" y="226" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="700">Terraform</text>
+  <text x="96" y="242" fill="#A855F7" font-family="'Inter', sans-serif" font-size="9">IaC Declarative</text>
+  <text x="56" y="266" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8">Modular VPC Manifests</text>
 
-  <rect x="55" y="255" width="140" height="42" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="125" y="275" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Multi-Stage Dockerfiles</text>
-  <text x="125" y="288" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Minimal Alpine / Distroless</text>
+  <!-- Docker Container Card -->
+  <rect x="45" y="286" width="150" height="74" rx="6" fill="#0C1F38" stroke="#1B3558"/>
+  <!-- Docker Container 3D Cube Icon -->
+  <g transform="translate(56, 300)">
+    <polygon points="16,4 28,11 16,18 4,11" fill="#55B9FF" stroke="#00D2FF" stroke-width="1"/>
+    <polygon points="4,11 16,18 16,32 4,25" fill="#087BCE" stroke="#00D2FF" stroke-width="1"/>
+    <polygon points="28,11 16,18 16,32 28,25" fill="#162D4D" stroke="#00D2FF" stroke-width="1"/>
+  </g>
+  <text x="96" y="310" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="700">Docker Image</text>
+  <text x="96" y="326" fill="#00D2FF" font-family="'Inter', sans-serif" font-size="9">Multi-Stage Build</text>
+  <text x="56" y="350" fill="#10B981" font-family="'Inter', sans-serif" font-size="8">Trivy Vulnerability Scan</text>
 
-  <rect x="55" y="310" width="140" height="42" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="125" y="330" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Vulnerability Scans</text>
-  <text x="125" y="343" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Trivy &amp; Secret Linting</text>
+  <!-- Flow Connector -->
+  <path d="M210 227 L250 227" stroke="#00D2FF" stroke-width="2" stroke-dasharray="4 2"/>
+  <circle cx="230" cy="227" r="4" fill="#00D2FF"/>
 
-  <path d="M210 235 L260 235" stroke="#55B9FF" stroke-width="2" stroke-dasharray="4 2"/>
+  <!-- Center: CI/CD Pipeline with Glowing Infinity Loop -->
+  <rect x="250" y="80" width="300" height="295" rx="10" fill="#071426" stroke="#00D2FF" stroke-width="1.5"/>
+  <text x="400" y="108" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="12" font-weight="700" text-anchor="middle">AUTOMATED CI/CD ORCHESTRATION</text>
 
-  <!-- CI/CD Orchestration Engine -->
-  <rect x="260" y="100" width="280" height="270" rx="10" fill="#071426" stroke="#087BCE" stroke-width="1.5"/>
-  <text x="400" y="125" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle">AUTOMATED CI/CD &amp; DELIVERY</text>
+  <!-- Infinity CI/CD Loop Illustration -->
+  <g transform="translate(320, 130)">
+    <!-- Infinity Path -->
+    <path d="M50 40 C30 15, 0 15, 0 40 C0 65, 30 65, 50 40 C70 15, 100 15, 100 40 C100 65, 70 65, 50 40 Z" fill="none" stroke="#162D4D" stroke-width="8" stroke-linecap="round"/>
+    <path d="M50 40 C30 15, 0 15, 0 40 C0 65, 30 65, 50 40 C70 15, 100 15, 100 40 C100 65, 70 65, 50 40 Z" fill="none" stroke="#00D2FF" stroke-width="2.5" stroke-dasharray="14 6"/>
+    <!-- Stage Dots on Loop -->
+    <circle cx="0" cy="40" r="7" fill="#00D2FF"/>
+    <circle cx="50" cy="40" r="8" fill="#10B981"/>
+    <circle cx="100" cy="40" r="7" fill="#F59E0B"/>
+    <!-- Center Label -->
+    <text x="50" y="86" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="800" text-anchor="middle">Continuous Delivery</text>
+  </g>
 
-  <rect x="280" y="145" width="240" height="48" rx="6" fill="#0C1F38" stroke="#087BCE" stroke-width="1.5"/>
-  <text x="300" y="165" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="700">GitHub Actions Pipeline</text>
-  <text x="300" y="180" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9">Automated Build, Unit Tests &amp; Lint</text>
+  <!-- Blue-Green Deployment Strip -->
+  <g transform="translate(270, 230)">
+    <rect width="260" height="54" rx="7" fill="#0C1F38" stroke="#10B981" stroke-width="1.2"/>
+    <circle cx="28" cy="27" r="12" fill="#162D4D" stroke="#10B981" stroke-width="1.5"/>
+    <path d="M22 27 L26 31 L34 23" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+    <text x="50" y="24" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="700">Blue-Green Zero-Downtime</text>
+    <text x="50" y="40" fill="#10B981" font-family="'Inter', sans-serif" font-size="9">Automated Health Check Traffic Cutover</text>
+  </g>
 
-  <path d="M400 193 L400 203" stroke="#087BCE" stroke-width="2"/>
+  <!-- Observability Strip -->
+  <g transform="translate(270, 294)">
+    <rect width="260" height="42" rx="7" fill="#0C1F38" stroke="#1B3558"/>
+    <!-- Pulsing waveform -->
+    <path d="M20 21 L35 21 L40 10 L45 32 L50 15 L55 25 L60 21 L80 21" fill="none" stroke="#00D2FF" stroke-width="1.8" stroke-linecap="round"/>
+    <text x="90" y="20" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="700">CloudWatch &amp; Tracing</text>
+    <text x="90" y="34" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9">Real-Time Anomaly &amp; Alert Hooks</text>
+  </g>
 
-  <rect x="280" y="205" width="240" height="48" rx="6" fill="#0C1F38" stroke="#55B9FF" stroke-width="1.5"/>
-  <text x="300" y="225" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="700">Container Image Registry</text>
-  <text x="300" y="240" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="9">AWS ECR / GitHub Container Registry</text>
+  <!-- Infrastructure State Tag -->
+  <rect x="270" y="346" width="260" height="20" rx="4" fill="#162D4D"/>
+  <text x="400" y="360" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Multi-Region CloudFormation &amp; Terraform State</text>
 
-  <path d="M400 253 L400 263" stroke="#087BCE" stroke-width="2"/>
+  <!-- Flow Connector -->
+  <path d="M550 227 L590 227" stroke="#00D2FF" stroke-width="2" stroke-dasharray="4 2"/>
+  <circle cx="570" cy="227" r="4" fill="#00D2FF"/>
 
-  <rect x="280" y="265" width="240" height="48" rx="6" fill="#0C1F38" stroke="#10B981" stroke-width="1.5"/>
-  <text x="300" y="285" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="700">Blue-Green Zero-Downtime</text>
-  <text x="300" y="300" fill="#10B981" font-family="'Inter', sans-serif" font-size="9">Rolling Updates • Health-Check Cutover</text>
+  <!-- Right: Cloud Runtime with Multi-AZ Server Racks -->
+  <rect x="590" y="80" width="180" height="295" rx="10" fill="#071426" stroke="#1B3558"/>
+  <text x="680" y="108" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle">CLOUD RUNTIME</text>
 
-  <rect x="280" y="325" width="240" height="30" rx="4" fill="#1B3558"/>
-  <text x="400" y="344" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">CloudWatch &amp; Prometheus Real-Time Metrics</text>
+  <!-- AWS Multi-AZ VPC Card -->
+  <rect x="605" y="130" width="150" height="66" rx="6" fill="#0C1F38" stroke="#F59E0B"/>
+  <!-- Floating Cloud Icon -->
+  <g transform="translate(615, 142)">
+    <path d="M7 22 C3 22, 0 19, 0 15 C0 11, 4 9, 8 9 C9 4, 15 0, 21 0 C27 0, 32 4, 33 9 C36 9, 40 12, 40 16 C40 20, 37 22, 33 22 Z" fill="#162D4D" stroke="#F59E0B" stroke-width="1.2"/>
+  </g>
+  <text x="662" y="156" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="700">AWS / Azure</text>
+  <text x="662" y="172" fill="#FCD34D" font-family="'Inter', sans-serif" font-size="9">Multi-AZ VPC</text>
+  <text x="662" y="186" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8">Public / Private</text>
 
-  <path d="M540 235 L590 235" stroke="#55B9FF" stroke-width="2" stroke-dasharray="4 2"/>
+  <!-- ECS / EKS Container Cluster Card -->
+  <rect x="605" y="208" width="150" height="66" rx="6" fill="#0C1F38" stroke="#00D2FF"/>
+  <!-- Server Blade Racks Icon -->
+  <g transform="translate(615, 220)">
+    <rect width="32" height="8" rx="2" fill="#162D4D" stroke="#00D2FF" stroke-width="1"/>
+    <circle cx="26" cy="4" r="1.5" fill="#10B981"/>
+    <rect y="11" width="32" height="8" rx="2" fill="#162D4D" stroke="#00D2FF" stroke-width="1"/>
+    <circle cx="26" cy="15" r="1.5" fill="#10B981"/>
+    <rect y="22" width="32" height="8" rx="2" fill="#162D4D" stroke="#00D2FF" stroke-width="1"/>
+    <circle cx="26" cy="26" r="1.5" fill="#00D2FF"/>
+  </g>
+  <text x="658" y="234" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="700">ECS / EKS</text>
+  <text x="658" y="250" fill="#00D2FF" font-family="'Inter', sans-serif" font-size="9">Auto-Scaling Nodes</text>
+  <text x="658" y="264" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8">High-Availability</text>
 
-  <!-- Multi-Cloud Production Runtime -->
-  <rect x="590" y="100" width="170" height="270" rx="8" fill="#071426" stroke="#1B3558"/>
-  <text x="675" y="125" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle">CLOUD RUNTIME</text>
+  <!-- Serverless Lambda & Edge Card -->
+  <rect x="605" y="286" width="150" height="66" rx="6" fill="#0C1F38" stroke="#10B981"/>
+  <g transform="translate(615, 300)">
+    <!-- Lambda Greek Symbol -->
+    <rect width="28" height="28" rx="5" fill="#162D4D" stroke="#10B981" stroke-width="1"/>
+    <path d="M7 22 L13 6 L17 6 L22 22 M13 16 L19 22" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <text x="652" y="312" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="700">Serverless</text>
+  <text x="652" y="328" fill="#10B981" font-family="'Inter', sans-serif" font-size="9">AWS Lambda</text>
+  <text x="652" y="342" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8">DynamoDB &amp; Edge</text>
 
-  <rect x="605" y="150" width="140" height="50" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="675" y="172" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Multi-AZ VPC</text>
-  <text x="675" y="188" fill="#F59E0B" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">AWS &amp; Azure Isolated Subnets</text>
+  <!-- Bottom Capability Badges -->
+  <rect x="30" y="395" width="740" height="80" rx="8" fill="#071426" stroke="#1B3558"/>
+  <text x="50" y="420" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11" font-weight="700">CORE DIVISION TECHNOLOGIES &amp; PROTOCOLS:</text>
 
-  <rect x="605" y="215" width="140" height="50" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="675" y="237" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Container Services</text>
-  <text x="675" y="253" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">ECS / EKS Orchestration</text>
+  <rect x="50" y="432" width="130" height="26" rx="5" fill="#0C1F38" stroke="#00D2FF"/>
+  <text x="115" y="449" fill="#00D2FF" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">AWS &amp; Azure Cloud</text>
 
-  <rect x="605" y="280" width="140" height="50" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="675" y="302" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Serverless &amp; Edge</text>
-  <text x="675" y="318" fill="#10B981" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Lambda, DynamoDB &amp; Cloudflare</text>
+  <rect x="195" y="432" width="130" height="26" rx="5" fill="#0C1F38" stroke="#F59E0B"/>
+  <text x="260" y="449" fill="#FCD34D" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Terraform IaC</text>
 
-  <!-- Bottom Spec Pills -->
-  <rect x="40" y="400" width="720" height="60" rx="8" fill="#071426" stroke="#1B3558"/>
-  <text x="60" y="425" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10" font-weight="600">CORE CAPABILITIES:</text>
-  
-  <rect x="60" y="433" width="130" height="18" rx="4" fill="#0C1F38" stroke="#087BCE"/>
-  <text x="125" y="446" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" font-weight="600" text-anchor="middle">AWS &amp; Azure Multi-AZ</text>
+  <rect x="340" y="432" width="130" height="26" rx="5" fill="#0C1F38" stroke="#10B981"/>
+  <text x="405" y="449" fill="#10B981" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Docker Containerization</text>
 
-  <rect x="200" y="433" width="130" height="18" rx="4" fill="#0C1F38" stroke="#087BCE"/>
-  <text x="265" y="446" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" font-weight="600" text-anchor="middle">Docker Containerization</text>
+  <rect x="485" y="432" width="130" height="26" rx="5" fill="#0C1F38" stroke="#00D2FF"/>
+  <text x="550" y="449" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">GitHub Actions CI/CD</text>
 
-  <rect x="340" y="433" width="130" height="18" rx="4" fill="#0C1F38" stroke="#087BCE"/>
-  <text x="405" y="446" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" font-weight="600" text-anchor="middle">Terraform IaC</text>
-
-  <rect x="480" y="433" width="130" height="18" rx="4" fill="#0C1F38" stroke="#087BCE"/>
-  <text x="545" y="446" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" font-weight="600" text-anchor="middle">GitHub Actions CI/CD</text>
-
-  <rect x="620" y="433" width="125" height="18" rx="4" fill="#0C1F38" stroke="#087BCE"/>
-  <text x="682" y="446" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" font-weight="600" text-anchor="middle">Zero-Downtime Rollout</text>
+  <rect x="630" y="432" width="125" height="26" rx="5" fill="#0C1F38" stroke="#F59E0B"/>
+  <text x="692" y="449" fill="#FCD34D" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Blue-Green Rollout</text>
 </svg>

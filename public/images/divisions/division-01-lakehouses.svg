@@ -1,121 +1,196 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" class="w-full h-full">
   <rect width="800" height="500" fill="#0C1F38" rx="12"/>
   <defs>
-    <pattern id="diagGrid1" width="30" height="30" patternUnits="userSpaceOnUse">
-      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1B3558" stroke-width="0.5" stroke-opacity="0.6"/>
+    <pattern id="grid1" width="25" height="25" patternUnits="userSpaceOnUse">
+      <path d="M 25 0 L 0 0 0 25" fill="none" stroke="#162D4D" stroke-width="0.5"/>
     </pattern>
-    <linearGradient id="bronzeG" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#CD7F32"/>
-      <stop offset="100%" stop-color="#8B4513"/>
+    <linearGradient id="bronzeGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E59866"/>
+      <stop offset="50%" stop-color="#BA4A00"/>
+      <stop offset="100%" stop-color="#6E2C00"/>
     </linearGradient>
-    <linearGradient id="silverG" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#E2E8F0"/>
-      <stop offset="100%" stop-color="#94A3B8"/>
+    <linearGradient id="silverGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F2F4F4"/>
+      <stop offset="50%" stop-color="#BDC3C7"/>
+      <stop offset="100%" stop-color="#7F8C8D"/>
     </linearGradient>
-    <linearGradient id="goldG" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#FCD34D"/>
-      <stop offset="100%" stop-color="#D97706"/>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F9E79F"/>
+      <stop offset="50%" stop-color="#F39C12"/>
+      <stop offset="100%" stop-color="#B9770E"/>
+    </linearGradient>
+    <linearGradient id="cyanSpark" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00D2FF"/>
+      <stop offset="100%" stop-color="#0066FF"/>
     </linearGradient>
   </defs>
-  <rect width="800" height="500" fill="url(#diagGrid1)" rx="12"/>
+  <rect width="800" height="500" fill="url(#grid1)" rx="12"/>
 
   <!-- Window Header -->
-  <rect x="40" y="30" width="720" height="40" rx="6" fill="#071426" stroke="#1B3558"/>
-  <circle cx="65" cy="50" r="5" fill="#EF4444"/>
-  <circle cx="82" cy="50" r="5" fill="#F59E0B"/>
-  <circle cx="99" cy="50" r="5" fill="#10B981"/>
-  <text x="120" y="55" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="12" font-weight="600" letter-spacing="0.05em">DIVISION 01 — DATA ENGINEERING &amp; MEDALLION LAKEHOUSE</text>
+  <rect x="30" y="24" width="740" height="38" rx="7" fill="#071426" stroke="#1B3558"/>
+  <circle cx="54" cy="43" r="5" fill="#EF4444"/>
+  <circle cx="70" cy="43" r="5" fill="#F59E0B"/>
+  <circle cx="86" cy="43" r="5" fill="#10B981"/>
+  <text x="110" y="47" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="12" font-weight="700" letter-spacing="0.05em">DATA ENGINEERING &amp; MEDALLION LAKEHOUSE PIPELINE</text>
 
-  <!-- Sources Column -->
-  <rect x="40" y="100" width="170" height="270" rx="8" fill="#071426" stroke="#1B3558"/>
-  <text x="125" y="125" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle">INGESTION SOURCES</text>
+  <!-- Left: Ingestion Sources with Visual Icons -->
+  <rect x="30" y="80" width="180" height="295" rx="10" fill="#071426" stroke="#1B3558"/>
+  <text x="120" y="108" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle">INGESTION SOURCES</text>
 
-  <rect x="55" y="145" width="140" height="42" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="125" y="165" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Kafka Streams</text>
-  <text x="125" y="178" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Event-Driven Telemetry</text>
+  <!-- Kafka Stream Icon Card -->
+  <rect x="45" y="125" width="150" height="50" rx="6" fill="#0C1F38" stroke="#1B3558"/>
+  <!-- Kafka Logo Symbol -->
+  <circle cx="68" cy="150" r="12" fill="#162D4D" stroke="#00D2FF" stroke-width="1.5"/>
+  <circle cx="68" cy="150" r="4" fill="#00D2FF"/>
+  <path d="M68 142 L68 138 M76 146 L80 144 M74 156 L78 159 M62 156 L58 159 M60 146 L56 144" stroke="#00D2FF" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="92" y="146" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="600">Kafka Streams</text>
+  <text x="92" y="161" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9">Real-Time Events</text>
 
-  <rect x="55" y="200" width="140" height="42" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="125" y="220" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Cloud Storage S3/ADLS</text>
-  <text x="125" y="233" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Auto Loader File Ingestion</text>
+  <!-- Database CDC Icon Card -->
+  <rect x="45" y="185" width="150" height="50" rx="6" fill="#0C1F38" stroke="#1B3558"/>
+  <!-- Database Icon -->
+  <g transform="translate(56, 195)">
+    <ellipse cx="12" cy="6" rx="10" ry="4" fill="#162D4D" stroke="#55B9FF" stroke-width="1.2"/>
+    <path d="M2 6 v12 c0 2.2 4.5 4 10 4 s10 -1.8 10 -4 v-12" fill="none" stroke="#55B9FF" stroke-width="1.2"/>
+    <path d="M2 12 c0 2.2 4.5 4 10 4 s10 -1.8 10 -4" fill="none" stroke="#55B9FF" stroke-width="1.2"/>
+  </g>
+  <text x="92" y="206" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="600">Databases CDC</text>
+  <text x="92" y="221" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9">Postgres / MySQL</text>
 
-  <rect x="55" y="255" width="140" height="42" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="125" y="275" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">OLTP Databases</text>
-  <text x="125" y="288" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">PostgreSQL / MySQL CDC</text>
+  <!-- Cloud Storage S3 Icon Card -->
+  <rect x="45" y="245" width="150" height="50" rx="6" fill="#0C1F38" stroke="#1B3558"/>
+  <!-- Cloud Storage Bucket Icon -->
+  <g transform="translate(56, 255)">
+    <path d="M3 7 L6 20 C6.5 22 17.5 22 18 20 L21 7 Z" fill="#162D4D" stroke="#10B981" stroke-width="1.2"/>
+    <ellipse cx="12" cy="7" rx="9" ry="3" fill="#1B3558" stroke="#10B981" stroke-width="1.2"/>
+  </g>
+  <text x="92" y="266" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="600">Cloud Storage</text>
+  <text x="92" y="281" fill="#10B981" font-family="'Inter', sans-serif" font-size="9">S3 / ADLS AutoLoader</text>
 
-  <rect x="55" y="310" width="140" height="42" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="125" y="330" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">REST APIs &amp; Webhooks</text>
-  <text x="125" y="343" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Batch Ingestion Schedules</text>
+  <!-- Batch API Icon Card -->
+  <rect x="45" y="305" width="150" height="50" rx="6" fill="#0C1F38" stroke="#1B3558"/>
+  <!-- Sync Arrow Icon -->
+  <g transform="translate(57, 318)">
+    <circle cx="11" cy="11" r="9" fill="none" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="8 4"/>
+    <path d="M17 11 L20 14 L20 8 Z" fill="#F59E0B"/>
+  </g>
+  <text x="92" y="326" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="600">REST APIs</text>
+  <text x="92" y="341" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9">Batch Webhooks</text>
 
-  <!-- Connectors -->
-  <path d="M210 235 L260 235" stroke="#55B9FF" stroke-width="2" stroke-dasharray="4 2"/>
+  <!-- Data Flow Conduits -->
+  <path d="M210 227 L250 227" stroke="#00D2FF" stroke-width="2" stroke-dasharray="4 2"/>
+  <circle cx="230" cy="227" r="4" fill="#00D2FF"/>
 
-  <!-- Medallion Lakehouse Engine -->
-  <rect x="260" y="100" width="280" height="270" rx="10" fill="#071426" stroke="#087BCE" stroke-width="1.5"/>
-  <text x="400" y="125" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle">DATABRICKS DELTA LAKEHOUSE</text>
+  <!-- Center: Databricks Medallion Engine -->
+  <rect x="250" y="80" width="300" height="295" rx="10" fill="#071426" stroke="#00D2FF" stroke-width="1.5"/>
+  <text x="400" y="108" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="12" font-weight="700" text-anchor="middle">DATABRICKS DELTA LAKEHOUSE</text>
 
-  <!-- Bronze Layer -->
-  <rect x="280" y="145" width="240" height="48" rx="6" fill="#0C1F38" stroke="#CD7F32" stroke-width="1.5"/>
-  <circle cx="300" cy="169" r="6" fill="#CD7F32"/>
-  <text x="315" y="165" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="700">BRONZE (Raw Storage)</text>
-  <text x="315" y="180" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9">Append-Only Parquet • ACID Audit Logs</text>
+  <!-- Medallion Layer 1: Bronze Cylinder Graphic -->
+  <g transform="translate(270, 130)">
+    <rect width="260" height="52" rx="7" fill="#0C1F38" stroke="#CD7F32" stroke-width="1.5"/>
+    <!-- 3D Bronze Cylinder -->
+    <ellipse cx="26" cy="18" rx="14" ry="6" fill="#E59866" stroke="#BA4A00" stroke-width="1"/>
+    <path d="M12 18 v16 c0 3.3 6.3 6 14 6 s14 -2.7 14 -6 v-16" fill="url(#bronzeGrad)" stroke="#BA4A00" stroke-width="1"/>
+    <ellipse cx="26" cy="34" rx="14" ry="6" fill="none" stroke="#E59866" stroke-width="0.8"/>
+    <text x="50" y="24" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="700">BRONZE LAYER (RAW DATA)</text>
+    <text x="50" y="40" fill="#E59866" font-family="'Inter', sans-serif" font-size="9">Append-Only Ingestion • Schema Validation</text>
+  </g>
 
-  <!-- Flow Arrow -->
-  <path d="M400 193 L400 203" stroke="#087BCE" stroke-width="2"/>
+  <!-- Arrow Down -->
+  <path d="M400 184 L400 196" stroke="#00D2FF" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="400,200 396,194 404,194" fill="#00D2FF"/>
 
-  <!-- Silver Layer -->
-  <rect x="280" y="205" width="240" height="48" rx="6" fill="#0C1F38" stroke="#94A3B8" stroke-width="1.5"/>
-  <circle cx="300" cy="229" r="6" fill="#E2E8F0"/>
-  <text x="315" y="225" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="700">SILVER (Cleansed &amp; Conformed)</text>
-  <text x="315" y="240" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9">Deduplicated • PySpark Transformations</text>
+  <!-- Medallion Layer 2: Silver Cylinder Graphic -->
+  <g transform="translate(270, 202)">
+    <rect width="260" height="52" rx="7" fill="#0C1F38" stroke="#BDC3C7" stroke-width="1.5"/>
+    <!-- 3D Silver Cylinder -->
+    <ellipse cx="26" cy="18" rx="14" ry="6" fill="#F2F4F4" stroke="#7F8C8D" stroke-width="1"/>
+    <path d="M12 18 v16 c0 3.3 6.3 6 14 6 s14 -2.7 14 -6 v-16" fill="url(#silverGrad)" stroke="#7F8C8D" stroke-width="1"/>
+    <ellipse cx="26" cy="34" rx="14" ry="6" fill="none" stroke="#F2F4F4" stroke-width="0.8"/>
+    <text x="50" y="24" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="700">SILVER LAYER (CLEANSED)</text>
+    <text x="50" y="40" fill="#BDC3C7" font-family="'Inter', sans-serif" font-size="9">PySpark Deduplication • Conformed Schemas</text>
+  </g>
 
-  <!-- Flow Arrow -->
-  <path d="M400 253 L400 263" stroke="#087BCE" stroke-width="2"/>
+  <!-- Arrow Down -->
+  <path d="M400 256 L400 268" stroke="#00D2FF" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="400,272 396,266 404,266" fill="#00D2FF"/>
 
-  <!-- Gold Layer -->
-  <rect x="280" y="265" width="240" height="48" rx="6" fill="#0C1F38" stroke="#F59E0B" stroke-width="1.5"/>
-  <circle cx="300" cy="289" r="6" fill="#FCD34D"/>
-  <text x="315" y="285" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="700">GOLD (Curated Aggregates)</text>
-  <text x="315" y="300" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9">Star/Snowflake Schemas • Sub-Second Latency</text>
+  <!-- Medallion Layer 3: Gold Cylinder Graphic -->
+  <g transform="translate(270, 274)">
+    <rect width="260" height="52" rx="7" fill="#0C1F38" stroke="#F39C12" stroke-width="1.5"/>
+    <!-- 3D Gold Cylinder -->
+    <ellipse cx="26" cy="18" rx="14" ry="6" fill="#F9E79F" stroke="#B9770E" stroke-width="1"/>
+    <path d="M12 18 v16 c0 3.3 6.3 6 14 6 s14 -2.7 14 -6 v-16" fill="url(#goldGrad)" stroke="#B9770E" stroke-width="1"/>
+    <ellipse cx="26" cy="34" rx="14" ry="6" fill="none" stroke="#F9E79F" stroke-width="0.8"/>
+    <text x="50" y="24" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="700">GOLD LAYER (AGGREGATES)</text>
+    <text x="50" y="40" fill="#F9E79F" font-family="'Inter', sans-serif" font-size="9">Star Schemas • High-Speed BI Marts</text>
+  </g>
 
-  <!-- Unity Catalog Bar -->
-  <rect x="280" y="325" width="240" height="30" rx="4" fill="#1B3558"/>
-  <text x="400" y="344" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Unity Catalog Governance &amp; Data Lineage</text>
+  <!-- Unity Catalog Lineage Bar -->
+  <rect x="270" y="336" width="260" height="26" rx="5" fill="#162D4D" stroke="#00D2FF" stroke-width="0.8"/>
+  <text x="400" y="353" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">⚡ Unity Catalog Governance &amp; Lineage</text>
 
-  <!-- Connector to Serving -->
-  <path d="M540 235 L590 235" stroke="#55B9FF" stroke-width="2" stroke-dasharray="4 2"/>
+  <!-- Conduit to Analytics -->
+  <path d="M550 227 L590 227" stroke="#00D2FF" stroke-width="2" stroke-dasharray="4 2"/>
+  <circle cx="570" cy="227" r="4" fill="#00D2FF"/>
 
-  <!-- Serving Column -->
-  <rect x="590" y="100" width="170" height="270" rx="8" fill="#071426" stroke="#1B3558"/>
-  <text x="675" y="125" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle">ANALYTICS &amp; BI</text>
+  <!-- Right: BI & Serving Layer with Visual Icons -->
+  <rect x="590" y="80" width="180" height="295" rx="10" fill="#071426" stroke="#1B3558"/>
+  <text x="680" y="108" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle">ANALYTICS &amp; OUTPUT</text>
 
-  <rect x="605" y="150" width="140" height="50" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="675" y="172" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Power BI Dashboards</text>
-  <text x="675" y="188" fill="#FCD34D" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Executive KPI Reports</text>
+  <!-- Power BI Bar Chart Card -->
+  <rect x="605" y="130" width="150" height="66" rx="6" fill="#0C1F38" stroke="#F59E0B"/>
+  <g transform="translate(615, 142)">
+    <!-- Mini Bar Chart -->
+    <rect x="2" y="18" width="6" height="20" fill="#F59E0B" rx="1"/>
+    <rect x="11" y="10" width="6" height="28" fill="#FCD34D" rx="1"/>
+    <rect x="20" y="4" width="6" height="34" fill="#F59E0B" rx="1"/>
+    <rect x="29" y="14" width="6" height="24" fill="#00D2FF" rx="1"/>
+  </g>
+  <text x="658" y="156" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="700">Power BI</text>
+  <text x="658" y="172" fill="#FCD34D" font-family="'Inter', sans-serif" font-size="9">Executive KPIs</text>
+  <text x="658" y="186" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8">Auto-Refresh</text>
 
-  <rect x="605" y="215" width="140" height="50" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="675" y="237" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">SQL Endpoints</text>
-  <text x="675" y="253" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Serverless SQL Warehouses</text>
+  <!-- SQL Endpoint Card -->
+  <rect x="605" y="208" width="150" height="66" rx="6" fill="#0C1F38" stroke="#00D2FF"/>
+  <g transform="translate(615, 222)">
+    <!-- Terminal / SQL Code Icon -->
+    <rect x="0" y="0" width="34" height="26" rx="3" fill="#162D4D" stroke="#00D2FF" stroke-width="1"/>
+    <text x="4" y="16" fill="#00D2FF" font-family="monospace" font-size="11">&gt;_</text>
+  </g>
+  <text x="658" y="234" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="700">SQL Warehouses</text>
+  <text x="658" y="250" fill="#00D2FF" font-family="'Inter', sans-serif" font-size="9">Sub-Second Queries</text>
+  <text x="658" y="264" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8">Serverless Compute</text>
 
-  <rect x="605" y="280" width="140" height="50" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="675" y="302" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">ML Feature Store</text>
-  <text x="675" y="318" fill="#10B981" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Downstream AI Consumption</text>
+  <!-- ML Feature Store Card -->
+  <rect x="605" y="286" width="150" height="66" rx="6" fill="#0C1F38" stroke="#10B981"/>
+  <g transform="translate(615, 300)">
+    <!-- AI Brain / Graph Icon -->
+    <circle cx="16" cy="14" r="10" fill="#162D4D" stroke="#10B981" stroke-width="1"/>
+    <circle cx="16" cy="14" r="3" fill="#10B981"/>
+    <circle cx="10" cy="9" r="2" fill="#55B9FF"/>
+    <circle cx="22" cy="9" r="2" fill="#55B9FF"/>
+  </g>
+  <text x="658" y="312" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="700">ML Features</text>
+  <text x="658" y="328" fill="#10B981" font-family="'Inter', sans-serif" font-size="9">Model Training</text>
+  <text x="658" y="342" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8">Feature Store Hub</text>
 
-  <!-- Bottom Spec Pills -->
-  <rect x="40" y="400" width="720" height="60" rx="8" fill="#071426" stroke="#1B3558"/>
-  <text x="60" y="425" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10" font-weight="600">CORE CAPABILITIES:</text>
-  
-  <rect x="60" y="433" width="130" height="18" rx="4" fill="#0C1F38" stroke="#087BCE"/>
-  <text x="125" y="446" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" font-weight="600" text-anchor="middle">Apache Spark &amp; PySpark</text>
+  <!-- Bottom Capability Badges -->
+  <rect x="30" y="395" width="740" height="80" rx="8" fill="#071426" stroke="#1B3558"/>
+  <text x="50" y="420" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11" font-weight="700">CORE DIVISION TECHNOLOGIES &amp; PROTOCOLS:</text>
 
-  <rect x="200" y="433" width="130" height="18" rx="4" fill="#0C1F38" stroke="#087BCE"/>
-  <text x="265" y="446" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" font-weight="600" text-anchor="middle">Delta Lake Medallion</text>
+  <rect x="50" y="432" width="130" height="26" rx="5" fill="#0C1F38" stroke="#00D2FF"/>
+  <text x="115" y="449" fill="#00D2FF" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Apache Spark / PySpark</text>
 
-  <rect x="340" y="433" width="130" height="18" rx="4" fill="#0C1F38" stroke="#087BCE"/>
-  <text x="405" y="446" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" font-weight="600" text-anchor="middle">Unity Catalog Lineage</text>
+  <rect x="195" y="432" width="130" height="26" rx="5" fill="#0C1F38" stroke="#F59E0B"/>
+  <text x="260" y="449" fill="#FCD34D" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Databricks Delta Lake</text>
 
-  <rect x="480" y="433" width="130" height="18" rx="4" fill="#0C1F38" stroke="#087BCE"/>
-  <text x="545" y="446" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" font-weight="600" text-anchor="middle">Streaming Ingestion</text>
+  <rect x="340" y="432" width="130" height="26" rx="5" fill="#0C1F38" stroke="#10B981"/>
+  <text x="405" y="449" fill="#10B981" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Medallion Architecture</text>
 
-  <rect x="620" y="433" width="125" height="18" rx="4" fill="#0C1F38" stroke="#087BCE"/>
-  <text x="682" y="446" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" font-weight="600" text-anchor="middle">Power BI Modeling</text>
+  <rect x="485" y="432" width="130" height="26" rx="5" fill="#0C1F38" stroke="#00D2FF"/>
+  <text x="550" y="449" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Unity Catalog Lineage</text>
+
+  <rect x="630" y="432" width="125" height="26" rx="5" fill="#0C1F38" stroke="#F59E0B"/>
+  <text x="692" y="449" fill="#FCD34D" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Power BI Analytics</text>
 </svg>

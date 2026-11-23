@@ -1,98 +1,169 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none" class="w-full h-full">
   <rect width="800" height="500" fill="#0C1F38" rx="12"/>
   <defs>
-    <pattern id="diagGrid6" width="30" height="30" patternUnits="userSpaceOnUse">
-      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1B3558" stroke-width="0.5" stroke-opacity="0.6"/>
+    <pattern id="grid6" width="25" height="25" patternUnits="userSpaceOnUse">
+      <path d="M 25 0 L 0 0 0 25" fill="none" stroke="#162D4D" stroke-width="0.5"/>
     </pattern>
   </defs>
-  <rect width="800" height="500" fill="url(#diagGrid6)" rx="12"/>
+  <rect width="800" height="500" fill="url(#grid6)" rx="12"/>
 
   <!-- Window Header -->
-  <rect x="40" y="30" width="720" height="40" rx="6" fill="#071426" stroke="#1B3558"/>
-  <circle cx="65" cy="50" r="5" fill="#EF4444"/>
-  <circle cx="82" cy="50" r="5" fill="#F59E0B"/>
-  <circle cx="99" cy="50" r="5" fill="#10B981"/>
-  <text x="120" y="55" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="12" font-weight="600" letter-spacing="0.05em">DIVISION 06 — BUSINESS AUTOMATION &amp; ENTERPRISE ERP</text>
+  <rect x="30" y="24" width="740" height="38" rx="7" fill="#071426" stroke="#1B3558"/>
+  <circle cx="54" cy="43" r="5" fill="#EF4444"/>
+  <circle cx="70" cy="43" r="5" fill="#F59E0B"/>
+  <circle cx="86" cy="43" r="5" fill="#10B981"/>
+  <text x="110" y="47" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="12" font-weight="700" letter-spacing="0.05em">BUSINESS AUTOMATION &amp; ENTERPRISE ERP INTEGRATION</text>
 
-  <!-- Peripheral Sources & Hardware -->
-  <rect x="40" y="100" width="170" height="270" rx="8" fill="#071426" stroke="#1B3558"/>
-  <text x="125" y="125" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle">HARDWARE &amp; TELEPHONY</text>
+  <!-- Left: Hardware & Telephony with Phone Waveform & Biometric Icons -->
+  <rect x="30" y="80" width="180" height="295" rx="10" fill="#071426" stroke="#1B3558"/>
+  <text x="120" y="108" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle">HARDWARE &amp; TELEPHONY</text>
 
-  <rect x="55" y="145" width="140" height="42" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="125" y="165" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">VICIdial PBX Systems</text>
-  <text x="125" y="178" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Call Audio &amp; Agent Logs</text>
+  <!-- VICIdial Telephony with Audio Waveform Card -->
+  <rect x="45" y="125" width="150" height="110" rx="7" fill="#0C1F38" stroke="#00D2FF" stroke-width="1.2"/>
+  <!-- Telephone Handset Icon -->
+  <g transform="translate(56, 137)">
+    <circle cx="14" cy="14" r="12" fill="#162D4D" stroke="#00D2FF" stroke-width="1"/>
+    <path d="M9 10 C9 15, 13 19, 18 19 L20 17 C20.5 16.5, 20 15, 19 14.5 L17 14 C16.5 13.8, 16 14, 15.5 14.5 C14.5 14, 13 12.5, 12.5 11.5 C13 11, 13.2 10.5, 13 10 L12.5 8 C12 7, 10.5 6.5, 10 7 L8 9 Z" fill="#00D2FF"/>
+  </g>
+  <text x="96" y="152" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="700">VICIdial PBX</text>
+  <text x="96" y="168" fill="#00D2FF" font-family="'Inter', sans-serif" font-size="9">Telephony Gateway</text>
 
-  <rect x="55" y="200" width="140" height="42" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="125" y="220" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Biometric Terminals</text>
-  <text x="125" y="233" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Anviz / Hikvision SDKs</text>
+  <!-- Mini Audio Waveform -->
+  <g transform="translate(56, 185)">
+    <rect width="128" height="38" rx="4" fill="#071426"/>
+    <line x1="8" y1="19" x2="8" y2="19" stroke="#00D2FF" stroke-width="2" stroke-linecap="round"/>
+    <line x1="16" y1="12" x2="16" y2="26" stroke="#00D2FF" stroke-width="2" stroke-linecap="round"/>
+    <line x1="24" y1="6" x2="24" y2="32" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+    <line x1="32" y1="14" x2="32" y2="24" stroke="#00D2FF" stroke-width="2" stroke-linecap="round"/>
+    <line x1="40" y1="4" x2="40" y2="34" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+    <line x1="48" y1="10" x2="48" y2="28" stroke="#00D2FF" stroke-width="2" stroke-linecap="round"/>
+    <line x1="56" y1="16" x2="56" y2="22" stroke="#00D2FF" stroke-width="2" stroke-linecap="round"/>
+    <line x1="64" y1="2" x2="64" y2="36" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+    <line x1="72" y1="12" x2="72" y2="26" stroke="#00D2FF" stroke-width="2" stroke-linecap="round"/>
+    <line x1="80" y1="8" x2="80" y2="30" stroke="#00D2FF" stroke-width="2" stroke-linecap="round"/>
+    <line x1="88" y1="15" x2="88" y2="23" stroke="#00D2FF" stroke-width="2" stroke-linecap="round"/>
+    <line x1="96" y1="6" x2="96" y2="32" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+    <line x1="104" y1="12" x2="104" y2="26" stroke="#00D2FF" stroke-width="2" stroke-linecap="round"/>
+    <line x1="112" y1="18" x2="112" y2="20" stroke="#00D2FF" stroke-width="2" stroke-linecap="round"/>
+    <line x1="120" y1="19" x2="120" y2="19" stroke="#00D2FF" stroke-width="2" stroke-linecap="round"/>
+  </g>
 
-  <rect x="55" y="255" width="140" height="42" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="125" y="275" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">TCP/IP Hardware Sockets</text>
-  <text x="125" y="288" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Real-Time Punch Events</text>
+  <!-- Biometric Terminal Card with Fingerprint Graphic -->
+  <rect x="45" y="248" width="150" height="112" rx="7" fill="#0C1F38" stroke="#10B981"/>
+  <!-- Fingerprint Icon with Glowing Scan Line -->
+  <g transform="translate(56, 260)">
+    <rect width="28" height="34" rx="4" fill="#162D4D" stroke="#10B981" stroke-width="1"/>
+    <!-- Fingerprint ridges -->
+    <path d="M14 8 C10 8, 8 11, 8 16 C8 24, 11 28, 14 28" fill="none" stroke="#10B981" stroke-width="1.2"/>
+    <path d="M14 12 C12 12, 10 14, 10 18 C10 22, 12 24, 14 24" fill="none" stroke="#10B981" stroke-width="1.2"/>
+    <path d="M14 16 C13 16, 12 17, 12 19 C12 21, 13 22, 14 22" fill="none" stroke="#10B981" stroke-width="1.2"/>
+    <!-- Cyan Scan Beam Line -->
+    <line x1="4" y1="18" x2="24" y2="18" stroke="#00D2FF" stroke-width="2"/>
+  </g>
+  <text x="96" y="274" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="700">Biometrics</text>
+  <text x="96" y="290" fill="#10B981" font-family="'Inter', sans-serif" font-size="9">Anviz / Hikvision</text>
+  <text x="56" y="318" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9">TCP/IP Socket Sync</text>
+  <text x="56" y="334" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="8">Real-Time Punch Reconciliation</text>
+  <text x="56" y="348" fill="#F59E0B" font-family="'Inter', sans-serif" font-size="8">Zero Lost Attendance Records</text>
 
-  <rect x="55" y="310" width="140" height="42" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="125" y="330" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">CRM Webhook Streams</text>
-  <text x="125" y="343" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Lead Capture Ingestion</text>
+  <!-- Flow Connector -->
+  <path d="M210 227 L250 227" stroke="#00D2FF" stroke-width="2" stroke-dasharray="4 2"/>
+  <circle cx="230" cy="227" r="4" fill="#00D2FF"/>
 
-  <path d="M210 235 L260 235" stroke="#55B9FF" stroke-width="2" stroke-dasharray="4 2"/>
+  <!-- Center: Business Automation & Integration Engine with Interlocking Gears -->
+  <rect x="250" y="80" width="300" height="295" rx="10" fill="#071426" stroke="#00D2FF" stroke-width="1.5"/>
+  <text x="400" y="108" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="12" font-weight="700" text-anchor="middle">ENTERPRISE AUTOMATION ENGINE</text>
 
-  <!-- Enterprise Automation Engine -->
-  <rect x="260" y="100" width="280" height="270" rx="10" fill="#071426" stroke="#087BCE" stroke-width="1.5"/>
-  <text x="400" y="125" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle">INTEGRATION &amp; AUTOMATION ENGINE</text>
+  <!-- Interlocking Industrial Gears Graphic -->
+  <g transform="translate(325, 125)">
+    <!-- Primary Blue Gear -->
+    <circle cx="45" cy="45" r="30" fill="#162D4D" stroke="#00D2FF" stroke-width="2"/>
+    <circle cx="45" cy="45" r="12" fill="#071426" stroke="#00D2FF" stroke-width="1.5"/>
+    <!-- Gear cogs -->
+    <rect x="41" y="8" width="8" height="10" rx="2" fill="#00D2FF"/>
+    <rect x="41" y="72" width="8" height="10" rx="2" fill="#00D2FF"/>
+    <rect x="8" y="41" width="10" height="8" rx="2" fill="#00D2FF"/>
+    <rect x="72" y="41" width="10" height="8" rx="2" fill="#00D2FF"/>
+    <rect x="18" y="18" width="8" height="8" rx="2" fill="#00D2FF" transform="rotate(45 22 22)"/>
+    <rect x="64" y="64" width="8" height="8" rx="2" fill="#00D2FF" transform="rotate(45 68 68)"/>
+    <rect x="18" y="64" width="8" height="8" rx="2" fill="#00D2FF" transform="rotate(-45 22 68)"/>
+    <rect x="64" y="18" width="8" height="8" rx="2" fill="#00D2FF" transform="rotate(-45 68 22)"/>
 
-  <rect x="280" y="145" width="240" height="48" rx="6" fill="#0C1F38" stroke="#087BCE" stroke-width="1.5"/>
-  <text x="300" y="165" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="700">FastAPI Middleware Sync</text>
-  <text x="300" y="180" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="9">Asynchronous Worker Queues &amp; Retries</text>
+    <!-- Interlocking Gold Gear -->
+    <circle cx="105" cy="55" r="22" fill="#162D4D" stroke="#F59E0B" stroke-width="2"/>
+    <circle cx="105" cy="55" r="8" fill="#071426" stroke="#F59E0B" stroke-width="1.2"/>
+    <rect x="102" y="27" width="6" height="8" rx="1.5" fill="#F59E0B"/>
+    <rect x="102" y="75" width="6" height="8" rx="1.5" fill="#F59E0B"/>
+    <rect x="77" y="52" width="8" height="6" rx="1.5" fill="#F59E0B"/>
+    <rect x="125" y="52" width="8" height="6" rx="1.5" fill="#F59E0B"/>
+  </g>
+  <text x="400" y="235" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="12" font-weight="800" text-anchor="middle">Asynchronous Event Processor</text>
+  <text x="400" y="252" fill="#00D2FF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">FastAPI Middleware • Background Queues</text>
 
-  <path d="M400 193 L400 203" stroke="#087BCE" stroke-width="2"/>
+  <!-- Fuzzy Deduplication Strip -->
+  <g transform="translate(270, 268)">
+    <rect width="260" height="42" rx="7" fill="#0C1F38" stroke="#10B981" stroke-width="1"/>
+    <text x="285" y="286" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="700">Fuzzy Matching Deduplication</text>
+    <text x="285" y="300" fill="#10B981" font-family="'Inter', sans-serif" font-size="9">Levenshtein Distance Contact Cleansing</text>
+  </g>
 
-  <rect x="280" y="205" width="240" height="48" rx="6" fill="#0C1F38" stroke="#10B981" stroke-width="1.5"/>
-  <text x="300" y="225" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="700">Fuzzy Matching Deduplication</text>
-  <text x="300" y="240" fill="#10B981" font-family="'Inter', sans-serif" font-size="9">Levenshtein Distance Contact Cleansing</text>
+  <!-- Odoo Sync Bridge Strip -->
+  <g transform="translate(270, 318)">
+    <rect width="260" height="42" rx="7" fill="#0C1F38" stroke="#F59E0B" stroke-width="1"/>
+    <text x="285" y="336" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="700">Custom Odoo Module Sync</text>
+    <text x="285" y="350" fill="#FCD34D" font-family="'Inter', sans-serif" font-size="9">Automated Payroll &amp; Stock Ledger Sync</text>
+  </g>
 
-  <path d="M400 253 L400 263" stroke="#087BCE" stroke-width="2"/>
+  <!-- Flow Connector -->
+  <path d="M550 227 L590 227" stroke="#00D2FF" stroke-width="2" stroke-dasharray="4 2"/>
+  <circle cx="570" cy="227" r="4" fill="#00D2FF"/>
 
-  <rect x="280" y="265" width="240" height="48" rx="6" fill="#0C1F38" stroke="#F59E0B" stroke-width="1.5"/>
-  <text x="300" y="285" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="700">Custom Odoo Module Sync</text>
-  <text x="300" y="300" fill="#FCD34D" font-family="'Inter', sans-serif" font-size="9">Automated Inventory &amp; Payroll Reconciliation</text>
+  <!-- Right: Operations Layer with QA Scorecards & Live KPI Gauge -->
+  <rect x="590" y="80" width="180" height="295" rx="10" fill="#071426" stroke="#1B3558"/>
+  <text x="680" y="108" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle">OPERATIONS LAYER</text>
 
-  <rect x="280" y="325" width="240" height="30" rx="4" fill="#1B3558"/>
-  <text x="400" y="344" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">PostgreSQL Relational Ledger &amp; Event Sinks</text>
+  <!-- QA Scorecard Live Card -->
+  <rect x="605" y="125" width="150" height="110" rx="7" fill="#0C1F38" stroke="#00D2FF" stroke-width="1.2"/>
+  <!-- Evaluation Scorecard Icon -->
+  <g transform="translate(615, 137)">
+    <rect width="28" height="32" rx="3" fill="#162D4D" stroke="#00D2FF" stroke-width="1"/>
+    <path d="M7 16 L12 21 L21 11" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <text x="652" y="152" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="700">QA CRM Portal</text>
+  <text x="652" y="168" fill="#00D2FF" font-family="'Inter', sans-serif" font-size="9">Agent Scorecards</text>
+  <text x="615" y="195" fill="#FCD34D" font-family="'Inter', sans-serif" font-size="12" font-weight="800">Score: 94.8%</text>
+  <text x="615" y="212" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8">Real-Time Evaluation</text>
+  <text x="615" y="226" fill="#10B981" font-family="'Inter', sans-serif" font-size="8">Call Ingestion &amp; Playback</text>
 
-  <path d="M540 235 L590 235" stroke="#55B9FF" stroke-width="2" stroke-dasharray="4 2"/>
+  <!-- Odoo ERP Live Sync Card -->
+  <rect x="605" y="248" width="150" height="112" rx="7" fill="#0C1F38" stroke="#A855F7"/>
+  <!-- Odoo Cloud Sync Icon -->
+  <g transform="translate(615, 260)">
+    <circle cx="14" cy="14" r="12" fill="#162D4D" stroke="#A855F7" stroke-width="1.2"/>
+    <path d="M9 14 C9 11, 14 11, 14 14 C14 17, 19 17, 19 14" fill="none" stroke="#A855F7" stroke-width="2"/>
+  </g>
+  <text x="652" y="272" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="11" font-weight="700">Odoo ERP</text>
+  <text x="652" y="288" fill="#C084FC" font-family="'Inter', sans-serif" font-size="9">Enterprise Ledger</text>
+  <text x="615" y="318" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="9">Bi-Directional Webhooks</text>
+  <text x="615" y="336" fill="#10B981" font-family="'Inter', sans-serif" font-size="8">Automated Payroll Sync</text>
+  <text x="615" y="350" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8">Inventory Reconciliation</text>
 
-  <!-- Enterprise Dashboards & ERP Layer -->
-  <rect x="590" y="100" width="170" height="270" rx="8" fill="#071426" stroke="#1B3558"/>
-  <text x="675" y="125" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle">OPERATIONS LAYER</text>
+  <!-- Bottom Capability Badges -->
+  <rect x="30" y="395" width="740" height="80" rx="8" fill="#071426" stroke="#1B3558"/>
+  <text x="50" y="420" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11" font-weight="700">CORE DIVISION TECHNOLOGIES &amp; PROTOCOLS:</text>
 
-  <rect x="605" y="150" width="140" height="50" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="675" y="172" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Odoo ERP Workflows</text>
-  <text x="675" y="188" fill="#F59E0B" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Synced Payroll &amp; Stock</text>
+  <rect x="50" y="432" width="130" height="26" rx="5" fill="#0C1F38" stroke="#00D2FF"/>
+  <text x="115" y="449" fill="#00D2FF" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">VICIdial PBX Telephony</text>
 
-  <rect x="605" y="215" width="140" height="50" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="675" y="237" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">QA CRM Portals</text>
-  <text x="675" y="253" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Agent Evaluation Scorecards</text>
+  <rect x="195" y="432" width="130" height="26" rx="5" fill="#0C1F38" stroke="#10B981"/>
+  <text x="260" y="449" fill="#10B981" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Biometric SDK Sync</text>
 
-  <rect x="605" y="280" width="140" height="50" rx="5" fill="#0C1F38" stroke="#1B3558"/>
-  <text x="675" y="302" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Incident Alerting</text>
-  <text x="675" y="318" fill="#10B981" font-family="'Inter', sans-serif" font-size="8" text-anchor="middle">Real-Time Sync Webhooks</text>
+  <rect x="340" y="432" width="130" height="26" rx="5" fill="#0C1F38" stroke="#A855F7"/>
+  <text x="405" y="449" fill="#C084FC" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Custom Odoo ERP</text>
 
-  <!-- Bottom Spec Pills -->
-  <rect x="40" y="400" width="720" height="60" rx="8" fill="#071426" stroke="#1B3558"/>
-  <text x="60" y="425" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="10" font-weight="600">CORE CAPABILITIES:</text>
-  
-  <rect x="60" y="433" width="130" height="18" rx="4" fill="#0C1F38" stroke="#087BCE"/>
-  <text x="125" y="446" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" font-weight="600" text-anchor="middle">VICIdial &amp; Telephony</text>
+  <rect x="485" y="432" width="130" height="26" rx="5" fill="#0C1F38" stroke="#F59E0B"/>
+  <text x="550" y="449" fill="#FCD34D" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">Fuzzy Deduplication</text>
 
-  <rect x="200" y="433" width="130" height="18" rx="4" fill="#0C1F38" stroke="#087BCE"/>
-  <text x="265" y="446" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" font-weight="600" text-anchor="middle">Biometric SDK Sync</text>
-
-  <rect x="340" y="433" width="130" height="18" rx="4" fill="#0C1F38" stroke="#087BCE"/>
-  <text x="405" y="446" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" font-weight="600" text-anchor="middle">Custom Odoo ERP</text>
-
-  <rect x="480" y="433" width="130" height="18" rx="4" fill="#0C1F38" stroke="#087BCE"/>
-  <text x="545" y="446" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" font-weight="600" text-anchor="middle">Fuzzy Deduplication</text>
-
-  <rect x="620" y="433" width="125" height="18" rx="4" fill="#0C1F38" stroke="#087BCE"/>
-  <text x="682" y="446" fill="#55B9FF" font-family="'Inter', sans-serif" font-size="8" font-weight="600" text-anchor="middle">QA Live Scorecards</text>
+  <rect x="630" y="432" width="125" height="26" rx="5" fill="#0C1F38" stroke="#00D2FF"/>
+  <text x="692" y="449" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">QA CRM Portals</text>
 </svg>
