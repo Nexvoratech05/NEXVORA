@@ -66,6 +66,15 @@ const projectServiceIconMap: Record<string, React.ReactNode> = {
   "business-automation": <Users className="w-3.5 h-3.5 text-amber-600" />,
 };
 
+const categoryIconMap: Record<string, React.ReactNode> = {
+  "Data & Lakehouse": <Database className="w-4 h-4 text-blue-600" />,
+  "Artificial Intelligence & Vision": <Cpu className="w-4 h-4 text-cyan-600" />,
+  "Generative AI & Agentic Systems": <Cpu className="w-4 h-4 text-purple-600" />,
+  "Cloud & DevOps": <Cloud className="w-4 h-4 text-blue-600" />,
+  "Software & APIs": <Code2 className="w-4 h-4 text-blue-600" />,
+  "Enterprise Automation": <Users className="w-4 h-4 text-amber-600" />,
+};
+
 const industryIconMap: Record<string, React.ReactNode> = {
   Activity: <Activity className="w-6 h-6 text-cyan-400" />,
   TrendingUp: <TrendingUp className="w-6 h-6 text-cyan-400" />,
@@ -456,7 +465,7 @@ export default function HomePage() {
           ========================================================================= */}
       <section className="py-20 sm:py-24 bg-gray-50 border-b border-gray-200">
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div className="space-y-3 max-w-2xl">
               <span className="eyebrow text-blue-600">Enterprise Toolchain</span>
               <h2 className="text-3xl sm:text-4xl font-bold font-heading text-navy-950">
@@ -475,6 +484,20 @@ export default function HomePage() {
             </Link>
           </div>
 
+          {/* Master Technology Ecosystem & Active Cloud Toolchain Matrix Blueprint */}
+          <div className="mb-14 rounded-2xl overflow-hidden border border-navy-800/80 bg-navy-950 shadow-2xl relative group">
+            <div className="relative aspect-[16/9] w-full max-h-[540px]">
+              <Image
+                src="/images/technology-ecosystem-matrix.svg"
+                alt="NEXVORA Technology Ecosystem & Active Cloud Toolchain Matrix — 36+ Verified Frameworks"
+                fill
+                priority
+                className="object-contain p-2 sm:p-4 transition-transform duration-500 group-hover:scale-[1.01]"
+                sizes="(max-width: 1280px) 100vw, 1280px"
+              />
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {techStackCategories.map((cat) => (
               <div
@@ -482,14 +505,20 @@ export default function HomePage() {
                 className="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 space-y-4 shadow-sm"
               >
                 <h3 className="text-base font-bold font-heading text-navy-950 border-b border-gray-100 pb-3 flex items-center justify-between">
-                  <span>{cat.name}</span>
+                  <span className="flex items-center gap-2">
+                    {categoryIconMap[cat.name]}
+                    <span>{cat.name}</span>
+                  </span>
                   <span className="text-xs font-mono text-blue-600 font-semibold">Active Toolchain</span>
                 </h3>
                 <ul className="space-y-3">
                   {cat.technologies.map((t) => (
                     <li key={t.name} className="text-xs space-y-0.5">
-                      <div className="font-semibold text-navy-950 font-mono">{t.name}</div>
-                      <div className="text-gray-500 leading-relaxed">{t.description}</div>
+                      <div className="font-semibold text-navy-950 font-mono flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-600 flex-shrink-0" />
+                        <span>{t.name}</span>
+                      </div>
+                      <div className="text-gray-500 leading-relaxed pl-3.5">{t.description}</div>
                     </li>
                   ))}
                 </ul>
