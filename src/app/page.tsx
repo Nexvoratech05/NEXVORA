@@ -241,7 +241,7 @@ export default function HomePage() {
           ========================================================================= */}
       <section id="divisions" className="py-20 sm:py-24 bg-gray-50 border-b border-gray-200">
         <div className="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div className="space-y-3 max-w-2xl">
               <span className="eyebrow text-blue-600">Six Core Divisions</span>
               <h2 className="text-3xl sm:text-4xl font-bold font-heading text-navy-950">
@@ -260,12 +260,12 @@ export default function HomePage() {
             </Link>
           </div>
 
-          {/* 3D Unified Engineering Ecosystem Showcase */}
+          {/* 3D Ecosystem Architecture Showcase */}
           <div className="mb-14 rounded-2xl overflow-hidden border border-navy-800/80 bg-navy-950 shadow-2xl relative group">
             <div className="relative aspect-[16/9] w-full max-h-[500px]">
               <Image
-                src="/images/divisions-ecosystem-3d.jpg"
-                alt="NEXVORA Unified Engineering Ecosystem — 3D Architecture Visualization"
+                src="/images/specialized-engineering-divisions-3d.jpg"
+                alt="NEXVORA 6 Specialized Engineering Divisions — 3D Architecture Visual"
                 fill
                 priority
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.01]"
@@ -275,14 +275,14 @@ export default function HomePage() {
               <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pointer-events-none">
                 <div className="space-y-0.5">
                   <span className="text-[11px] font-mono uppercase tracking-widest text-cyan-400 font-semibold block">
-                    Unified Engineering Architecture
+                    6 Specialized Engineering Divisions
                   </span>
                   <p className="text-xs sm:text-sm text-gray-200 font-medium">
-                    Integrated data lakehouses, AI/ML models, cloud infrastructure, and intelligent automation.
+                    Data Lakehouses • AI & Vision • Generative AI & Agents • Cloud & DevOps • Software & APIs • Business ERP
                   </p>
                 </div>
                 <span className="text-[11px] font-mono text-gray-400 bg-navy-900/80 border border-navy-700/60 px-2.5 py-1 rounded-full backdrop-blur-md">
-                  3D Interactive Infrastructure Overview
+                  Unified 3D Infrastructure Model
                 </span>
               </div>
             </div>
