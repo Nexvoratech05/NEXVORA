@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { NexvoraLogo } from "./NexvoraLogo";
 import { siteConfig, services } from "@/content/site";
-import { Mail, MapPin, ArrowRight, Phone } from "lucide-react";
+import { Mail, Globe2, ArrowRight, Phone } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -49,7 +49,7 @@ export function Footer() {
 
               {siteConfig.contact.hasRealAddress && siteConfig.contact.address ? (
                 <div className="flex items-start gap-2.5 text-gray-400">
-                  <MapPin className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                  <Globe2 className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" aria-hidden="true" />
                   <span>{siteConfig.contact.address}</span>
                 </div>
               ) : null}

@@ -126,7 +126,7 @@ export const siteConfig = {
     whatsappNumber: "923355277018",
     hasRealWhatsapp: true,
     whatsappGreeting: "Hello NEXVORA Technologies, I would like to discuss an engineering project.",
-    address: "Islamabad / Rawalpindi & Global Delivery",
+    address: "Remote-First (Operating Nationally & Internationally)",
     hasRealAddress: true,
     businessHours: "Monday – Saturday: 9:00 AM – 6:00 PM PKT (UTC+5)",
     responseTime: "Our team aims to respond within one business day.",
@@ -140,7 +140,7 @@ export const siteConfig = {
 
   metadata: {
     foundingYear: "2024",
-    locationRegion: "PK / GCC / Global",
+    locationRegion: "Remote-First • National & International Delivery",
   },
 };
 

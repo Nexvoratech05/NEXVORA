@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Metadata } from "next";
-import { Mail, MapPin, Clock, MessageSquare, ArrowRight, Phone } from "lucide-react";
+import { Mail, Globe2, Clock, MessageSquare, ArrowRight, Phone } from "lucide-react";
 import { siteConfig } from "@/content/site";
 import { ContactForm } from "@/components/ContactForm";
 
@@ -183,21 +183,21 @@ export default function ContactPage() {
                   </div>
                 ) : null}
 
-                {/* Office Location */}
+                {/* Company Model & Operations */}
                 {siteConfig.contact.hasRealAddress && siteConfig.contact.address ? (
                   <div className="p-5 rounded-2xl bg-white border border-gray-200 shadow-sm flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-gray-100 text-gray-700 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <MapPin className="w-5 h-5" />
+                    <div className="w-10 h-10 rounded-xl bg-blue-600/10 text-blue-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Globe2 className="w-5 h-5" />
                     </div>
                     <div className="space-y-1">
                       <span className="text-xs font-semibold uppercase tracking-wider text-gray-400 block font-heading">
-                        Headquarters &amp; Office
+                        Headquarters &amp; Operational Model
                       </span>
-                      <p className="text-sm font-medium text-navy-950 font-mono">
+                      <p className="text-sm font-semibold text-navy-950">
                         {siteConfig.contact.address}
                       </p>
                       <p className="text-xs text-gray-500">
-                        Remote-first delivery serving regional &amp; international time zones.
+                        Remote-first engineering organization operating nationally and internationally across multiple time zones.
                       </p>
                     </div>
                   </div>
